@@ -38,9 +38,9 @@ A collection of best practice development specifications and related tools.
     * Label template
     * Issues template
     * Issues standards
-* Warehouse template
-    * Golang warehouse template
-    * Python warehouse template
+* Repository template
+    * Golang repository template
+    * Python repository template
 * Microservice implementation standards
     * Microservice segmentation specification
     * Message queue standards
