@@ -1,5 +1,5 @@
 # devSpec
-[English](README.md) | [中文](README_CN.md)
+[English](README.md) | [中文](README-zh.md)
 
 一个最佳实践的开发规范和配套工具集合。
 
