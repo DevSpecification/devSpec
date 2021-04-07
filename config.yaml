@@ -1,16 +1,8 @@
-module:
-  # import docsy as template
-  imports:
-  - disable: false
-    ignoreConfig: false
-    ignoreImports: false
-  - path: github.com/google/docsy
-
 baseURL: /
 title: Development specification
 enableRobotsTXT: true
 theme:
-  - docsy
+  - github.com/google/docsy
 enableGitInfo: true
 contentDir: content/en
 defaultContentLanguage: en
