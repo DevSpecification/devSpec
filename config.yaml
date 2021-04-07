@@ -1,0 +1,144 @@
+module:
+  # import docsy as template
+  imports:
+  - disable: false
+    ignoreConfig: false
+    ignoreImports: false
+  - path: github.com/google/docsy
+
+baseURL: /
+title: Development specification
+enableRobotsTXT: true
+theme:
+  - docsy
+enableGitInfo: true
+contentDir: content/en
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: true
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+pygmentsCodeFences: true
+pygmentsUseClasses: false
+pygmentsUseClassic: false
+pygmentsStyle: tango
+permalinks:
+  blog: '/:section/:year/:month/:day/:slug/'
+outputs:
+  home:
+    - HTML
+    - JSON
+  page:
+    - HTML
+  section:
+    - HTML
+    - RSS
+    - print
+blackfriday:
+  plainIDAnchors: true
+  hrefTargetBlank: true
+  angledQuotes: false
+  latexDashes: true
+imaging:
+  resampleFilter: CatmullRom
+  quality: 75
+  anchor: smart
+menu:
+  main:
+    - name: Example Site
+      weight: 40
+      url: 'https://example.docsy.dev'
+      pre: <i class='fas fa-laptop-code'></i>
+    - name: GitHub
+      weight: 50
+      url: 'https://github.com/google/docsy/'
+      pre: <i class='fab fa-github'></i>
+      post: <span class='alert'>New!</span>
+services:
+  googleAnalytics:
+    id: UA-00000000-0
+languages:
+  en:
+    title: Docsy
+    description: Docsy does docs
+    languageName: English
+    weight: 1
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: tango
+params:
+  copyright: The Docsy Authors
+  privacy_policy: 'https://policies.google.com/privacy'
+  version_menu: Releases
+  archived_version: false
+  version: '0.0'
+  url_latest_version: 'https://example.com'
+  github_repo: 'https://github.com/google/docsy'
+  github_project_repo: 'https://github.com/google/docsy'
+  github_subdir: userguide
+  time_format_blog: 'Monday, January 02, 2006'
+  time_format_default: 'January 2, 2006'
+  rss_sections:
+    - blog
+  gcs_engine_id: '011217106833237091527:la2vtv2emlw'
+  algolia_docsearch: false
+  offlineSearch: false
+  offlineSearchSummaryLength: 70
+  offlineSearchMaxResults: 10
+  prism_syntax_highlighting: false
+  ui:
+    sidebar_menu_compact: false
+    breadcrumb_disable: false
+    sidebar_search_disable: false
+    navbar_logo: true
+    feedback:
+      enable: true
+      'yes': >-
+        Glad to hear it! Please <a
+        href="https://github.com/google/docsy/issues/new">tell us how we can
+        improve</a>.
+      'no': >-
+        Sorry to hear that. Please <a
+        href="https://github.com/google/docsy/issues/new">tell us how we can
+        improve</a>.
+    readingtime:
+      enable: false
+  links:
+    user:
+      - name: GitHub Discussions
+        url: 'https://twitter.com/docsydocs'
+        icon: fab fa-github
+        desc: Discussion and help from your fellow users
+      - name: User mailing list
+        url: 'https://groups.google.com/forum/#!forum/docsy-users'
+        icon: fa fa-envelope
+        desc: Sign up for Docsy announcements
+      - name: Twitter
+        url: 'https://twitter.com/docsydocs'
+        icon: fab fa-twitter
+        desc: Follow us on Twitter to get the latest news!
+      - name: Stack Overflow
+        url: 'https://stackoverflow.com/questions/tagged/docsy'
+        icon: fab fa-stack-overflow
+        desc: Practical questions and curated answers
+    developer:
+      - name: GitHub
+        url: 'https://github.com/google/docsy'
+        icon: fab fa-github
+        desc: Development takes place here!
+  mermaid:
+    enable: true
+    theme: default
+  plantuml:
+    enable: true
+    theme: default
+    svg_image_url: 'https://www.plantuml.com/plantuml/svg/'
+  katex:
+    enable: true
+    html_dom_element: document.body
+  print:
+    disable_toc: false
