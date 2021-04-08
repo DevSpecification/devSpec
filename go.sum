@@ -1,2 +1,5 @@
+github.com/bep/hugotestmods v0.0.0-20190604083900-a4c456c8a91c h1:92Ol/PBxFNz6nypoXm73BPRdM1ZnggGw0nrG8jf6i+k=
+github.com/bep/hugotestmods/mymounts v1.2.0 h1:1Li0CppU5rsmxTDpFLxMOeOypOsCt0TO7/ELxJ5sfIQ=
+github.com/bep/hugotestmods/mymounts v1.2.0/go.mod h1:eEF3JU4Kta3g3O2mxuHs4fVq0qMuJoOrr0OCADn1Lm4=
 github.com/google/docsy v0.0.0-20210406162330-fadea89bdb01 h1:WxFagIQ05ZsjwDaV32dEDYz6GtRtrJcX6UDGjvbyn3g=
 github.com/google/docsy v0.0.0-20210406162330-fadea89bdb01/go.mod h1:alhAPKceHP14eqO+nJEhYehHeNcPKV8QnduoauTBZhs=

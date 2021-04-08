@@ -4,13 +4,9 @@ module:
   noVendor: ""
   private: '*.*'
   proxy: https://goproxy.cn,direct
-  replacements: ""
   imports:
-    - path: github.com/bep/hugotestmods/mymounts
+    - path: https://github.com/google/docsy
       disabled: false
-      mounts:
-        - source: myassets/subfolder
-          target: assets/images
 title: Development specification
 enableRobotsTXT: true
 theme:
