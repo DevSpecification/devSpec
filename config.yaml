@@ -1,5 +1,10 @@
 baseURL: /
 module:
+  noProxy: none
+  noVendor: ""
+  private: '*.*'
+  proxy: https://goproxy.cn,direct
+  replacements: ""
   imports:
     - path: github.com/bep/hugotestmods/mymounts
       disabled: false
