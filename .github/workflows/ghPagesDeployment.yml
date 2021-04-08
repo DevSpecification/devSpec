@@ -1,26 +1,27 @@
-name: github Pages
+name: github pages
 
-on: 
+on:
   push:
-    branches: 
-      - master
+    branches:
+      - master  # Set a branch to deploy
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1  # v2 does not have submodules option now
-        # with:
-        #   submodules: true
-      
-      - name: dependencies
-        run: make dependencies
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
 
       - name: Build
-        uses: docker://klakegg/hugo:ext-alpine
-        with:
-          volume: $(pwd):/src
-          args: --minify -b https://taibiaoguo.github.io/devSepc/
+        run: hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
