@@ -54,9 +54,9 @@ params:
   archived_version: false
   version: '0.0'
   url_latest_version: 'https://example.com'
-  github_repo: 'https://github.com/TaibiaoGuo/devSpec'
-  github_project_repo: 'https://github.com/TaibiaoGuo/devSpec/projects'
-  github_subdir: userguide
+  github_repo: "https://github.com/TaibiaoGuo/devSpec"
+  github_project_repo: "https://github.com/TaibiaoGuo/devSpec/projects"
+  github_subdir:
   time_format_blog: 'Monday, January 02, 2006'
   time_format_default: 'January 2, 2006'
   rss_sections:
