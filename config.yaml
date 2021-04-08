@@ -1,4 +1,11 @@
 baseURL: /
+module:
+  imports:
+    - path: github.com/bep/hugotestmods/mymounts
+      disabled: false
+      mounts:
+        - source: myassets/subfolder
+          target: assets/images
 title: Development specification
 enableRobotsTXT: true
 theme:
