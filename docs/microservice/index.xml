@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 开发规范</title><link>https://taibiaoguo.github.io/devSpec/docs/</link><description>Recent content on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 微服务</title><link>https://taibiaoguo.github.io/devSpec/docs/microservice/</link><description>Recent content in 微服务 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/microservice/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</guid><description>
 &lt;p>你应该早已经看过许多介绍微服务优点的博文，但很少有人告诉你微服务的切分、微服务的管理和监测等要点如果处理不当，微服务的实施将会是一场噩梦。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -65,13 +65,4 @@
 以带来更好的灵活性。这在面向客户的界面(如 API、移动应用或 Web 应用)中尤为常见。这些界面通常较小，需要更加频繁的更新才能满足客户的期望。&lt;/p>
 &lt;p>分布式架构的最新定义之一是微服务。与其他模块化设计，像面向服务的架构(SOA)有一些相似之处，但微服务将服务之间的松散耦合转变为服务独立性。
 通常，单个服务的定义较为明确，可以轻松地在较大的架构中添加、升级或删除服务。这对于动态可扩展性和容错能力都有一定的好处:
-可以在不占用大量基础架构的情况下按需扩展单个服务，或者可以在不影响其他服务的情况下进行故障转移。&lt;/p></description></item><item><title>Docs: 团队文化</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</guid><description>
-&lt;p>微服务、敏捷开发、DevOps 在软件和互联网行业大行其道，屹立潮头的企业们设计了许多精巧的软件架构、严密的开发流程来适应这些新事物。
-事实上，&lt;a href="https://www.gartner.com/newsroom/id/3032517">Gartner&lt;/a> 曾做过统计，90%的DevOps 实践最终都走向了失败。人们逐渐发现，
-即使你设计的再精美的系统架构图、再严密的流程，一旦涉及到诸如人的参与和或卷入传统企业流程，往往都会变形，并最终走向崩溃。&lt;/p>
-&lt;p>康威定理指出：“任何采用系统设计的企业，其设计结构最终都会不可避免地与该企业的沟通结构相一致。”针对这方面，有两个彼此相关的解释：&lt;/p>
-&lt;ul>
-&lt;li>除非也改变沟通结构，否则单纯改变架构或基础架构不会带来任何改变；&lt;/li>
-&lt;li>无论基础架构如何，改变沟通结构都会带来流程和基础架构的改进。&lt;/li>
-&lt;/ul>
-&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description/></item><item><title>Docs:</title><link>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</guid><description/></item></channel></rss>
+可以在不占用大量基础架构的情况下按需扩展单个服务，或者可以在不影响其他服务的情况下进行故障转移。&lt;/p></description></item></channel></rss>
