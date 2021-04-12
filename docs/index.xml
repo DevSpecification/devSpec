@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 开发规范</title><link>https://taibiaoguo.github.io/devSpec/docs/</link><description>Recent content on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 可行性研究报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/feasibilityanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/feasibilityanalysis/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 开发规范</title><link>https://taibiaoguo.github.io/devSpec/docs/</link><description>Recent content on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 可行性研究报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写本可行性研究报告的目的，指出预期的读者。&lt;/p>
@@ -348,7 +348,92 @@
 &lt;li>
 &lt;p>不能进行或不必进行（例如因技术不成熟、经济上不合算等）。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</guid><description/></item><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 源代码API参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/apireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/apireference/</guid><description>
+&lt;p>创建API后，需要提供对应的API参考文档，通常是从源代码中生成的公开类、方法、常量及其他成员。根据不同的编程语言，依照本指南给出的基本准则，
+并参照特定语言样式指南。&lt;/p>
+&lt;p>此指南不含该 Web API 的参考文档样式，编写 Web API 的参考文档样式时，请参考 Web API 的参考文档样式说明。&lt;/p>
+&lt;h2 id="基础知识">基础知识&lt;/h2>
+&lt;p>API参考文档必须提供以下各项的描述：&lt;/p>
+&lt;ul>
+&lt;li>API的每个类、接口、结构体和其他类似的成员；&lt;/li>
+&lt;li>每个常量、字段、枚举、类型定义等；&lt;/li>
+&lt;li>每个方法、以及每个参数的说明、返回值和可能的异常说明。&lt;/li>
+&lt;/ul>
+&lt;p>以下是具体的规则。在某些情况下，它们对于特定的API或特定的语言没有意义，但一般来说，请遵循以下准则：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>在每个唯一类，界面等上，在顶部都包含一个5-20行代码示例：&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将所有API名称，类，方法，常量等放入代码中，并将​​每个名称链接到相应的参考文档（大多数文档生成器会自动为您执行此操作）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将参数名用斜体表示。例如，当您引用类似 &lt;code>doSomething(Uri data, int count)&lt;/code> 的参数时，将 &lt;em>data&lt;/em>、&lt;em>count&lt;/em> 斜体化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>确保文档中的类的拼写和代码中相同。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>不要使类名复数（Intents，Activities）; 而是添加一个复数名词（Intent对象，Activity实例）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果一个类的名称是一个常用术语，则可以使用相应的英语单词来引用它，该单词要小写而不是使用代码字体（activities, action bar）。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="类接口结构体">类、接口、结构体&lt;/h2>
+&lt;p>在类的注释的第一句话中，简要说明类或接口的预期用途和功能，以及一些无法从类名称或签名中得到的信息。文档工具和IDE会自动提取每个类的第一句话，
+展示到类的文档列表，因此第一句话应精炼。然后，详细说明API的使用方法，包括：
+如何调用或实例化API、一些关键功能以及最佳实践或陷阱。&lt;/p>
+&lt;p>&lt;strong>例子&lt;/strong>&lt;/p>
+&lt;p>ActionBar 类的第一句注释：&lt;/p>
+&lt;p>处于活动状态的主工具栏，可以显示活动标题、应用程序级别的功能导航以及其他交互的对象。&lt;/p>
+&lt;h2 id="成员">成员&lt;/h2>
+&lt;p>成员（常量、属性）的注释应尽可能简短，并链接到使用了该常量或属性的相关方法。&lt;/p>
+&lt;p>&lt;strong>例子&lt;/strong>&lt;/p>
+&lt;p>ActionBar 类的 &lt;code>DISPLAY_SHOW_HOME&lt;/code> 常量的注释：&lt;/p>
+&lt;p>在此操作栏中显示“主页”元素，从而为徽标、图标等其他导航元素留出更多空间。&lt;/p>
+&lt;p>另请参阅： &lt;code>setDisplayOptions(int)&lt;/code>，&lt;code>setDisplayOptions(int, int)&lt;/code>&lt;/p>
+&lt;h2 id="方法">方法&lt;/h2>
+&lt;p>在方法注释的第一句话中，简要说明该方法执行的操作。在随后的句子中，解释为什么以及如何使用该方法，声明在调用之前必须满足的所有先决条件，
+提供有关可能发生的异常的详细信息，并指定任何相关的API。&lt;/p>
+&lt;p>同时，描述调用该方法所需的任何依赖项，以及缺少此依赖时该方法的行为（例如该方法抛出 &lt;code>SecurityException&lt;/code>或该方法返回&lt;code>null&lt;/code>）。&lt;/p>
+&lt;p>&lt;strong>例子&lt;/strong>&lt;/p>
+&lt;p>&lt;code>Activity.isChangingConfigurations()&lt;/code> 方法的注释：&lt;/p>
+&lt;p>检查此活动是否正在销毁中，以便使用新配置重新创建此活动。这通常用于 &lt;code>onStop()&lt;/code>
+来确定状态从而判断是否要清除活动或者将活动传递给活动的下一个实例&lt;code>onRetainNonConfigurationInstance()&lt;/code>&lt;/p>
+&lt;p>另请参阅： &lt;code>setDisplayOptions(int)&lt;/code>，&lt;code>setDisplayOptions(int, int)&lt;/code>&lt;/p>
+&lt;h3 id="描述">描述&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>如果某个方法执行某个操作并返回一些数据，请以描述该操作的动词开始描述，例如：&lt;/p>
+&lt;ul>
+&lt;li>添加新的鸟到鸟类列表中，并返回新条目的 ID；&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>如何它是 getter 方法并返回布尔值， 描述以 “检查是否&amp;hellip;” 开始；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果它是 getter 方法并且返回的不是布尔值，则以 “获取&amp;hellip;” 开始；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如何它没有返回值，请使用类似下述的动词作为开头：&lt;/p>
+&lt;ul>
+&lt;li>启用一项新技能或设置： “设置&amp;hellip;”；&lt;/li>
+&lt;li>更新属性：“更新&amp;hellip;”；&lt;/li>
+&lt;li>删除内容：“删除&amp;hellip;”；&lt;/li>
+&lt;li>注册回调或其他元素以供以后参考：“Registers&amp;hellip;”；&lt;/li>
+&lt;li>对于回调：“由&amp;hellip;调用”（例如：有注册器在&amp;hellip;时调用，然后，子类将此方法实现为&amp;hellip;）；&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="弃用">弃用&lt;/h3>
+&lt;p>如果该方法将在未来弃用，则需要在第一句话中告知用户该方法的最后支持版本。随后，可以向开发者解释为什么不推荐使用该API以及其他对开发人员有用的信息。&lt;/p>
+&lt;p>&lt;strong>例子&lt;/strong>：&lt;/p>
+&lt;p>不推荐使用，请改用 &lt;code>CameraPose&lt;/code>&lt;/p>
+&lt;p>不推荐使用，使用 &lt;code>getField()&lt;/code>方法访问此字段&lt;/p></description></item><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</guid><description/></item><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</guid><description>
 &lt;p>你应该早已经看过许多介绍微服务优点的博文，但很少有人告诉你微服务的切分、微服务的管理和监测等要点如果处理不当，微服务的实施将会是一场噩梦。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -424,7 +509,88 @@
 &lt;li>除非也改变沟通结构，否则单纯改变架构或基础架构不会带来任何改变；&lt;/li>
 &lt;li>无论基础架构如何，改变沟通结构都会带来流程和基础架构的改进。&lt;/li>
 &lt;/ul>
-&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 持续集成</title><link>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/continuesintegrationstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/continuesintegrationstandards/</guid><description/></item><item><title>Docs: 项目开发计划</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentplan/</guid><description/></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description>
+&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 持续集成</title><link>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/continuesintegrationstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/continuesintegrationstandards/</guid><description/></item><item><title>Docs: 项目开发计划</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明：编写这份软件项目开发计划的目的，并指出预期的读者。&lt;/p>
+&lt;h3 id="12-背景">1.2 背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>待开发的软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本项目的任务提出者、开发者、用户及实现该软件的计算中心或计算机网络；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>该软件系统同其他系统或其他机构的基本的相互来往关系。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义和外文的首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出用得着的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书和合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用的文件、资料，包括所要用到的软件开发标准。列出这些文件资料的标题、文件编号、发表日期和出版单位，说明能够得到这些文件资料的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2项目概述">2项目概述&lt;/h2>
+&lt;h3 id="21工作内容">2.1工作内容&lt;/h3>
+&lt;p>简要地说明在本项目的开发中须进行的各项主要工作。&lt;/p>
+&lt;h3 id="22主要参加人员">2.2主要参加人员&lt;/h3>
+&lt;p>扼要说明参加本项目开发的主要人员的情况，包括他们的技术水平。&lt;/p>
+&lt;h3 id="23产品">2.3产品&lt;/h3>
+&lt;h4 id="231程序">2.3.1程序&lt;/h4>
+&lt;p>列出须移交给用户的程序的名称、所用地编程语言及存储程序的媒体形式，并通过引用相关文件，逐项说明其功能和能力。&lt;/p>
+&lt;h4 id="232文件">2.3.2文件&lt;/h4>
+&lt;p>列出须移交用户的每种文件的名称及内容要点。&lt;/p>
+&lt;h4 id="233服务">2.3.3服务&lt;/h4>
+&lt;p>列出需向用户提供的各项服务，如培训安装、维护和运行支持等，应逐项规定开始日期、所提供支持的级别和服务的期限。&lt;/p>
+&lt;h4 id="234非移交的产品">2.3.4非移交的产品&lt;/h4>
+&lt;p>说明开发集体应向本单位交出但不必向用户移交的产品（文件甚至某些程序）。&lt;/p>
+&lt;h3 id="24验收标准">2.4验收标准&lt;/h3>
+&lt;p>对于上述这些应交出的产品和服务，逐项说明或引用资料说明验收标准。&lt;/p>
+&lt;h3 id="25完成项目的最迟期限">2.5完成项目的最迟期限&lt;/h3>
+&lt;h3 id="26本计划的批准者和批准日期">2.6本计划的批准者和批准日期&lt;/h3>
+&lt;h2 id="3实施计划">3实施计划&lt;/h2>
+&lt;h3 id="31工作任务的分解与人员分工">3.1工作任务的分解与人员分工&lt;/h3>
+&lt;p>对于项目开发中需要完成的各项工作，从需求分析、设计、实现、测试直到维护，包括文件的编制、审批、打印、分发工作，用户培训工作，软件安装工作等，按层次进行分解，指明每项任务的负责人和参加人员。&lt;/p>
+&lt;h3 id="32接口人员">3.2接口人员&lt;/h3>
+&lt;p>说明负责接口工作的人员及他们的职责，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>负责本项目同用户的接口人员；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>负责本项目同本单位各管理机构，如合同计划管理部门、财务部门、质量管理部门等的接口人员；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>负责本项目同个份合同负责单位的接口人员等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="33进度">3.3进度&lt;/h3>
+&lt;p>对于需求分析、设计、编码实现、测试、移交、培训和安装等工作，给出每项工作任务的预定开始日期、完成日期及所需资源，规定各项工作任务完成的先后顺序以及表征每项工作任务完成的标志性事件（即所谓“里程碑）。&lt;/p>
+&lt;h3 id="34预算">3.4预算&lt;/h3>
+&lt;p>逐项列出本开发项目所需要的劳务（包括人员的数量和时间）以及经费的预算（包括办公费、差旅费、机时费、资料费、通讯设备和专用设备的租金等）和来源。&lt;/p>
+&lt;h3 id="35关键问题">3.5关键问题&lt;/h3>
+&lt;p>逐项列出能够影响整个项目成败的关键问题、技术难点和风险，指出这些问题对项目的影响。&lt;/p>
+&lt;h2 id="4支持条件">4支持条件&lt;/h2>
+&lt;p>说明为支持本项目的开发所需要的各种条件和设施。&lt;/p>
+&lt;h3 id="41计算机系统支持">4.1计算机系统支持&lt;/h3>
+&lt;p>逐项列出开发中和运行时所需的计算机系统支持，包括计算机、外围设备、通讯设备、模拟器、编译（或汇编）程序、操作系统、数据管理程序包、数据存储能力和测试支持能力等，逐项给出有关到货日期、使用时间的要求。&lt;/p>
+&lt;h3 id="42需由用户承担的工作">4.2需由用户承担的工作&lt;/h3>
+&lt;p>逐项列出需要用户承担的工作和完成期限。包括需由用户提供的条件及提供时间。&lt;/p>
+&lt;h3 id="43由外单位提供的条件">4.3由外单位提供的条件&lt;/h3>
+&lt;p>逐项列出需要外单位分合同承包者承担的工作和完成的时间，包括需要由外单位提供的条件和提供的时间。&lt;/p>
+&lt;h2 id="5专题计划要点">5专题计划要点&lt;/h2>
+&lt;p>说明本项目开发中需制定的各个专题计划（如分合同计划、开发人员培训计划、测试计划、安全保密计划、质量保证计划、配置管理计划、用户培训计划、系统安装计划等）的要点。&lt;/p></description></item><item><title>Docs: WebAPI参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</guid><description/></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description>
 &lt;p>在明确团队文化后，下一步就是明确团队架构。团队中所有 DevOps、敏捷的主要目标都是改进客户和业务的价值交付，而不是降低成本、
 提升自动化或者配置管理驱动一切。 这意味着，为了实现有效的 Dev 和 Ops 协同，不同的组织可能需要不同的团队结构。
 &lt;a href="https://web.devopstopologies.com/index.html">DevOpsTopologies&lt;/a> 给出了大量的团队架构范式，
@@ -485,6 +651,954 @@
 &lt;p>Netflix 和 Facebook 这种产品形态较为单一的组织已经实现了完全共担 Ops 职责架构。但如果你的团队包含多个产品流的研发任务，
 例如初创团队同时进行多个最小可行产品的论证工作，那么完全共担 Ops 职责架构最终将导致成员目标的分散，
 最终导致完全共担 Ops 职责架构的实施变形或失败。&lt;/p>
-&lt;h2 id="devspec-强烈反对的组织架构模板">devSpec 强烈反对的组织架构模板&lt;/h2></description></item><item><title>Docs: 软件需求说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwarerequirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwarerequirements/</guid><description/></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/outlinedesign/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description>
+&lt;h2 id="devspec-强烈反对的组织架构模板">devSpec 强烈反对的组织架构模板&lt;/h2></description></item><item><title>Docs: 软件需求说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwarerequirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwarerequirements/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明编写这份软件需求说明书的目的，指出预期的读者。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>待开发的软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本项目的任务提出者、开发者、用户及实现该软件的计算中心或计算机网络；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>该软件系统同其他系统或其他机构的基本的相互来往关系。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出用得着的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书或合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用的文件、资料、包括所要用到的软件开发标准。
+列出这些文件资料的标题、文件编号、发表日期和出版单位，说明能够得到这些文件资料的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2任务概述">2任务概述&lt;/h2>
+&lt;h3 id="21目标">2.1目标&lt;/h3>
+&lt;p>叙述该项软件开发的意图、应用目标、作用范围以及其他应向读者说明的有关该软件开发的背景材料。解释被开发软件与其他有关软件之间的关系。如果本软件产品是一项独立的软件，而且全部内容自含，则说明这一点。如果所定义的产品是一个更大的系统的一个组成部分，则应说明本产品与该系统中其他各组成部分之间的关系，为此可使用一张方框图来说明该系统的组成和本产品同其他各部分的联系和接口。|&lt;/p>
+&lt;h3 id="22用户的特点">2.2用户的特点&lt;/h3>
+&lt;p>列出本软件的最终用户的特点，充分说明操作人员、维护人员的教育水平和技术专长，以及本软件的预期使甩频度。这些是软件设计工作的重要约束&lt;/p>
+&lt;h3 id="23假定和约束">2.3假定和约束&lt;/h3>
+&lt;p>列出进行本软件开发工作的假定和约束，例如经费限制、开发期限等。&lt;/p>
+&lt;h2 id="3需求规定">3需求规定&lt;/h2>
+&lt;h3 id="31对功能的规定">3.1对功能的规定&lt;/h3>
+&lt;p>用列表的方式（例如IPO表即输入、处理、输出表的形式），逐项定量和定性地叙述对软件所提出的功能要求，说明输入什么量、经怎样的处理、得到什么输出，说明软件应支持的终端数和应支持的并行操作的用户数。&lt;/p>
+&lt;h3 id="32对性能的规定">3.2对性能的规定&lt;/h3>
+&lt;h4 id="321精度">3.2.1精度&lt;/h4>
+&lt;p>说明对该软件的输入、输出数据精度的要求，可能包括传输过程中的精度。&lt;/p>
+&lt;h4 id="322时间特性要求">3.2.2时间特性要求&lt;/h4>
+&lt;p>说明对于该软件的时间特性要求，如对：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>响应时间；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>更新处理时间；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据的转换和传送时间；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>解题时间；等的要求。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="323灵活性">3.2.3灵活性&lt;/h4>
+&lt;p>说明对该软件的灵活性的要求，即当需求发生某些变化时，该软件对这些变化的适应能力，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>操作方式上的变化；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>运行环境的变化；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>同其他软件的接口的变化；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>精度和有效时限的变化；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>计划的变化或改进。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>对于为了提供这些灵活性而进行的专门设计的部分应该加以标明。&lt;/p>
+&lt;h3 id="33输人输出要求">3.3输人输出要求&lt;/h3>
+&lt;p>解释各输入输出数据类型，并逐项说明其媒体、格式、数值范围、精度等。对软件的数据输出及必须标明的控制输出量进行解释并举例，包括对硬拷贝报告（正常结果输出、状态输出及异常输出）以及图形或显示报告的描述。&lt;/p>
+&lt;h3 id="34数据管理能力要求">3.4数据管理能力要求&lt;/h3>
+&lt;p>说明需要管理的文卷和记录的个数、表和文卷的大小规模，要按可预见的增长对数据及其分量的存储要求作出估算。&lt;/p>
+&lt;h3 id="35故障处理要求">3.5故障处理要求&lt;/h3>
+&lt;p>列出可能的软件、硬件故障以及对各项性能而言所产生的后果和对故障处理的要求。&lt;/p>
+&lt;h3 id="36其他专门要求">3.6其他专门要求&lt;/h3>
+&lt;p>如用户单位对安全保密的要求，对使用方便的要求，对可维护性、可补充性、易读性、可靠性、运行环境可转换性的特殊要求等。&lt;/p>
+&lt;h2 id="4运行环境规定">4运行环境规定&lt;/h2>
+&lt;h3 id="41设备">4.1设备&lt;/h3>
+&lt;p>列出运行该软件所需要的硬设备。说明其中的新型设备及其专门功能，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>处理器型号及内存容量；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>外存容量、联机或脱机、媒体及其存储格式，设备的型号及数量；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入及输出设备的型号和数量，联机或脱机；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据通信设备的型号和数量；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>功能键及其他专用硬件&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="42支持软件">4.2支持软件&lt;/h3>
+&lt;p>列出支持软件,包括要用到的操作系统、编译（或汇编）程序、测试支持软件等。&lt;/p>
+&lt;h3 id="43接口">4.3接口&lt;/h3>
+&lt;p>说明该软件同其他软件之间的接口、数据通信协议等。&lt;/p>
+&lt;h3 id="44控制">4.4控制&lt;/h3>
+&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明编写这份概要设计说明书的目的，指出预期的读者。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>待开发软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>列出此项目的任务提出者、开发者、用户以及将运行该软件的计算站（中心）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出有关的参考文件，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书或合同，上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用的文件、资料，包括所要用到的软件开发标准。列出这些文件的标题、文件编号、发表日期和出版单位，说明能够得到这些文件资料的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2总体设计">2总体设计&lt;/h2>
+&lt;h3 id="21需求规定">2.1需求规定&lt;/h3>
+&lt;p>说明对本系统的主要的输入输出项目、处理的功能性能要求，详细的说明可参见附录C。&lt;/p>
+&lt;h3 id="22运行环境">2.2运行环境&lt;/h3>
+&lt;p>简要地说明对本系统的运行环境（包括硬件环境和支持环境）的规定，详细说明参见附录C。&lt;/p>
+&lt;h3 id="23基本设计概念和处理流程">2.3基本设计概念和处理流程&lt;/h3>
+&lt;p>说明本系统的基本设计概念和处理流程，尽量使用图表的形式。&lt;/p>
+&lt;h3 id="24结构">2.4结构&lt;/h3>
+&lt;p>用一览表及框图的形式说明本系统的系统元素（各层模块、子程序、公用程序等）的划分，扼要说明每个系统元素的标识符和功能，分层次地给出各元素之间的控制与被控制关系.&lt;/p>
+&lt;h3 id="25功能器求与程序的关系">2.5功能器求与程序的关系&lt;/h3>
+&lt;p>本条用一张如下的矩阵图说明各项功能需求的实现同各块程序的分配关系：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>&lt;/th>
+&lt;th>&lt;/th>
+&lt;th>&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>程序1&lt;/td>
+&lt;td>程序2&lt;/td>
+&lt;td>……&lt;/td>
+&lt;td>程序n&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>功能需求1&lt;/td>
+&lt;td>√&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>功能需求2&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>√&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>……&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>功能需求n&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>√&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>√&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="26人工处理过程">2.6人工处理过程&lt;/h3>
+&lt;p>说明在本软件系统的工作过程中不得不包含的人工处理过程（如果有的话）。&lt;/p>
+&lt;h3 id="27尚未问决的问题">2.7尚未问决的问题&lt;/h3>
+&lt;p>说明在概要设计过程中尚未解决而设计者认为在系统完成之前必须解决的各个问题。&lt;/p>
+&lt;h2 id="3接口设计">3接口设计&lt;/h2>
+&lt;h3 id="31用户接口">3.1用户接口&lt;/h3>
+&lt;p>说明将向用户提供的命令和它们的语法结构，以及软件的回答信息。&lt;/p>
+&lt;h3 id="32外部接口">3.2外部接口&lt;/h3>
+&lt;p>说明本系统同外界的所有接口的安排包括软件与硬件之间的接口、本系统与各支持软件之间的接口关系。&lt;/p>
+&lt;h3 id="33内部接口">3.3内部接口&lt;/h3>
+&lt;p>说明本系统之内的各个系统元素之间的接口的安排。&lt;/p>
+&lt;h2 id="4运行设计">4运行设计&lt;/h2>
+&lt;h3 id="41运行模块组合">4.1运行模块组合&lt;/h3>
+&lt;p>说明对系统施加不同的外界运行控制时所引起的各种不同的运行模块组合，说明每种运行所历经的内部模块和支持软件。&lt;/p>
+&lt;h3 id="42运行控制">4.2运行控制&lt;/h3>
+&lt;p>说明每一种外界的运行控制的方式方法和操作步骤。&lt;/p>
+&lt;h3 id="43运行时间">4.3运行时间&lt;/h3>
+&lt;p>说明每种运行模块组合将占用各种资源的时间。&lt;/p>
+&lt;h2 id="5系统数据结构设计">5系统数据结构设计&lt;/h2>
+&lt;h3 id="51逻辑结构设计要点">5.1逻辑结构设计要点&lt;/h3>
+&lt;p>给出本系统内所使用的每个数据结构的名称、标识符以及它们之中每个数据项、记录、文卷和系的标识、定义、长度及它们之间的层次的或表格的相互关系。&lt;/p>
+&lt;h3 id="52物理结构设计要点">5.2物理结构设计要点&lt;/h3>
+&lt;p>给出本系统内所使用的每个数据结构中的每个数据项的存储要求，访问方法、存取单位、存取的物理关系（索引、设备、存储区域）、设计考虑和保密条件。&lt;/p>
+&lt;h3 id="53数据结构与程序的关系">5.3数据结构与程序的关系&lt;/h3>
+&lt;p>说明各个数据结构与访问这些数据结构的形式:&lt;/p>
+&lt;h2 id="6系统出错处理设计">6系统出错处理设计&lt;/h2>
+&lt;h3 id="61出错信息">6.1出错信息&lt;/h3>
+&lt;p>用一览表的方式说朗每种可能的出错或故障情况出现时，系统输出信息的形式、含意及处理方法。&lt;/p>
+&lt;h3 id="62补救措施">6.2补救措施&lt;/h3>
+&lt;p>说明故障出现后可能采取的变通措施，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>后备技术说明准备采用的后备技术，当原始系统数据万一丢失时启用的副本的建立和启动的技术，例如周期性地把磁盘信息记录到磁带上去就是对于磁盘媒体的一种后备技术；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>降效技术说明准备采用的后备技术，使用另一个效率稍低的系统或方法来求得所需结果的某些部分，例如一个自动系统的降效技术可以是手工操作和数据的人工记录；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>恢复及再启动技术说明将使用的恢复再启动技术，使软件从故障点恢复执行或使软件从头开始重新运行的方法。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="63系统维护设计">6.3系统维护设计&lt;/h3>
+&lt;p>说明为了系统维护的方便而在程序内部设计中作出的安排，包括在程序中专门安排用于系统的检查与维护的检测点和专用模块。
+各个程序之间的对应关系，可采用如下的矩阵图的形式；&lt;/p></description></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description>
 &lt;p>软件开发过程(software process) 是软件开发的开发生命周期(software development life cycle)，
-其各个阶段实现了软件的需求定义与分析、设计、实现、测试、交付和维护。软件过程是在开发与构建系统时应遵循的步骤，是软件开发的路线图。&lt;/p></description></item><item><title>Docs: 详细设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/detaileddesignspecification/</guid><description/></item><item><title>Docs: 用户操作手册</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/usermanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/usermanual/</guid><description/></item><item><title>Docs: 测试计划</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/testplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/testplan/</guid><description/></item><item><title>Docs: 测试分析报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/testanalysisreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/testanalysisreport/</guid><description/></item><item><title>Docs: 开发进度月报</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/monthlydevelopmentprogressreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/monthlydevelopmentprogressreport/</guid><description/></item><item><title>Docs: 项目开发总结报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentsummaryreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentsummaryreport/</guid><description/></item><item><title>Docs: 软件维护手册</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremaintenancemanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremaintenancemanual/</guid><description/></item><item><title>Docs: 软件问题报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwareproblemreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwareproblemreport/</guid><description/></item><item><title>Docs: 软件修改报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremodificationreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremodificationreport/</guid><description/></item><item><title>Docs:</title><link>https://taibiaoguo.github.io/devSpec/docs/iaas/userinterface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/iaas/userinterface/</guid><description/></item></channel></rss>
+其各个阶段实现了软件的需求定义与分析、设计、实现、测试、交付和维护。软件过程是在开发与构建系统时应遵循的步骤，是软件开发的路线图。&lt;/p></description></item><item><title>Docs: 详细设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明编写这份详细设计说明书的目的，指出预期的读者。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>待开发软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本项目的任务提出者、开发者、用户和运行该程序系统的计算中心。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到专门术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出有关的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书或合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用到的文件资料，包括所要用到的软件开发标准。列出这些文件的标题、文件编号、发表日期和出版单位，说明能够取得这些文件的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2程序系统的结构">2程序系统的结构&lt;/h2>
+&lt;p>用一系列图表列出本程序系统内的每个程序（包括每个模块和子程序）的名称、标识符和它们之间
+的层次结构关系。&lt;/p>
+&lt;h2 id="3程序1标识符设计说明">3程序1（标识符）设计说明&lt;/h2>
+&lt;p>从本章开始，逐个地给出各个层次中的每个程序的设计考虑。以下给出的提纲是针对一般情况的。对于一个具体的模块，尤其是层次比较低的模块或子程序，其很多条目的内容往往与它所隶属的上一层
+模块的对应条目的内容相同，在这种情况下，只要简单地说明这一点即可。&lt;/p>
+&lt;h3 id="31程序描述">3.1程序描述&lt;/h3>
+&lt;p>给出对该程序的简要描述，主要说明安排设计本程序的目的意义，并且，还要说明本程序的特点（如
+是常驻内存还是非常驻？是否子程序？是可重人的还是不可重人的？有无覆盖要求？是顺序处理还是并发处理等）。&lt;/p>
+&lt;h3 id="32功能">3.2功能&lt;/h3>
+&lt;p>说明该程序应具有的功能，可采用IPO图（即输入一处理一输出图）的形式。&lt;/p>
+&lt;h3 id="33性能">3.3性能&lt;/h3>
+&lt;p>说明对该程序的全部性能要求，包括对精度、灵活性和时间特性的要求。&lt;/p>
+&lt;h3 id="34输人项">3.4输人项&lt;/h3>
+&lt;p>给出对每一个输入项的特性，包括名称、标识、数据的类型和格式、数据值的有效范围、输入的方式。数量和频度、输入媒体、输入数据的来源和安全保密条件等等。&lt;/p>
+&lt;h3 id="35输出项">3.5输出项&lt;/h3>
+&lt;p>给出对每一个输出项的特性，包括名称、标识、数据的类型和格式，数据值的有效范围，输出的形式、数量和频度，输出媒体、对输出图形及符号的说明、安全保密条件等等。&lt;/p>
+&lt;h3 id="36算法">3.6算法&lt;/h3>
+&lt;p>详细说明本程序所选用的算法，具体的计算公式和计算步骤。&lt;/p>
+&lt;h3 id="37流程逻辑">3.7流程逻辑&lt;/h3>
+&lt;p>用图表（例如流程图、判定表等）辅以必要的说明来表示本程序的逻辑流程。&lt;/p>
+&lt;h3 id="38接口">3.8接口&lt;/h3>
+&lt;p>用图的形式说明本程序所隶属的上一层模块及隶属于本程序的下一层模块、子程序，说明参数赋值和调用方式，说明与本程序相直接关联的数据结构（数据库、数据文卷）。&lt;/p>
+&lt;h3 id="39存储分配">3.9存储分配&lt;/h3>
+&lt;p>根据需要，说明本程序的存储分配。&lt;/p>
+&lt;h3 id="310注释设计">3.10注释设计&lt;/h3>
+&lt;p>说明准备在本程序中安排的注释，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>加在模块首部的注释；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>加在各分枝点处的注释；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对各变量的功能、范围、缺省条件等所加的注释；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对使用的逻辑所加的注释等等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="311限制条件">3.11限制条件&lt;/h3>
+&lt;p>说明本程序运行中所受到的限制条件。&lt;/p>
+&lt;h3 id="312测试计划">3.12测试计划&lt;/h3>
+&lt;p>说明对本程序进行单体测试的计划，包括对测试的技术要求、输入数据、预期结果、进度安排、人员职责、设备条件驱动程序及桩模块等的规定。&lt;/p>
+&lt;h3 id="313尚未解决的问题">3.13尚未解决的问题&lt;/h3>
+&lt;p>说明在本程序的设计中尚未解决而设计者认为在软件完成之前应解决的问题。&lt;/p>
+&lt;h2 id="4程序2标识符设计说明">4程序2（标识符）设计说明&lt;/h2>
+&lt;p>用类似F．3的方式，说明第2个程序乃至第N个程序的设计考虑。&lt;/p>
+&lt;p>&amp;hellip;&amp;hellip;&lt;/p></description></item><item><title>Docs: 用户操作手册</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/usermanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/usermanual/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明编写这份用户手册的目的，指出预期的读者。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>这份用户手册所描述的软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>该软件项目的任务提出者、开发者、用户（或首批用户）及安装此软件的计算中心。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出有用的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>项目的经核准的计划任务书或合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用的文件、资料，包括所要用到的软件开发标准。列出这些文件资料的标题、文件编号、发表日期和出版单位，说明能够取得这些文件资料的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2用途">2用途&lt;/h2>
+&lt;h3 id="21功能">2.1功能&lt;/h3>
+&lt;p>结合本软件的开发目的逐项地说明本软件所具有各项功能以及它们的极限范围。&lt;/p>
+&lt;h3 id="22性能">2.2性能&lt;/h3>
+&lt;h4 id="221精度">2.2.1精度&lt;/h4>
+&lt;p>逐项说明对各项输入数据的精度要求和本软件输出数据达到的精度，包括传输中的精度要求。&lt;/p>
+&lt;h4 id="222时间特性">2.2.2时间特性&lt;/h4>
+&lt;p>定量地说明本软件的时间特性，如响应时间，更新处理时间，数据传输、转换时间，计算时间等。&lt;/p>
+&lt;h4 id="223灵活性">2.2.3灵活性&lt;/h4>
+&lt;p>说明本软件所具有的灵活性，即当用户需求（如对操作方式、运行环境、结果精度、时间特性等的要求）有某些变化时，本软件的适应能力。&lt;/p>
+&lt;h3 id="23安全保密">2.3安全保密&lt;/h3>
+&lt;p>说明本软件在安全、保密方面的设计考虑和实际达到的能力。&lt;/p>
+&lt;h2 id="3运行环境">3运行环境&lt;/h2>
+&lt;h3 id="31硬设备">3.1硬设备&lt;/h3>
+&lt;p>列出为运行本软件所要求的硬设备的最小配置，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>处理机的型号、内存容量；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>所要求的外存储器、媒体、记录格式、设备的型号和台数、联机／脱机；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>I／O设备（联机／脱机？）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据传输设备和转换设备的型号、台数。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="32支持软件">3.2支持软件&lt;/h3>
+&lt;p>说明为运行本软件所需要的支持软件，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>操作系统的名称、版本号；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>程序语言的编译／汇编系统的名称和版本号；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据库管理系统的名称和版本号；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>其他支持软件。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="33数据结构">3.3数据结构&lt;/h3>
+&lt;p>列出为支持本软件的运行所需要的数据库或数据文卷。&lt;/p>
+&lt;h2 id="4使用过程">4使用过程&lt;/h2>
+&lt;p>在本章，首先用图表的形式说明软件的功能同系统的输入源机构、输出接收机构之间的关系。&lt;/p>
+&lt;h3 id="41安装与初始化">4.1安装与初始化&lt;/h3>
+&lt;p>一步一步地说明为使用本软件而需进行的安装与初始化过程，包括程序的存储形式、安装与初始化过程中的全部操作命令、系统对这些命令的反应与答复。表征安装工作完成的测试实例等。如果有的话，还应说明安装过程中所需用到的专用软件。&lt;/p>
+&lt;h3 id="42输入">4.2输入&lt;/h3>
+&lt;p>规定输入数据和参量的准备要求。&lt;/p>
+&lt;h4 id="421输入数据的现实背景">4.2.1输入数据的现实背景&lt;/h4>
+&lt;p>说明输入数据的现实背景，主要是&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>情况——例如人员变动、库存缺货；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>情况出现的频度——例如是周期性的、随机的、一项操作状态的函数；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>情况来源—一例如人事部门、仓库管理部门；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入媒体———例如键盘、穿孔卡片、磁带；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>限制——出于安全、保密考虑而对访问这些输入数据所加的限制；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>质量管理——例如对输入数据合理性的检验以及当输入数据有错误时应采取的措施，如建立出错情况的记录等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>支配——例如如何确定输入数据是保留还是废弃，是否要分配给其他的接受者等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="422输入格式">4.2.2输入格式&lt;/h4>
+&lt;p>说明对初始输入数据和参量的格式要求，包括语法规则和有关约定，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>长度—一例如字符数／行，字符数／项；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>格式基准——例如以左面的边沿为基准；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>标号——例如标记或标识符；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>顺序——例如各个数据项的次序及位置；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>标点——例如用来表示行、数据组等的开始或结束而使用的空格、斜线、星号、字符组等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>词汇表——给出允许使用的字符组合的列表，禁止使用＊的字符组合的列表等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>省略和重复——给出用来表示输人元素可省略或重复的表示方式；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>控制——给出用来表示输入开始或结束的控制信息。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="423输入举例">4.2.3输入举例&lt;/h4>
+&lt;p>为每个完整的输入形式提供样本，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>控制或首部——例如用来表示输入的种类和类型的信息，标识符输入日期，正文起点和对所用编码的规定；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>主体——输入数据的主体，包括数据文卷的输入表述部分；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>尾部——用来表示输入结束的控制信息，累计字符总数等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>省略——指出哪些输入数据是可省略的；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>重复——指出哪些输入数据是重复的。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="43输出对每项输出作出说明">4.3输出对每项输出作出说明&lt;/h3>
+&lt;h4 id="431输出数据的现实背景">4.3.1输出数据的现实背景&lt;/h4>
+&lt;p>说明输出数据的现实背景，主要是：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>使用——这些输出数据是给谁的，用来干什么；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用频度——例如每周的、定期的或备查阅的；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>媒体——打印、CRI显示、磁带、卡片、磁盘，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>质量管理—一例如关于合理性检验、出错纠正的规定；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>支配——例如如何确定输出数据是保留还是废弃，是否要分配给其他接受者等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="432输出格式">4.3.2输出格式&lt;/h4>
+&lt;p>给出对每一类输出信息的解释，主要是：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>首部——如输出数据的标识符，输出日期和输出编号；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>主体——输出信息的主体，包括分栏标题；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>尾部——包括累计总数，结束标记。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="433输出举例">4.3.3输出举例&lt;/h4>
+&lt;p>为每种输出类型提供例子。对例子中的每一项，说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>定义——每项输出信息的意义和用途；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>来源——是从特定的输入中抽出、从数据库文卷中取出、或从软件的计算过程中得到；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>特性——输出的值域、计量单位、在什么情况下可缺省等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="44文卷查询">4.4文卷查询&lt;/h3>
+&lt;p>这一条的编写针对具有查询能力的软件，内容包括：同数据库查询有关的初始化、准备、及处理所需
+要的详细规定，说明查询的能力、方式，所使用的命令和所要求的控制规定。&lt;/p>
+&lt;h3 id="45出错处理和恢复">4.5出错处理和恢复&lt;/h3>
+&lt;p>列出由软件产生的出错编码或条件以及应由用户承担的修改纠正工作。指出为了确保再启动和恢复的能力，用户必须遵循的处理过程。&lt;/p>
+&lt;h3 id="46终端操作">4.6终端操作&lt;/h3>
+&lt;p>当软件是在多终端系统上工作时，应编写本条，以说明终端的配置安排、连接步释、数据和参数输入步骤以及控制规定．说明通过终端操作进行查询、检索、修改数据文卷的能力、语言、过程以及辅助性程序等。&lt;/p></description></item><item><title>Docs: 测试计划</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testplan/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>本测试计划的具体编写目的，指出预期的读者范围。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>测试计划所从属的软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>该开发项目的历史，列出用户和执行此项目测试的计算中心，说明在开始执行本测试计划之前必须完成的各项工作。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出要用到的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书或合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用的文件、资料，包括所要用到的软件开发标准。列出这些文件的标题、文件编号、发表日期和出版单位，说明能够得到这些文件资料的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2计划">2计划&lt;/h2>
+&lt;h3 id="21软件说明">2.1软件说明&lt;/h3>
+&lt;p>提供一份图表，并逐项说明被测软件的功能、输入和输出等质量指标，作为叙述测试计划的提纲。&lt;/p>
+&lt;h3 id="22测试内容">2.2测试内容&lt;/h3>
+&lt;p>列出组装测试和确认测试中的每一项测试内容的名称标识符、这些测试的进度安排以及这些测试的内容和目的，例如模块功能测试、接口正确性测试、数据文卷存取的测试、运行时间的测试、设计约束和极限的测试等。&lt;/p>
+&lt;h3 id="23测试1标识符">2.3测试1（标识符）&lt;/h3>
+&lt;p>给出这项测试内容的参与单位及被测试的部位。&lt;/p>
+&lt;h4 id="231进度安排">2.3.1进度安排&lt;/h4>
+&lt;p>给出对这项测试的进度安排，包括进行测试的日期和工作内容（如熟悉环境。培训、准备输入数据等）。&lt;/p>
+&lt;h4 id="232条件">2.3.2条件&lt;/h4>
+&lt;p>陈述本项测试工作对资源的要求，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>设备所用到的设备类型、数量和预定使用时间；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>软件列出将被用来支持本项测试过程而本身又并不是被测软件的组成部分的软件，如测试驱动程序、测试监控程序、仿真程序、桩模块等等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>人员列出在测试工作期间预期可由用户和开发任务组提供的工作人员的人数。技术水平及有关的预备知识，包括一些特殊要求，如倒班操作和数据键入人员。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="233测试资料">2.3.3测试资料&lt;/h4>
+&lt;p>列出本项测试所需的资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>有关本项任务的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>被测试程序及其所在的媒体；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>测试的输入和输出举例；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有关控制此项测试的方法、过程的图表。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="234测试培训">2.3.4测试培训&lt;/h4>
+&lt;p>说明或引用资料说明为被测软件的使用提供培训的计划。规定培训的内容、受训的人员及从事培训的工作人员。&lt;/p>
+&lt;h3 id="24测试2标识符">2.4测试2（标识符）&lt;/h3>
+&lt;p>用与本测试计划2.3条相类似的方式说明用于另一项及其后各项测试内容的测试工作计划。&lt;/p>
+&lt;h2 id="3测试设计说明">3测试设计说明&lt;/h2>
+&lt;h3 id="31测试1标识符">3.1测试1（标识符）&lt;/h3>
+&lt;p>说明对第一项测试内容的测试设计考虑。&lt;/p>
+&lt;h4 id="311控制">3.1.1控制&lt;/h4>
+&lt;p>说明本测试的控制方式，如输入是人工、半自动或自动引入、控制操作的顺序以及结果的记录方法。&lt;/p>
+&lt;h4 id="312输入">3.1.2输入&lt;/h4>
+&lt;p>说明本项测试中所使用的输入数据及选择这些输入数据的策略。&lt;/p>
+&lt;h4 id="313输出">3.1.3输出&lt;/h4>
+&lt;p>说明预期的输出数据，如测试结果及可能产生的中间结果或运行信息。&lt;/p>
+&lt;h3 id="314过程">3.1.4过程&lt;/h3>
+&lt;p>说明完成此项测试的一个个步骤和控制命令，包括测试的准备、初始化、中间步聚和运行结束方式。&lt;/p>
+&lt;h3 id="32测试2标识符">3.2测试2（标识符）&lt;/h3>
+&lt;p>用与本测试计划3.l条相类似的方式说明第2项及其后各项测试工作的设计考虑。&lt;/p>
+&lt;h2 id="4评价准则">4评价准则&lt;/h2>
+&lt;h3 id="41范围">4.1范围&lt;/h3>
+&lt;p>说明所选择的测试用例能够接查的范围及其局限性。&lt;/p>
+&lt;h3 id="42数据整理">4.2数据整理&lt;/h3>
+&lt;p>陈述为了把测试数据加工成便于评价的适当形式，使得测试结果可以同，已知结果进行比较而要用到的转换处理技术，如手工方式或自动方式；如果是用自动方式整理数据，还要说明为进行处理而要用到的硬件、软件资源。&lt;/p>
+&lt;h3 id="43尺度">4.3尺度&lt;/h3>
+&lt;p>说明用来判断测试工作是否能通过的评价尺度，如合理的输出结果的类型、测试输出结果与预期输出之间的容许偏离范围、允许中断或停机的最大次数。&lt;/p></description></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/databasedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/databasedesign/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明编写这份数据库设计说明书的目的，指出预期的读者。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>说明待开发的数据库的名称和使用此数据库的软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>列出该软件系统开发项目的任务提出者、用户以及将安装该软件和这个数据库的计算站（中心）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义、外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出有关的参考资料：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书或合同、上级机关批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用到的文件资料，包括所要用到的软件开发标准。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>列出这些文件的标题、文件编号、发表日期和出版单位，说明能够取得这些文件的来源。&lt;/p>
+&lt;h2 id="2外部设计">2外部设计&lt;/h2>
+&lt;h3 id="21标识符和状态">2.1标识符和状态&lt;/h3>
+&lt;p>联系用途，详细说明用于唯一地标识该数据库的代码、名称或标识符，附加的描述性信息亦要给出。如果该数据库属于尚在实验中、尚在测试中或是暂时使用的，则要说明这一特点及其有效时间范围。&lt;/p>
+&lt;h3 id="22使用它的程序">2.2使用它的程序&lt;/h3>
+&lt;p>列出将要使用或访问此数据库的所有应用程序，对于这些应用程序的每一个，给出它的名称和版本号。&lt;/p>
+&lt;h3 id="23约定">2.3约定&lt;/h3>
+&lt;p>陈述一个程序员或一个系统分析员为了能使用此数据库而需要了解的建立标号、标识的约定，例如用于标识数据库的不同版本的约定和用于标识库内各个文卷、、记录、数据项的命名约定等。&lt;/p>
+&lt;h3 id="24专门指导">2.4专门指导&lt;/h3>
+&lt;p>向准备从事此数据库的生成、从事此数据库的测试、维护人员提供专门的指导，例如将被送入数据库的数据的格式和标准、送入数据库的操作规程和步骤，用于产生、修改、更新或使用这些数据文卷的操作指导。如果这些指导的内容篇幅很长，列出可参阅的文件资料的名称和章条。&lt;/p>
+&lt;h3 id="25支持软件">2.5支持软件&lt;/h3>
+&lt;p>简单介绍同此数据库直接有关的支持软件，如数据库管理系统、存储定位程序和用于装入、生成、修
+改、更新数据库的程序等。说明这些软件的名称、版本号和主要功能特性，如所用数据模型的类型、允许
+的数据容量等。列出这些支持软件的技术文件的标题、编号及来源。&lt;/p>
+&lt;h2 id="3结构设计">3结构设计&lt;/h2>
+&lt;h3 id="31概念结构设计">3.1概念结构设计&lt;/h3>
+&lt;p>说明本数据库将反映的现实世界中的实体、属性和它们之间的关系等的原始数据形式，包括各数据项、记录、系、文卷的标识符、定义、类型、度量单位和值域，建立本数据库的每一幅用户视图。&lt;/p>
+&lt;h3 id="32逻辑结构设计">3.2逻辑结构设计&lt;/h3>
+&lt;p>说明把上述原始数据进行分解、合并后重新组织起来的数据库全局逻辑结构，包括所确定的关键字和属性、重新确定的记录结构和文卷结构、所建立的各个文卷之间的相互关系，形成本数据库的数据库管理员视图。&lt;/p>
+&lt;h3 id="33物理结构设计">3.3物理结构设计&lt;/h3>
+&lt;p>建立系统程序员视图，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>数据在内存中的安排，包括对索引区、缓冲区的设计；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>所使用的外存设备及外存空间的组织，包括索引区、数据块的组织与划分；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>访问数据的方式方法。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="4运用设计">4运用设计&lt;/h2>
+&lt;h3 id="41数据字典设计">4.1数据字典设计&lt;/h3>
+&lt;p>对数据库设计中涉及到的各种项目，如数据项、记录、系、文卷、模式、子模式等一般要建立起数据字典，以说明它们的标识符、同义名及有关信息。在本节中要说明对此数据字典设计的基本考虑。&lt;/p>
+&lt;h3 id="42安全保密设计">4.2安全保密设计&lt;/h3>
+&lt;p>说明在数据库的设计中，将如何通过区分不同的访问者、不同的访问类型和不同的数据对象，进行分别对待而获得的数据库安全保密的设计考虑。&lt;/p></description></item><item><title>Docs: 测试分析报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testanalysisreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testanalysisreport/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明这份测试分析报告的具体编写目的，指出预期的阅读范围。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>被测试软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>该软件的任务提出者、开发者、用户及安装此软件的计算中心，指出测试环境与实际运行环境
+之间可能存在的差异以及这些差异对测试结果的影响。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专问术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出要用到的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书或合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用的文件、资料，包括所要用到的软件开发标准。列出这些文件的标题、文件编号、发表日期和出版单位，说明能够得到这些文件资料的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2测试概要">2测试概要&lt;/h2>
+&lt;p>用表格的形式列出每一项测试的标识符及其测试内容，并指明实际进行的测试工作内容与测试计划中预先设计的内容之间的差别，说明作出这种改变的原因。&lt;/p>
+&lt;h2 id="3测试结果及发现">3测试结果及发现&lt;/h2>
+&lt;h3 id="31测试1标识符">3.1测试1（标识符）&lt;/h3>
+&lt;p>把本项测试中实际得到的动态输出（包括内部生成数据输出）结果同对于动态输出的要求进行比较，陈述其中的各项发现。&lt;/p>
+&lt;h3 id="32测试2标识符">3.2测试2（标识符）&lt;/h3>
+&lt;p>用类似本报告3.1条的方式给出第 2项及其后各项测试内容的测试结果和发现。&lt;/p>
+&lt;h2 id="4对软件功能的结论">4对软件功能的结论&lt;/h2>
+&lt;h3 id="41功能1标识符">4.1功能1（标识符）&lt;/h3>
+&lt;h4 id="411能力">4.1.1能力&lt;/h4>
+&lt;p>简述该项功能，说明为满足此项功能而设计的软件能力以及经过一项或多项测试已证实的能力。&lt;/p>
+&lt;h4 id="412限制">4.1.2限制&lt;/h4>
+&lt;p>说明测试数据值的范围（包括动态数据和静态数据），列出就这项功能而言，测试期间在该软件中查出的缺陷、局限性。&lt;/p>
+&lt;h3 id="42功能2标识符">4.2功能2（标识符）&lt;/h3>
+&lt;p>用类似本报告4.l的方式给出第2项及其后各项功能的测试结论。&lt;/p>
+&lt;p>．．．．．．&lt;/p>
+&lt;h2 id="5分析摘要">5分析摘要&lt;/h2>
+&lt;h3 id="51能力">5.1能力&lt;/h3>
+&lt;p>陈述经测试证实了的本软件的能力。如果所进行的测试是为了验证一项或几项特定性能要求的实现，应提供这方面的测试结果与要求之间的比较，并确定测试环境与实际运行环境之间可能存在的差异
+对能力的测试所带来的影响。&lt;/p>
+&lt;h3 id="52缺陷和限制">5.2缺陷和限制&lt;/h3>
+&lt;p>陈述经测试证实的软件缺陷和限制，说明每项缺陷和限制对软件性能的影响，并说明全部测得的性能缺陷的累积影响和总影响。&lt;/p>
+&lt;h3 id="53建议">5.3建议&lt;/h3>
+&lt;p>对每项缺陷提出改进建议，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>各项修改可采用的修改方法；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>各项修改的紧迫程度；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>各项修改预计的工作量；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>各项修改的负责人。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="54评价">5.4评价&lt;/h3>
+&lt;p>说明该项软件的开发是否已达到预定目标，能否交付使用。&lt;/p>
+&lt;h2 id="6测试资源消耗">6测试资源消耗&lt;/h2>
+&lt;p>总结测试工作的资源消耗数据，如工作人员的水平级别数量、机时消耗等。&lt;/p></description></item><item><title>Docs: 开发进度月报</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</guid><description>
+&lt;h2 id="1标题">1标题&lt;/h2>
+&lt;p>开发中的软件系统的名称和标识符&lt;/p>
+&lt;p>分项目名称和标识符&lt;/p>
+&lt;p>分项目负责人签名&lt;/p>
+&lt;p>本期月报编写人签名&lt;/p>
+&lt;p>本期月报的编号及所报告的年月&lt;/p>
+&lt;h2 id="2工程进度与状态">2工程进度与状态&lt;/h2>
+&lt;h3 id="21进度">2.1进度&lt;/h3>
+&lt;p>列出本月内进行的各项主要活动，并且说明本月内遇到的重要事件，这里所说的重要事件是指一个开发阶段（即软件生存周期内各个阶段中的某一个，例如需求分析阶段）的开始或结束，要说明阶段名称及开始（或结束）的日期。&lt;/p>
+&lt;h3 id="22状态">2.2状态&lt;/h3>
+&lt;p>说明本月的实际工作进度与计划相比，是提前了、按期完成了、或是推迟了？如果与计划不一致，说
+明原因及准备采取的措施。&lt;/p>
+&lt;h2 id="3资额耗用与状态">3资额耗用与状态&lt;/h2>
+&lt;h3 id="31资额耗用">3.1资额耗用&lt;/h3>
+&lt;p>主要说明本月份内耗用的工时与机时。&lt;/p>
+&lt;h4 id="311工时">3.1.1工时&lt;/h4>
+&lt;p>分为三类：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>管理用工时包括在项目管理（制订计划、布置工作、收集数据、检查汇报工作等）方面耗用的工时；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>服务工时包括为支持项目开发所必须的服务工作及非直接的开发工作所耗用的工时；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>开发用工时要分各个开发阶段填写。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="312机时">3.1.2机时&lt;/h4>
+&lt;p>说明本月内耗用的机时，以小时为单位，说明计算机系统的型号。&lt;/p>
+&lt;h3 id="32状态">3.2状态&lt;/h3>
+&lt;p>说明本月内实际耗用的资源与计划相比，是超出了、相一致、还是不到计划数？如果与计划不一致，说明原因及准备采取的措施。&lt;/p>
+&lt;h2 id="4经费支出与状态">4经费支出与状态&lt;/h2>
+&lt;h3 id="41经费支出">4.1经费支出&lt;/h3>
+&lt;h4 id="411支持性费用">4.1.1支持性费用&lt;/h4>
+&lt;p>列出本月内支出的支持性费用，一般可按如下七类列出，并给出本月支持费用的总和：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>房租或房屋折旧费；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>社工资、奖金、补贴；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>培训费包括给教师的酬金及教室租金；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>资料费包括复印及购买参考资料的费用；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>会议费召集有关业务会议的费用；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>旅差费；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>其他费用。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="412设备购置费">4.1.2设备购置费&lt;/h4>
+&lt;p>列出本月内支出的设备购置费，一般可分如下三类：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>购买软件的名称与金额；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>购买硬设备的名称、型号、数量及金额；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有硬设备的折旧费。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="42状态">4.2状态&lt;/h3>
+&lt;p>说明本月内实际支出的经费与计划相比较，是超过了。相符合、还是不到计划数？如果与计划不一致，说明原因及准备采取的措施。&lt;/p>
+&lt;h2 id="5下个月的工作计划">5下个月的工作计划&lt;/h2>
+&lt;h2 id="6建议">6建议&lt;/h2>
+&lt;p>本月遇到的重要问题和应引起重视的问题以及因此产生的建议。&lt;/p></description></item><item><title>Docs: 项目开发总结报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明编写这份项目开发总结报告的目的，指出预期的阅读范围。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的名称和所开发出来的软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>此软件的任务提出者、开发者、用户及安装此软件的计算中心。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出要用到的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的已核准的计划任务书或合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处所引用的文件、资料，包括所要用到的软件开发标准。列出这些文件的标题、文件编号、发表日期和出版单位，说明能够得到这些文件资料的来源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2实际开发结果">2实际开发结果&lt;/h2>
+&lt;h3 id="21产品">2.1产品&lt;/h3>
+&lt;p>说明最终制成的产品，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>程序系统中各个程序的名字，它们之间的层次关系，以千字节为单位的各个程序的程序量、存储媒体的形式和数量；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>程序系统共有哪几个版本，各自的版本号及它们之间的区别；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>每个文件的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>所建立的每个数据库。
+如果开发中制订过配置管理计划，要同这个计划相比较。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="22主要功能和性能">2.2主要功能和性能&lt;/h3>
+&lt;p>逐项列出本软件产品所实际具有的主要功能和性能，对照可行性研究报告、项目开发计划、功能需求说明书的有关内容，说明原定的开发目标是达到了、未完全达到、或超过了。&lt;/p>
+&lt;h3 id="23基本流程">2.3基本流程&lt;/h3>
+&lt;p>用图给出本程序系统的实际的基本的处理流程。&lt;/p>
+&lt;h3 id="24进度">2.4进度&lt;/h3>
+&lt;p>列出原定计划进度与实际进度的对比，明确说明，实际进度是提前了、还是延迟了，分析主要原因。&lt;/p>
+&lt;h3 id="25费用">2.5费用&lt;/h3>
+&lt;p>列出原定计划费用与实际支出费用的对比，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>工时，以人月为单位，并按不同级别统计；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>计算机的使用时间，区别CPU时间及其他设备时间；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>物料消耗、出差费等其他支出。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>明确说明，经费是超出了、还是节余了，分析其主要原因。&lt;/p>
+&lt;h2 id="3开发工作评价">3开发工作评价&lt;/h2>
+&lt;h3 id="31对生产效率的评价">3.1对生产效率的评价&lt;/h3>
+&lt;p>给出实际生产效率，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>程序的平均生产效率，即每人月生产的行数；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>文件的平均生产效率，即每人月生产的千字数；&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="32对产品质量的评价">3.2对产品质量的评价&lt;/h3>
+&lt;p>说明在测试中检查出来的程序编制中的错误发生率，即每干条指令（或语句）中的错误指令数（或语句数）。如果开发中制订过质量保证计划或配置管理计划，要同这些计划相比较。&lt;/p>
+&lt;h3 id="33对技术方法的评价">3.3对技术方法的评价&lt;/h3>
+&lt;p>给出对在开发中所使用的技术、方法、工具、手段的评价。&lt;/p>
+&lt;h3 id="34出错原因的分析">3.4出错原因的分析&lt;/h3>
+&lt;p>给出对于开发中出现的错误的原因分析。&lt;/p>
+&lt;h2 id="4经验与教训">4经验与教训&lt;/h2>
+&lt;p>列出从这项开发工作中所得到的最主要的经验与教训及对今后的项目开发工作的建议。&lt;/p></description></item><item><title>Docs: 模块开发卷宗</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</guid><description>
+&lt;h2 id="1标题">1标题&lt;/h2>
+&lt;p>软件系统名称和标识符&lt;/p>
+&lt;p>模块名称和标识符（如果本卷宗包含多于一个的模块，则用这组模块的功能标识代替模块名）&lt;/p>
+&lt;p>程序编制员签名&lt;/p>
+&lt;p>卷宗的修改文本序号&lt;/p>
+&lt;p>修改完成日期&lt;/p>
+&lt;p>卷宗序号（说明本卷宗在整个卷宗中的序号）&lt;/p>
+&lt;p>编排日期（说明整个卷宗最近的一次编排日期）&lt;/p>
+&lt;h2 id="2模块开发情况表">2模块开发情况表&lt;/h2>
+&lt;h2 id="3功能说明">3功能说明&lt;/h2>
+&lt;p>扼要说明本模块（或本组模块）的功能，主要是输入、要求的处理、输出。可以从系统设计说明书中摘录。同时列出在软件需求说明书中对这些功能的说明的章、条、款。&lt;/p>
+&lt;h2 id="4设计说明">4设计说明&lt;/h2>
+&lt;p>说明本模块（或本组模块）的设计考虑，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>在系统设计说明书中有关对本模块（或本组模块）设计考虑的叙述，包括本模块在软件系统中所处的层次，它同其他模块的接口；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在程序设计说明书中有关对本模块（或本组模块）的设计考虑，包括本模块的算法、处理流程、牵涉到的数据文卷设计限制、驱动方式和出错信息等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在编制目前已通过全部测试的源代码时实际使用的设计考虑。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="5原代码清单">5原代码清单&lt;/h2>
+&lt;p>要给出所产生的本模块（或本组模块）的第一份无语法错的源代码清单以及已通过全部测试的当前有效的源代码清单。&lt;/p>
+&lt;h2 id="6测试说明">6测试说明&lt;/h2>
+&lt;p>说明直接要经过本模块（或本组模块）的每一项测试，包括这些测试各自的标识符和编号、进行这些测试的目的、所用的配置和输入、预期的输出及实际的输出。&lt;/p>
+&lt;h2 id="7复审的结论">7复审的结论&lt;/h2>
+&lt;p>把实际测试的结果，同软件需求说明书、系统设计说明书、程序设计说明书中规定的要求进行比较和给出结论。&lt;/p></description></item><item><title>Docs: 软件问题报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwareproblemreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwareproblemreport/</guid><description/></item><item><title>Docs: 软件修改报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</guid><description/></item><item><title>Docs:</title><link>https://taibiaoguo.github.io/devSpec/docs/iaas/userinterface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/iaas/userinterface/</guid><description/></item></channel></rss>
