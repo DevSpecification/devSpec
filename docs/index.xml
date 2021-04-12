@@ -590,7 +590,7 @@
 &lt;h3 id="43由外单位提供的条件">4.3由外单位提供的条件&lt;/h3>
 &lt;p>逐项列出需要外单位分合同承包者承担的工作和完成的时间，包括需要由外单位提供的条件和提供的时间。&lt;/p>
 &lt;h2 id="5专题计划要点">5专题计划要点&lt;/h2>
-&lt;p>说明本项目开发中需制定的各个专题计划（如分合同计划、开发人员培训计划、测试计划、安全保密计划、质量保证计划、配置管理计划、用户培训计划、系统安装计划等）的要点。&lt;/p></description></item><item><title>Docs: WebAPI参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</guid><description/></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description>
+&lt;p>说明本项目开发中需制定的各个专题计划（如分合同计划、开发人员培训计划、测试计划、安全保密计划、质量保证计划、配置管理计划、用户培训计划、系统安装计划等）的要点。&lt;/p></description></item><item><title>Docs: WebAPI参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/grpcapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/grpcapireference/</guid><description/></item><item><title>Docs: WebAPI参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</guid><description/></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description>
 &lt;p>在明确团队文化后，下一步就是明确团队架构。团队中所有 DevOps、敏捷的主要目标都是改进客户和业务的价值交付，而不是降低成本、
 提升自动化或者配置管理驱动一切。 这意味着，为了实现有效的 Dev 和 Ops 协同，不同的组织可能需要不同的团队结构。
 &lt;a href="https://web.devopstopologies.com/index.html">DevOpsTopologies&lt;/a> 给出了大量的团队架构范式，
@@ -766,7 +766,96 @@
 &lt;h3 id="43接口">4.3接口&lt;/h3>
 &lt;p>说明该软件同其他软件之间的接口、数据通信协议等。&lt;/p>
 &lt;h3 id="44控制">4.4控制&lt;/h3>
-&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
+&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: 代码审阅</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</guid><description>
+&lt;p>代码审阅（Code Review） 是项目中的必需项。&lt;/p>
+&lt;h2 id="代码审阅流程">代码审阅流程&lt;/h2>
+&lt;p>大致的审查流程大致如下流程图所示，即&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>开发者完成开发后，将功能分支提交并提醒审阅者进行代码审查&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>评审者审阅代码，假设没有存在问题则让开发者将功能分支合并至开发分支，否则组织评审会，指出相应的不合理之处并讨论出可行方案进行更改&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>开发者根据修改方案进行代码修复，完成后再次提交，返回 &lt;code>1&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre>&lt;code class="language-mermaid" data-lang="mermaid">graph TB
+subgraph 团队协作仓库
+wait[稳住稳住]--&amp;gt;merge_code[合并功能分支]
+end
+subgraph 审阅者
+review_code[评审提交代码]
+is_modify{看看是否要修改}
+review_code--&amp;gt;is_modify
+is_modify-- 否 --&amp;gt;merge_code
+is_modify-- 是 --&amp;gt;modify_code
+end
+subgraph 开发者
+push_code[提交分支代码]
+modify_code[修改代码]
+modify_code-- 重新提交 --&amp;gt;push_code
+push_code--&amp;gt;review_code
+end
+&lt;/code>&lt;/pre>&lt;h2 id="代码审阅内容">代码审阅内容&lt;/h2>
+&lt;p>业务上确保业务定义的功能正常运行 以及 业务后续的可迭代性&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>业务处理&lt;/p>
+&lt;p>即功能实现是否能正常运行、满足预期的效果，同时确保业务的合理性 与 可迭代性。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>业务规范&lt;/p>
+&lt;p>使用正确的姿势正确处理业务，尽量禁止特殊处理 或者 歧义方式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>规范习惯&lt;/p>
+&lt;p>必须编写并更新项目文档、接口文档。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>代码上必须遵循项目规范，主要是从项目规范审阅，详细查看其它规范章节&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>命名规范&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>日志输出&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>代码注释&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>代码优化&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据库规范&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>事务处理&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>代码复用&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>效率与性能( 稳定性、健壮性 )&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>事务处理&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>项目架构目录定义规范&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可读性、可维护性&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>代码安全性&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>单元测试&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 日志</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份概要设计说明书的目的，指出预期的读者。&lt;/p>
@@ -897,7 +986,7 @@
 &lt;/ol>
 &lt;h3 id="63系统维护设计">6.3系统维护设计&lt;/h3>
 &lt;p>说明为了系统维护的方便而在程序内部设计中作出的安排，包括在程序中专门安排用于系统的检查与维护的检测点和专用模块。
-各个程序之间的对应关系，可采用如下的矩阵图的形式；&lt;/p></description></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description>
+各个程序之间的对应关系，可采用如下的矩阵图的形式；&lt;/p></description></item><item><title>Docs: 注释</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/comment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/comment/</guid><description/></item><item><title>Docs: 测试</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/test/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description>
 &lt;p>软件开发过程(software process) 是软件开发的开发生命周期(software development life cycle)，
 其各个阶段实现了软件的需求定义与分析、设计、实现、测试、交付和维护。软件过程是在开发与构建系统时应遵循的步骤，是软件开发的路线图。&lt;/p></description></item><item><title>Docs: 详细设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
