@@ -1,0 +1,351 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 国家标准软件开发文档模板</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/</link><description>Recent content in 国家标准软件开发文档模板 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/docstandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 可行性研究报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/feasibilityanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/feasibilityanalysis/</guid><description>
+&lt;h2 id="1引言">1引言&lt;/h2>
+&lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
+&lt;p>说明编写本可行性研究报告的目的，指出预期的读者。&lt;/p>
+&lt;h3 id="12背景">1.2背景&lt;/h3>
+&lt;p>说明：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>所建议开发的软件系统的名称；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本项目的任务提出者、开发者、用户及实现该软件的计算中心或计算机网络；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>该软件系统同其他系统或其他机构的基本的相互来往关系。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="13定义">1.3定义&lt;/h3>
+&lt;p>列出本文件中用到的专门术语的定义和外文首字母组词的原词组。&lt;/p>
+&lt;h3 id="14参考资料">1.4参考资料&lt;/h3>
+&lt;p>列出用得着的参考资料，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>本项目的经核准的计划任务书或合同、上级机关的批文；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>属于本项目的其他已发表的文件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本文件中各处引用的文件、资料，包括所需用到的软件开发标准。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>列出这些文件资料的标题、文件编号、发表日期和出版单位，说明能够得到这些文件资料的来源。&lt;/p>
+&lt;h2 id="2可行性研究的前提">2可行性研究的前提&lt;/h2>
+&lt;p>说明对所建议的开发项目进行可行性研究的前提，如要求、目标、假定、限制等。&lt;/p>
+&lt;h3 id="21要求">2.1要求&lt;/h3>
+&lt;p>说明对所建议开发的软件的基本要求，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>功能；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>性能；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输出如报告、文件或数据，对每项输出要说明其特征，如用途、产生频度、接口以及分发对象；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入说明系统的输入，包括数据的来源、类型、数量、数据的组织以及提供的频度；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>处理流程和数据流程用图表的方式表示出最基本的数据流程和处理流程，并辅之以叙述；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在安全与保密方面的要求；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>同本系统相连接的其他系统；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>完成期限。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="22目标">2.2目标&lt;/h3>
+&lt;p>说明所建议系统的主要开发目标，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>人力与设备费用的减少；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>处理速度的提高；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>控制精度或生产能力的提高；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>管理信息服务的改进；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自动决策系统的改进；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>人员利用率的改进。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="23条件假定和限制">2.3条件、假定和限制&lt;/h3>
+&lt;p>说明对这项开发中给出的条件、假定和所受到的限制，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>所建议系统的运行寿命的最小值；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>进行系统方案选择比较的时间；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>经费、投资方面的来源和限制；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>法律和政策方面的限制；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>硬件、软件、运行环境和开发环境方面的条件和限制；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可利用的信息和资源；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>系统投入使用的最晚时间。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="24进行可行性研究的方法">2.4进行可行性研究的方法&lt;/h3>
+&lt;p>说明这项可行性研究将是如何进行的，所建议的系统将是如何评价的。摘要说明所使用的基本方法
+和策略，如调查、加权、确定模型、建立基准点或仿真等。&lt;/p>
+&lt;h3 id="25评价尺度">2.5评价尺度&lt;/h3>
+&lt;p>说明对系统进行评价时所使用的主要尺度，如费用的多少、各项功能的优先次序、开发时间的长短
+及使用中的难易程度。&lt;/p>
+&lt;h2 id="3对现有系统的分析">3对现有系统的分析&lt;/h2>
+&lt;p>这里的现有系统是指当前实际使用的系统，这个系统可能是计算机系统，也可能是一个机械系统甚
+至是一个人工系统。&lt;/p>
+&lt;p>分析现有系统的目的是为了进一步阐明建议中的开发新系统或修改现有系统的必要性。&lt;/p>
+&lt;h3 id="31处理流程和数据流程">3.1处理流程和数据流程&lt;/h3>
+&lt;p>说明现有系统的基本的处理流程和数据流程。此流程可用图表即流程图的形式表示，并加以叙述。&lt;/p>
+&lt;h3 id="32工作负荷">3.2工作负荷&lt;/h3>
+&lt;p>列出现有系统所承担的工作及工作量。&lt;/p>
+&lt;h3 id="33费用开支">3.3费用开支&lt;/h3>
+&lt;p>列出由于运行现有系统所引起的费用开支，如人力、设备、空间、支持性服务、材料等项开支以及开
+支总额。&lt;/p>
+&lt;h3 id="34人员">3.4人员&lt;/h3>
+&lt;p>列出为了现有系统的运行和维护所需要的人员的专业技术类别和数量。&lt;/p>
+&lt;h3 id="35设备">3.5设备&lt;/h3>
+&lt;p>列出现有系统所使用的各种设备。&lt;/p>
+&lt;h3 id="36局限性">3.6局限性&lt;/h3>
+&lt;p>列出本系统的主要的局限性，例如处理时间赶不上需要，响应不及时，数据存储能力不足，处理功能
+不够等。并且要说明，为什么对现有系统的改进性维护已经不能解决问题。&lt;/p>
+&lt;h2 id="4所建议的系统">4所建议的系统&lt;/h2>
+&lt;p>本章将用来说明所建议系统的目标和要求将如何被满足。&lt;/p>
+&lt;h3 id="41对所建议系统的说明">4.1对所建议系统的说明&lt;/h3>
+&lt;p>概括地说明所建议系统，并说明在第2章中列出的那些要求将如何得到满足，说明所使用的基本方法及理论根据。&lt;/p>
+&lt;h3 id="42处理流程和数据流程">4.2处理流程和数据流程&lt;/h3>
+&lt;p>给出所建议系统的处理流程和数据流程。&lt;/p>
+&lt;h3 id="43改进之处">4.3改进之处&lt;/h3>
+&lt;p>按2.2条中列出的目标，逐项说明所建议系统相对于现存系统具有的改进。&lt;/p>
+&lt;h3 id="44影响">4.4影响&lt;/h3>
+&lt;p>说明在建立所建议系统时，预期将带来的影响，包括：&lt;/p>
+&lt;h4 id="441对设备的影响">4.4.1对设备的影响&lt;/h4>
+&lt;p>说明新提出的设备要求及对现存系统中尚可使用的设备须作出的修改。&lt;/p>
+&lt;h4 id="442对软件的影响">4.4.2对软件的影响&lt;/h4>
+&lt;p>说明为了使现存的应用软件和支持软件能够同所建议系统相适应。而需要对这些软件所进行的修改和补充。&lt;/p>
+&lt;h4 id="443对用户单位机构的影响">4.4.3对用户单位机构的影响&lt;/h4>
+&lt;p>说明为了建立和运行所建议系统，对用户单位机构、人员的数量和技术水平等方面的全部要求。&lt;/p>
+&lt;h4 id="444对系统运行过程的影响">4.4.4对系统运行过程的影响&lt;/h4>
+&lt;p>说明所建议系统对运行过程的影响，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>用户的操作规程；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>运行中心的操作规程；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>运行中心与用户之间的关系；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>源数据的处理；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据进入系统的过程；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对数据保存的要求，对数据存储、恢复的处理；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输出报告的处理过程、存储媒体和调度方法；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>系统失效的后果及恢复的处理办法。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="445对开发的影响">4.4.5对开发的影响&lt;/h4>
+&lt;p>说明对开发的影响，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>为了支持所建议系统的开发，用户需进行的工作；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>为了建立一个数据库所要求的数据资源；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>为了开发和测验所建议系统而需要的计算机资源；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>所涉及的保密与安全问题。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="446对地点和设施的影响">4.4.6对地点和设施的影响&lt;/h4>
+&lt;p>说明对建筑物改造的要求及对环境设施的要求。&lt;/p>
+&lt;h4 id="447对经费开支的影响">4.4.7对经费开支的影响&lt;/h4>
+&lt;p>扼要说明为了所建议系统的开发，设计和维持运行而需要的各项经费开支。&lt;/p>
+&lt;h3 id="45局限性">4.5局限性&lt;/h3>
+&lt;p>说明所建议系统尚存在的局限性以及这些问题未能消除的原因。&lt;/p>
+&lt;h3 id="46技术条件方面的可行性">4.6技术条件方面的可行性&lt;/h3>
+&lt;p>本节应说明技术条件方面的可行性，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>在当前的限制条件下，该系统的功能目标能否达到；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>利用现有的技术，该系统的功能能否实现；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对开发人员的数量和质量的要求并说明这些要求能否满足；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在规定的期限内，本系统的开发能否完成。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="5可选择的其他系统方案">5可选择的其他系统方案&lt;/h2>
+&lt;p>扼要说明曾考虑过的每一种可选择的系统方案，包括需开发的和可从国内国外直接购买的，如果没有供选择的系统方案可考虑，则说明这一点。&lt;/p>
+&lt;h3 id="51可选择的系统方案1">5.1可选择的系统方案1&lt;/h3>
+&lt;p>参照第4章的提纲，说明可选择的系统方案1，并说明它未被选中的理由。&lt;/p>
+&lt;h3 id="52可选择的系统方案2">5.2可选择的系统方案2&lt;/h3>
+&lt;p>按类似5.1条的方式说明第2个乃至第n个可选择的系统方案。&lt;/p>
+&lt;p>&amp;hellip;&amp;hellip;&lt;/p>
+&lt;h2 id="6投资及效益分析">6投资及效益分析&lt;/h2>
+&lt;h3 id="61支出">6.1支出&lt;/h3>
+&lt;p>对于所选择的方案，说明所需的费用。如果已有一个现存系统，则包括该系统继续运行期间所需的费用。&lt;/p>
+&lt;h4 id="611基本建设投资">6.1.1基本建设投资&lt;/h4>
+&lt;p>包括采购、开发和安装下列各项所需的费用，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>房屋和设施；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ADP设备；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据通讯设备；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>环境保护设备；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安全与保密设备；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ADP操作系统的和应用的软件；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据库管理软件。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="612其他一次性支出">6.1.2其他一次性支出&lt;/h4>
+&lt;p>包括下列各项所需的费用，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>研究（需求的研究和设计的研究）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>开发计划与测量基准的研究；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据库的建立；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ADP软件的转换；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>检查费用和技术管理性费用；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>培训费、旅差费以及开发安装人员所需要的一次性支出；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>人员的退休及调动费用等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="613非一次性支出">6.1.3非一次性支出&lt;/h4>
+&lt;p>列出在该系统生命期内按月或按季或按年支出的用于运行和维护的费用，包括：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>设备的租金和维护费用；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>软件的租金和维护费用；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据通讯方面的租金和维护费用；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>人员的工资、奖金；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>房屋、空间的使用开支；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>公用设施方面的开支；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>保密安全方面的开支；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>其他经常性的支出等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="62收益">6.2收益&lt;/h3>
+&lt;p>对于所选择的方案，说明能够带来的收益，这里所说的收益，表现为开支费用的减少或避免、差错的减少、灵活性的增加、动作速度的提高和管理计划方面的改进等，包括；&lt;/p>
+&lt;h4 id="621一次性收益">6.2.1一次性收益&lt;/h4>
+&lt;p>说明能够用人民币数目表示的一次性收益，可按数据处理、用户、管理和支持等项分类叙述，如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>开支的缩减包括改进了的系统的运行所引起的开支缩减，如资源要求的减少，运行效率的改进，数据进入、存贮和恢复技术的改进，系统性能的可监控，软件的转换和优化，数据压缩技术的采用，处理的集中化／分布化等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>价值的增升包括由于一个应用系统的使用价值的增升所引起的收益，如资源利用的改进，管理和运行效率的改进以及出错率的减少等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>其他如从多余设备出售回收的收入等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="622非一次性收益">6.2.2非一次性收益&lt;/h4>
+&lt;p>说明在整个系统生命期内由于运行所建议系统而导致的按月的、按年的能用人民币数目表示的收益，包括开支的减少和避免。&lt;/p>
+&lt;h4 id="623不可定量的收益">6.2.3不可定量的收益&lt;/h4>
+&lt;p>逐项列出无法直接用人民币表示的收益，如服务的改进，由操作失误引起的风险的减少，信息掌握情况的改进，组织机构给外界形象的改善等。有些不可捉摸的收益只能大概估计或进行极值估计（按最好和最差情况估计）。&lt;/p>
+&lt;h3 id="63收益投资比">6.3收益／投资比&lt;/h3>
+&lt;p>求出整个系统生命期的收益／投资比值。&lt;/p>
+&lt;h3 id="64投资回收周期">6.4投资回收周期&lt;/h3>
+&lt;p>求出收益的累计数开始超过支出的累计数的时间。&lt;/p>
+&lt;h3 id="65敏感性分析">6.5敏感性分析&lt;/h3>
+&lt;p>所谓敏感性分析是指一些关键性因素如系统生命期长度、系统的工作负荷量、工作负荷的类型与这些不同类型之间的合理搭配、处理速度要求、设备和软件的配置等变化时，对开支和收益的影响最灵敏的范围的估计。在敏感性分析的基础上做出的选择当然会比单一选择的结果要好一些。&lt;/p>
+&lt;h2 id="7社会因素方面的可行性">7社会因素方面的可行性&lt;/h2>
+&lt;p>本章用来说明对社会因素方面的可行性分析的结果，包括：&lt;/p>
+&lt;h3 id="71法律方面的可行性">7.1法律方面的可行性&lt;/h3>
+&lt;p>法律方面的可行性问题很多，如合同责任、侵犯专利权、侵犯版权等方面的陷井，软件人员通常是不熟悉的，有可能陷入，务必要注意研究。&lt;/p>
+&lt;h3 id="72使用方面的可行性">7.2使用方面的可行性&lt;/h3>
+&lt;p>例如从用户单位的行政管理、工作制度等方面来看，是否能够使用该软件系统；从用户单位的工作人员的素质来看，是否能满足使用该软件系统的要求等等，都是要考虑的。&lt;/p>
+&lt;h2 id="8结论">8结论&lt;/h2>
+&lt;p>在进行可行性研究报告的编制时，必须有一个研究的结论。结论可以是：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>可以立即开始进行；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>需要推迟到某些条件（例如资金、人力、设备等）落实之后才能开始进行；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>需要对开发目标进行某些修改之后才能开始进行；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>不能进行或不必进行（例如因技术不成熟、经济上不合算等）。&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Docs: 项目开发计划</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentplan/</guid><description/></item><item><title>Docs: 软件需求说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwarerequirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwarerequirements/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/outlinedesign/</guid><description/></item><item><title>Docs: 详细设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/detaileddesignspecification/</guid><description/></item><item><title>Docs: 用户操作手册</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/usermanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/usermanual/</guid><description/></item><item><title>Docs: 测试计划</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/testplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/testplan/</guid><description/></item><item><title>Docs: 测试分析报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/testanalysisreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/testanalysisreport/</guid><description/></item><item><title>Docs: 开发进度月报</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/monthlydevelopmentprogressreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/monthlydevelopmentprogressreport/</guid><description/></item><item><title>Docs: 项目开发总结报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentsummaryreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/projectdevelopmentsummaryreport/</guid><description/></item><item><title>Docs: 软件维护手册</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremaintenancemanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremaintenancemanual/</guid><description/></item><item><title>Docs: 软件问题报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwareproblemreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwareproblemreport/</guid><description/></item><item><title>Docs: 软件修改报告</title><link>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremodificationreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/docstandards/softwaremodificationreport/</guid><description/></item></channel></rss>
