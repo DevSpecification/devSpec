@@ -7,4 +7,40 @@
 &lt;li>除非也改变沟通结构，否则单纯改变架构或基础架构不会带来任何改变；&lt;/li>
 &lt;li>无论基础架构如何，改变沟通结构都会带来流程和基础架构的改进。&lt;/li>
 &lt;/ul>
-&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description/></item></channel></rss>
+&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description>
+&lt;p>在明确团队文化后，下一步就是明确团队架构。团队中所有 DevOps、敏捷的主要目标都是改进客户和业务的价值交付，而不是降低成本、
+提升自动化或者配置管理驱动一切。 这意味着，为了实现有效的 Dev 和 Ops 协同，不同的组织可能需要不同的团队结构。
+&lt;a href="https://web.devopstopologies.com/index.html">DevOpsTopologies&lt;/a> 给出了大量的团队架构范式，
+但对于 devSpec 的读者（初创小型团队、分布式团队）来说，我们需要考虑的点则少得多：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>团队是否自建基础设施服务？&lt;/strong>&lt;/p>
+&lt;p>大型团队往往需要保证服务的高可用和高并发，服务器、代码管理平台、消息队列、数据库、缓存等基础设施服务往往有专人进行维护。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>团队成员是否时间一致？&lt;/strong>&lt;/p>
+&lt;p>团队成员时间不一致会给开发和沟通带来挑战，分布式团队对组织的流程和成员素质提出了更高的要求。对于一些问题，团队
+成员可能会倾向于独立解决，因为沟通的成本相对来说会变得更高；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>团队是否是分布式团队？&lt;/strong>&lt;/p>
+&lt;p>很高兴的，随着居家办公和分布式办公的流行，阻碍团队成为分布式的约束正变得越来越弱。
+但一般情况下，集中办公的效率总是高于分布式办公的，但对于初创团队而言，可能需要付出更多的团队运营成本。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="好的-devspec-标准组织架构">好的 devSpec 标准组织架构&lt;/h2>
+&lt;h3 id="容器驱动协作架构">容器驱动协作架构&lt;/h3>
+&lt;p>容器将应用程序的部署和运行要求封装到了容器中，消除了 Dev 和 Ops 之间的某些协作需求。在这种情况下，容器充当了 Dev 和 Ops 的责任边界。
+在良好的工程文化中，容器驱动协作架构运转良好，但是，如果 Dev 开始忽视运维注意事项，那么，这个模型就会向敌对的“我们和他们”回归。&lt;/p>
+&lt;h3 id="devops-作为外部服务架构">DevOps 作为外部服务架构&lt;/h3>
+&lt;p>初创组织的财力、经验或人力往往不足以支撑其运维其开发的软件。有一些服务提供者如 华为云 可能提供相关的服务帮助他们构建测试环境及自动化
+基础设施和监控，并就他们在软件开发周期中实现何种运维特性提供建议。&lt;/p>
+&lt;p>随着初创组织的发展，可能会有更多的人专注于运维工作，他们可能会将 Ops 工作放入基础设施中，甚至独立出专门的Ops 团队来负责运维工作。这时，
+使用 DevOps 即服务可能是一种有效且务实的组织架构方式。&lt;/p>
+&lt;h3 id="完全共担-ops-职责架构">完全共担 Ops 职责架构&lt;/h3>
+&lt;p>如果你的初创团队是一个精英团队或产品形态比较单一，例如Web服务，那么完全共担 Ops 职责架构可能会适合你。在这种组织架构中，
+团队 Dev 和 Ops 成员必须只有一个目标，运维人员将被整合到产品开发团队。&lt;/p>
+&lt;p>Netflix 和 Facebook 这种产品形态较为单一的组织已经实现了完全共担 Ops 职责架构。但如果你的团队包含多个产品流的研发任务，
+例如初创团队同时进行多个最小可行产品的论证工作，那么完全共担 Ops 职责架构最终将导致成员目标的分散，
+最终导致完全共担 Ops 职责架构的实施变形或失败。&lt;/p>
+&lt;h2 id="坏的组织架构">坏的组织架构&lt;/h2></description></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description/></item></channel></rss>
