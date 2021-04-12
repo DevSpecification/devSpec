@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 项目管理标准</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/</link><description>Recent content in 项目管理标准 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 团队文化</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</guid><description>
-&lt;p>微服务、敏捷开发、DevOps 在软件和互联网行业大行其道，屹立潮头的企业们设计了许多精巧的软件架构、严密的开发流程来适应这些新事物。
+&lt;p>微服务、敏捷开发、&lt;a href="https://zh.wikipedia.org/wiki/DevOps">DevOps&lt;/a> 在软件和互联网行业大行其道，屹立潮头的企业们设计了许多精巧的软件架构、严密的开发流程来适应这些新事物。
 事实上，&lt;a href="https://www.gartner.com/newsroom/id/3032517">Gartner&lt;/a> 曾做过统计，90%的DevOps 实践最终都走向了失败。人们逐渐发现，
 即使你设计的再精美的系统架构图、再严密的流程，一旦涉及到诸如人的参与和或卷入传统企业流程，往往都会变形，并最终走向崩溃。&lt;/p>
 &lt;p>康威定理指出：“任何采用系统设计的企业，其设计结构最终都会不可避免地与该企业的沟通结构相一致。”针对这方面，有两个彼此相关的解释：&lt;/p>
@@ -28,13 +28,38 @@
 但一般情况下，集中办公的效率总是高于分布式办公的，但对于初创团队而言，可能需要付出更多的团队运营成本。&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="好的-devspec-标准组织架构">好的 devSpec 标准组织架构&lt;/h2>
+&lt;h2 id="现状">现状&lt;/h2>
+&lt;p>很多组织将开发和系统管理划分成不同的部门。开发部门的驱动力通常是“频繁交付新特性”，而运维部门则更关注IT服务的可靠性和IT成本投入的效率。两者目标的不匹配，就在开发与运维部门之间造成了鸿沟，从而减慢了IT交付业务价值的速度。&lt;/p>
+&lt;ul>
+&lt;li>开发人员经常不考虑自己写的代码会对运维造成什么影响。他们在交付代码之前，并不邀请运维人员参与架构决策或代码评审。&lt;/li>
+&lt;li>开发人员对配置或环境进行修改之后，经常没有及时与运维人员沟通，导致新的代码不能运行。&lt;/li>
+&lt;li>开发人员在自己的机器上手工修改配置，而没有记录所有需要的步骤。想找到必要的配置参数，通常需要尝试很多不同的参数；在得到一个可工作的状态后，往往很难识别出通过哪些最小步骤就能到达该状态。&lt;/li>
+&lt;li>开发人员倾向于使用有利于快速开发的工具：对代码修改更快的反馈，更低的内存消耗，等等。这样的工具集与运维人员面对的目标运行时环境非常不同：后者对稳定性和性能的要求远胜于灵活性。&lt;/li>
+&lt;li>由于开发人员平时使用桌面电脑，他们倾向于使用为桌面用户优化的操作系统。生产环境的运行时系统通常都运行服务器操作系统上。&lt;/li>
+&lt;li>在开发过程中，系统在开发者的本地机器上运行。在运维过程中，系统经常分布在多台服务器上，例如web服务器、应用服务器、数据库服务器等等。&lt;/li>
+&lt;li>开发是由功能性需求（通常与业务需求直接相关）驱动的。&lt;/li>
+&lt;li>运维是由非功能性需求（例如可获得性、可靠性、性能等）驱动的。&lt;/li>
+&lt;li>运维人员希望尽量避免修改功能，从而降低满足非功能性需求的风险&lt;/li>
+&lt;li>如果拒绝了小的修改，但给定时间段内需要修改的总量不变，那么每次变更的规模就会变大&lt;/li>
+&lt;li>变更规模越大，风险也越大，因为其中涉及的区域越多&lt;/li>
+&lt;li>由于运维人员尝试避免变更，新功能流入生产环境的速度因此被延缓，从而延缓了开发人员将特性交付给用户使用的速度。&lt;/li>
+&lt;li>运维人员可能对应用程序内部缺乏了解，从而难以正确地选择运行时环境和发布流程。&lt;/li>
+&lt;li>开发人员可能对运行时环境缺乏了解，从而难以正确地对代码进行调整。&lt;/li>
+&lt;/ul>
+&lt;h2 id="角色定义">角色定义&lt;/h2>
+&lt;h3 id="开发类">开发类&lt;/h3>
+&lt;h3 id="产品类">产品类&lt;/h3>
+&lt;h3 id="质量管理类">质量管理类&lt;/h3>
+&lt;h3 id="项目管理类">项目管理类&lt;/h3>
+&lt;h2 id="devspec-推荐的组织架构模板">devSpec 推荐的组织架构模板&lt;/h2>
 &lt;h3 id="容器驱动协作架构">容器驱动协作架构&lt;/h3>
-&lt;p>容器将应用程序的部署和运行要求封装到了容器中，消除了 Dev 和 Ops 之间的某些协作需求。在这种情况下，容器充当了 Dev 和 Ops 的责任边界。
-在良好的工程文化中，容器驱动协作架构运转良好，但是，如果 Dev 开始忽视运维注意事项，那么，这个模型就会向敌对的“我们和他们”回归。&lt;/p>
+&lt;p>容器技术在开发中的广泛应用催生出了容器驱动协作架构，容器驱动写作架构是 devSpec 最为推崇的初创团队协作架构模式。在容器驱动协作架构中，
+软件的部署和运行要求被封装到了容器中，可以避免 Dev 和 Ops 的很多多余的协作需求，容器充当了Dev 和 Ops 的责任边界。
+容器驱动协作架构使得软件的迁徙变得非常容器，同时可以借助自动化工具来进一步加速软件的交付速度。 在良好的工程文化中，
+容器驱动协作架构将会运转得很好。但是，一旦 Dev 开始忽略运维给出的注意事项清单，那么容器驱动协作架构下Dev 和 Ops 的多余的协作需求又将卷土重来。&lt;/p>
 &lt;h3 id="devops-作为外部服务架构">DevOps 作为外部服务架构&lt;/h3>
-&lt;p>初创组织的财力、经验或人力往往不足以支撑其运维其开发的软件。有一些服务提供者如 华为云 可能提供相关的服务帮助他们构建测试环境及自动化
-基础设施和监控，并就他们在软件开发周期中实现何种运维特性提供建议。&lt;/p>
+&lt;p>初创组织的财力、经验或人力往往不足以支撑其运维其开发的软件。有一些服务提供者如 华为云 可能提供相关的服务帮助他们构建测试环境及自动化基础设施和监控，
+并就他们在软件开发周期中实现何种运维特性提供建议。众多平台提供了工具来实施 DevOps 作为外部服务架构。&lt;/p>
 &lt;p>随着初创组织的发展，可能会有更多的人专注于运维工作，他们可能会将 Ops 工作放入基础设施中，甚至独立出专门的Ops 团队来负责运维工作。这时，
 使用 DevOps 即服务可能是一种有效且务实的组织架构方式。&lt;/p>
 &lt;h3 id="完全共担-ops-职责架构">完全共担 Ops 职责架构&lt;/h3>
@@ -43,4 +68,6 @@
 &lt;p>Netflix 和 Facebook 这种产品形态较为单一的组织已经实现了完全共担 Ops 职责架构。但如果你的团队包含多个产品流的研发任务，
 例如初创团队同时进行多个最小可行产品的论证工作，那么完全共担 Ops 职责架构最终将导致成员目标的分散，
 最终导致完全共担 Ops 职责架构的实施变形或失败。&lt;/p>
-&lt;h2 id="坏的组织架构">坏的组织架构&lt;/h2></description></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description/></item></channel></rss>
+&lt;h2 id="devspec-强烈反对的组织架构模板">devSpec 强烈反对的组织架构模板&lt;/h2></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description>
+&lt;p>软件开发过程(software process) 是软件开发的开发生命周期(software development life cycle)，
+其各个阶段实现了软件的需求定义与分析、设计、实现、测试、交付和维护。软件过程是在开发与构建系统时应遵循的步骤，是软件开发的路线图。&lt;/p></description></item></channel></rss>
