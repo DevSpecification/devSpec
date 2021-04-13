@@ -766,19 +766,169 @@
 &lt;h3 id="43接口">4.3接口&lt;/h3>
 &lt;p>说明该软件同其他软件之间的接口、数据通信协议等。&lt;/p>
 &lt;h3 id="44控制">4.4控制&lt;/h3>
-&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: 代码审阅</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</guid><description>
-&lt;p>代码审阅（Code Review） 是项目中的必需项。&lt;/p>
+&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: Git工作流</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/gitflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/gitflow/</guid><description>
+&lt;h2 id="git工作流">Git工作流&lt;/h2>
+&lt;p>目前的 &lt;code>git&lt;/code> 协作工作流的模式非常多，对于我们小团队而言，我们借鉴主流的 &lt;code>gitflow&lt;/code> 进而构建我们的协作方式或许还是非常不错的。&lt;/p>
+&lt;p>无论协作的方式再多，作为一个团队协作开发而言，协作必须有一个规范的工作流程。统一协作开发工作流，这样团队之间既可井然有序、高效地协作开发，同时项目开发迭代也会显得井井有序。&lt;/p>
+&lt;p>可知，每一个项目的一个端作为一个代码仓库，我们称之为&lt;strong>项目单元&lt;/strong>。团队开发 与 维护主要是针对项目单元去开发、迭代甚至是维护，使用分支能够有效地避免不同开发工作之间的相关干扰。&lt;/p>
+&lt;p>一般而言，一个项目单元必须包括如下类型的分支:&lt;/p>
+&lt;h3 id="长期存在分支或标签">长期存在分支或标签&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>master&lt;/code> | 主分支&lt;/p>
+&lt;p>主分支属于线上部署的分支，是项目生产稳定运行的项目分支，该分支自能合并 开发分支或热修复分支。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>develop&lt;/code> | 开发分支&lt;/p>
+&lt;p>开发分支 与 主分支必须是并行的，此分支基于运行于开发环境 与 测试环境。同时，从规范上面来说，尽量不要在开发分支上直接做开发，开发分支是由功能分支 或 修复分支合并叠成。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>tag&lt;/code>| 发行标签&lt;/p>
+&lt;p>发行分支即是项目版本可以稳定发行的版本，可看作为一个版本迭代的分水岭，譬如&lt;code>1.0.0&lt;/code>、&lt;code>2.0.0&lt;/code>等。注意、此发行分支是基于主分支构建而来，主要用于记录版本的节点，必须基于 &lt;code>master&lt;/code> 分支构建。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="短期存在分支">短期存在分支&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>feature&lt;/code> | 功能分支&lt;/p>
+&lt;p>顾名思义，即功能分支，功能分支是由需求确立而成，每一个需求 或 功能就必须建立一个功能分支，好处就是各个功能独立开发则不受影响，同时团队成员之间的协作隔离不容易产生冲突。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>hotfix&lt;/code> | 热修复分支&lt;/p>
+&lt;p>热修复分支亦称为补丁分支，假设生产分支出现异常等 &lt;code>bug&lt;/code> 危急的情况，需要建议一个修复分支，使得主分支合并进而解决 &lt;code>bug&lt;/code>，注意、修复分支在主分支合并的同时必须由开发分支也合并，同时发行版也要合并构建成小版本的发行版，测试通过后题需要基于热修复分支打标签。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="规范习惯">规范习惯&lt;/h3>
+&lt;ul>
+&lt;li>高频率、细粒度地提交&lt;/li>
+&lt;/ul>
+&lt;p>把大功能的实现尽可能分解成更多的相对独立的小模块，每个小模块测试完成后提交修改，再开始下一模块的开发。这样做能保证每次提交的内容高度相关，方便定为错误、解决合并冲突。&lt;/p>
+&lt;ul>
+&lt;li>提交之前务必通过自测与单元测试&lt;/li>
+&lt;/ul>
+&lt;p>每次提交代码不要自以为然，必须要将改动的代码进行自测 或者 单元测试，确保开发环境 与 测试环境平稳正常运行，否则会造成持续集成不通过、程序运行失败，甚至影响团队成员之间相互开发协作。&lt;/p>
+&lt;ul>
+&lt;li>周期性持续提交&lt;/li>
+&lt;/ul>
+&lt;p>经常提交势必让你每次提交的东西都很少，也有助于你只提交相关的改动。并且，你还能更频繁地与别人共享代码。通过这种方式，所有人在集成代码时都会感觉更轻松，也就能避免一些不必要的冲突。相比之下，如果每次提交的东西很多、改动很大、时间间隔很长，那么在代码合并过程中产生的冲突就很难解决了。约定: &lt;strong>在有改动的情况下，至少一天一提交&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>分支合并&lt;/p>
+&lt;ul>
+&lt;li>主分支合并&lt;/li>
+&lt;/ul>
+&lt;p>主分支合并必须经过测试组测试，验收通过后才能合并。一般而言、每次迭代上线前一步合并。&lt;/p>
+&lt;ul>
+&lt;li>开发分支合并&lt;/li>
+&lt;/ul>
+&lt;p>开发分支合并功能分支，尽量做到**&amp;ldquo;频繁合并&amp;rdquo;**，也就是说尽量将功能需求分解成 &lt;code>N&lt;/code> 个功能模块，每一个功能模块完成就提交代码并合并到开发分支，这样可以减少分支合并甚至拉去而造成冲突。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="代码提交的姿势">代码提交的姿势&lt;/h3>
+&lt;blockquote>
+&lt;p>此部分属于团队规范约定，已独立描述约定。&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="姿势演练">姿势演练&lt;/h4>
+&lt;p>现在已经有了版本 1.0.0 发布版本，即已经存在 &lt;code>tag&lt;/code> &lt;strong>1.0.0&lt;/strong> ，现在有新的版本规划 &lt;strong>1.1.0&lt;/strong>&lt;/p>
+&lt;p>那么需要给予发布 &lt;strong>1.0.0&lt;/strong> 新建一个版本开发分支&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_develop
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个版本有很多不止一个功能，同时有不止一个人参与这个版本迭代开发&lt;/p>
+&lt;p>研发 a 需要参与视频模块开发，则需要基于 &lt;strong>1.1.0_develop&lt;/strong> 创建一个功能分。支命名规范 &lt;strong>{version}&lt;em>{function}__{author}&lt;/em>{datetime}&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_video_a_20200806
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>研发 b 需要参与朋友圈模块开发，则需要基于 &lt;strong>1.1.0_develop&lt;/strong> 创建一个功能分&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_friends_group_b_20200805
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>切记千万不要在开发分支直接提交代码 开发分支是合并分支&lt;/strong>&lt;/p>
+&lt;p>开发完毕合并功能分支，处于不断合并的过程&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git merge 1.1.0_video_a_20200806
+git merge 1.1.0_friends_group_b_20200805
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>自测完成后，没有问题那就将功能分支删除&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git branch -d 1.1.0_video_a_20200806
+git branch -d 1.1.0_friends_group_b_20200805
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>提测发现有缺陷，需要基于版本迭代分支创建缺陷修复分支&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_fixed_video_upload_bug_alicfeng_20200808
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>修复完成再合并到迭代分支&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git merge 1.1.0_fixed_video_upload_bug_alicfeng_20200808
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>测试通过后 通过约定的方式 &lt;code>tag&lt;/code> 即为发布版本 发布 &lt;strong>1.1.0&lt;/strong> 版本&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git tag -a 1.1.0 -m &lt;span style="color:#4e9a06">&amp;#34;release:version:1.1.0&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>线上发现缺陷后 仓库操作与协作约定&lt;/p>
+&lt;blockquote>
+&lt;p>基于版本标签新建热修复分支&lt;/p>
+&lt;p>开发分支合并热修复分支 主分支合并开发分支&lt;/p>
+&lt;p>基于主分支新建新的版本标签&lt;/p>
+&lt;p>务必在&lt;code>git&lt;/code>上编写更新内容&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout 1.1.0
+git checkout -b hotfix_video_alicfeng_20200809
+git checkout develop
+git merge hotfix_video_alicfeng_20200809
+git checkout master
+git merge develop
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="测试通过后">测试通过后&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout hotfix_video_alicfeng_20200809
+git tag -a 1.1.1 -m &lt;span style="color:#4e9a06">&amp;#34;fixed:video:upload&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="git提交规范">Git提交规范&lt;/h2>
+&lt;p>当一个团队在协作开发时，针对 &lt;strong>git commit&lt;/strong> 规范是十分必须的，每一次提交都务必带上说明信息，同时说明信息亦要有格式规范，即团队要有良好的约定。目的是制定统一的标准，使得提交历史信息条理清晰，更是为了项目有条不絮地迭代以及提高开发者的效率。&lt;/p>
+&lt;blockquote>
+&lt;p>统一团队 git commit 日志标准，便于后续代码 review ，版本发布以及日志自动化生成等等。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="提交格式">提交格式&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git commit -m &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>type&lt;span style="color:#ce5c00;font-weight:bold">](&lt;/span>:scope&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>:&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>subject&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="示例">示例&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git commit -m &lt;span style="color:#4e9a06">&amp;#34;feature:log:algo log by using websocket&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="提交类别">提交类别&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>feature&lt;/code>: 新功能&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>fixed&lt;/code> : 修复bug&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>update&lt;/code> : 更新&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>docs&lt;/code> : 文档改变&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>style&lt;/code> : 代码格式改变&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>refactor&lt;/code> : 某个已有功能重构&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>perf&lt;/code> : 性能优化&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>test&lt;/code> : 增加测试&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>build&lt;/code> : 改变了build工具 如 grunt换成了 npm&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>revert&lt;/code> : 撤销上一次的 commit&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>chore&lt;/code> : 构建过程或辅助工具的变动&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="范围模块">范围模块&lt;/h3>
+&lt;p>使用一个词语涵盖此次提交的改动&lt;/p>
+&lt;h3 id="描述说明">描述说明&lt;/h3>
+&lt;p>简洁明了，同时更加能突出此次改动的内容即可&lt;/p></description></item><item><title>Docs: 代码审阅</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</guid><description>
+&lt;p>代码审阅（Code Review） 是项目中的必需项。代码审阅有助于提升代码的质量，尽早发现潜在的缺陷，降低修复的成本，
+同时可以促进开发团队内部知识的共享，帮助开发者更好理解系统的业务与实现对于代码审阅的原则而言，
+不定期地从小版本迭代(version) 或 新功能(feature)进行团队或者相关人员进行评审，评审的从架构、业务实现、技术等维度着手分析。&lt;/p>
 &lt;h2 id="代码审阅流程">代码审阅流程&lt;/h2>
-&lt;p>大致的审查流程大致如下流程图所示，即&lt;/p>
+&lt;p>大致的审阅流程大致如下流程图所示，即&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>开发者完成开发后，将功能分支提交并提醒审阅者进行代码审查&lt;/p>
+&lt;p>开发者完成开发后，将功能分支提交并提醒审阅者进行代码审阅；&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>评审者审阅代码，假设没有存在问题则让开发者将功能分支合并至开发分支，否则组织评审会，指出相应的不合理之处并讨论出可行方案进行更改&lt;/p>
+&lt;p>评审者审阅代码，假设没有存在问题则让开发者将功能分支合并至开发分支，否则组织评审会，指出相应的不合理之处并讨论出可行方案进行更改；&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>开发者根据修改方案进行代码修复，完成后再次提交，返回 &lt;code>1&lt;/code>&lt;/p>
+&lt;p>开发者根据修改方案进行代码修复，完成后再次提交。&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;pre>&lt;code class="language-mermaid" data-lang="mermaid">graph TB
@@ -798,23 +948,23 @@ modify_code[修改代码]
 modify_code-- 重新提交 --&amp;gt;push_code
 push_code--&amp;gt;review_code
 end
-&lt;/code>&lt;/pre>&lt;h2 id="代码审阅内容">代码审阅内容&lt;/h2>
-&lt;p>业务上确保业务定义的功能正常运行 以及 业务后续的可迭代性&lt;/p>
+&lt;/code>&lt;/pre>&lt;h2 id="代码审阅范围">代码审阅范围&lt;/h2>
+&lt;p>代码审阅应确保业务定义的功能正常运行以及业务后续的可迭代性：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>业务处理&lt;/p>
-&lt;p>即功能实现是否能正常运行、满足预期的效果，同时确保业务的合理性 与 可迭代性。&lt;/p>
+&lt;p>即功能实现是否能正常运行、满足预期的效果，同时确保业务的合理性与可迭代性。&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>业务规范&lt;/p>
-&lt;p>使用正确的姿势正确处理业务，尽量禁止特殊处理 或者 歧义方式。&lt;/p>
+&lt;p>使用正确的姿势正确处理业务，尽量禁止特殊处理或者歧义方式。&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>规范习惯&lt;/p>
 &lt;p>必须编写并更新项目文档、接口文档。&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>代码上必须遵循项目规范，主要是从项目规范审阅，详细查看其它规范章节&lt;/p>
+&lt;p>代码审阅必须遵循项目规范，主要是从项目规范审阅，详细查看其它规范章节：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>命名规范&lt;/p>
@@ -838,7 +988,7 @@ end
 &lt;p>代码复用&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>效率与性能( 稳定性、健壮性 )&lt;/p>
+&lt;p>效率与性能 (稳定性、健壮性)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>事务处理&lt;/p>
@@ -855,7 +1005,10 @@ end
 &lt;li>
 &lt;p>单元测试&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 日志</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
+&lt;/ul>
+&lt;h2 id="代码评审会">代码评审会&lt;/h2>
+&lt;p>代码评审会类似于技术分享会，从中我们可以获取高级的技术用法以提高自身代码要求。合理安排代码审阅时间，一般安排1~2个小时。
+根据项目规范与产品规划&lt;strong>指出问题&lt;/strong>、&lt;strong>讨论问题&lt;/strong>、&lt;strong>解决问题&lt;/strong>。&lt;/p></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 日志</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份概要设计说明书的目的，指出预期的读者。&lt;/p>
