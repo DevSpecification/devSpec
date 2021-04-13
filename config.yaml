@@ -100,5 +100,14 @@ params:
   katex:
     enable: true
     html_dom_element: document.body
+    options:
+      delimiters:
+        - left:  $$
+          right: $$
+          display: true
+        - left: $
+          right: $
+          display: false
+
   print:
     disable_toc: false
