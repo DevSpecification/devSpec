@@ -13,7 +13,7 @@ devSpec 文档协作遵循标准的 [GitHub 协作流](https://guides.github.com
 
 该贡献指南假定您可以完成以下任务：
 
-- Fork [Istio 文档存储库](https://github.com/istio/istio.io)。
+- Fork [devSpec 存储库](https://github.com/TaibiaoGuo/devSpec)。
 - 为您的更改创建分支。
 - 向该分支添加提交。
 - 打开一个 PR 分享您的贡献。
