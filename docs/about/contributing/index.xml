@@ -1,0 +1,129 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 向 devSpec 贡献文档</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/</link><description>Recent content in 向 devSpec 贡献文档 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/about/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 添加新文档</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/addcontent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/about/contributing/addcontent/</guid><description>
+&lt;p>贡献新文档到 devSpec，请执行以下步骤：&lt;/p>
+&lt;ol>
+&lt;li>确定受众和信息的预期用途。&lt;/li>
+&lt;li>选择您想要贡献的&lt;a href="#content-types">内容类型&lt;/a>。&lt;/li>
+&lt;li>&lt;a href="#choosing-a-title">命名标题&lt;/a>。&lt;/li>
+&lt;li>按照&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing">文档贡献指南&lt;/a>撰写您的贡献。&lt;/li>
+&lt;li>将您的贡献提交到 &lt;a href="https://github.com/TaibiaoGuo/devSpec">GitHub 存储库&lt;/a>。&lt;/li>
+&lt;li>执行&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/review">审核流程&lt;/a>，直到您的贡献被合并。&lt;/li>
+&lt;/ol>
+&lt;h2 id="identify-the-audience-and-intended-use">确定受众和信息的预期用途&lt;/h2>
+&lt;p>好的文档需要从了解读者的阅读目的，知识以及希望他们如何处理这些信息开始。否则，您无法确定要提供的信息的范围和深度、理想结构和必要的支持信息。
+下述示例描述如何在实际操作中践行该准则：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>读者需要执行特定的任务：告诉他们如何识别哪些是需要执行的任务，并以编号步骤列表的形式提供任务细节，而不是简单地概括性地描述任务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>读者在执行任务之前必须理解一个概念：在执行任务之前，请先介绍先决条件并提供指向该信息的链接。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>读者需要做出决定：提供必要的概念性信息，以了解何时做出决定，可用选项以及何时选择一个选项而不是另一个。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>读者需要扩展 devSpec 的内容：提供一个如何扩展功能的示例，并使用简化方案进行说明。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>读者需要理解复杂的功能关系：提供一个显示关系的图表，而不是编写大量文字信息供阅读理解。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>要避免的最重要也是最常见的错误，是简单地向读者提供您拥有的所有信息，因为您不确定他们需要什么信息。&lt;/p>
+&lt;h2 id="content-types">内容类型&lt;/h2>
+&lt;p>了解受众和所提供信息的预期用途后，您可以选择最能满足他们需求的内容类型。为了方便您选择，
+下表提供了受支持的内容类型、预期受众及每种类型文档的实施目标：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>内容类型&lt;/th>
+&lt;th>目标&lt;/th>
+&lt;th>受众&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>概念&lt;/td>
+&lt;td>解释 devSepc 中涉及的相关概念。 概念页面不应该包含具体的步骤，而是指向相应规范或定义的链接。&lt;/td>
+&lt;td>想要理解 devSpec 所需的一些基础知识或 devSpec 定义的一些关键定义。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>规范&lt;/td>
+&lt;td>定义了具体的 devSpec 规范。 规范应该是可以指导开发的可实施的规范。&lt;/td>
+&lt;td>项目成员可以直接理解并遵守的开发规范&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>例子&lt;/td>
+&lt;td>描述实施 devSpec 的独立示例，该示例突出 devSpec 中的一个功能或特征。 例子必须使用现有的 devSpec 规范为背景知识。 若例子为代码项目，则必须包含自动测试。&lt;/td>
+&lt;td>希望自己能快速实施 devSpec 规范或进行实验的读者。 理想情况下，读者应该能够轻松更改示例以产生自己的解决方案。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>模板&lt;/td>
+&lt;td>给出了软件项目全生命周期中可以复用的文档模板。&lt;/td>
+&lt;td>devSpec 实施过程中想要降低工作复杂度的项目成员&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>博客&lt;/td>
+&lt;td>独立的栏目，专注于 devSpec 相关的概念和技术和实际案例分析。 博客文章属于以下二个类别之一： &lt;ul>&lt;li>文章详细介绍了实施和定制化 devSpec 的经验，尤其是那些表达新颖经验或观点的经验。&lt;/li> &lt;li> 文章详细介绍了如何使用 devSpec 中的技术完成特定开发任务的实例。与 devSpec 规范文档中的任务和示例不同，博客文章的技术准确性在发布后不会得到维护和测试。&lt;/li> &lt;/ul>&lt;/td>
+&lt;td>对规范有基本了解的读者想以更加无拘束的方式，通过案例、实践来了解它，并了解一些还未包含在规范中的开发思想和未来规划。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="choosing-a-title">命名标题&lt;/h2>
+&lt;p>为您的主题选择一个标题， devSpec 的内容大致可以是嵌套的结构，其典型结构包括两个部分：章节索引文件 &lt;code>_index.md&lt;/code> 和正文文件 &lt;code>xxx.md&lt;/code>。
+每个正文文件的标题应尽可能短，便于交叉引用时的创建和维护。&lt;/p>
+&lt;h2 id="submit-your-contribution-to-GitHub">将您的贡献提交到 GitHub&lt;/h2>
+&lt;p>如果您不熟悉 GitHub，请参阅&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/github">使用 GitHub 参与&lt;/a>，以了解如何提交文档更改。&lt;/p>
+&lt;p>如果您想了解有关发表文稿的方式和时间的更多信息，请参阅&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/github#branching-strategy">分支策略&lt;/a>，
+以了解我们如何使用分支和 &lt;code>cherry picking&lt;/code> 来发布我们的内容。&lt;/p></description></item><item><title>Docs: 使用 GitHub 参与社区活动</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/github/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/about/contributing/github/</guid><description>
+&lt;p>devSpec 文档协作遵循标准的 &lt;a href="https://guides.github.com/introduction/flow/">GitHub 协作流&lt;/a>。这种成熟的协作模式有助于开源项目管理以下类型的贡献：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/addContent">添加&lt;/a>新文件到存储库。&lt;/li>
+&lt;li>&lt;a href="#quick-edit">编辑&lt;/a>现有文件。&lt;/li>
+&lt;li>&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/review">审阅&lt;/a>添加或修改的文件。&lt;/li>
+&lt;li>管理多个发布或开发&lt;a href="#branching-strategy">分支&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;p>该贡献指南假定您可以完成以下任务：&lt;/p>
+&lt;ul>
+&lt;li>Fork &lt;a href="https://github.com/istio/istio.io">Istio 文档存储库&lt;/a>。&lt;/li>
+&lt;li>为您的更改创建分支。&lt;/li>
+&lt;li>向该分支添加提交。&lt;/li>
+&lt;li>打开一个 PR 分享您的贡献。&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-to-contribute">开始之前&lt;/h2>
+&lt;p>要为 devSpec 贡献文档，您需要：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>创建 &lt;a href="https://github.com">GitHub 帐户&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安装 &lt;a href="https://www.docker.com/get-started">Docker&lt;/a>，以预览和测试您的文档更改。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>文档是根据 &lt;a href="https://github.com/TaibiaoGuo/devSpec/blob/master/LICENSE">MIT&lt;/a> 协议许可发布的。&lt;/p>
+&lt;h2 id="quick-edit">快速编辑&lt;/h2>
+&lt;p>任何GitHub 帐户，都可以对 devSpec 网站上的任何页面进行修改并提交贡献。这个过程非常简单：&lt;/p>
+&lt;ol>
+&lt;li>访问您要编辑的页面。&lt;/li>
+&lt;li>单击 &lt;code>编辑此页&lt;/code> 或 &lt;code>添加子页面&lt;/code> 按钮。&lt;/li>
+&lt;li>在 GitHub UI 上进行编辑。&lt;/li>
+&lt;li>创建 Pull Request 提交您的修改。&lt;/li>
+&lt;/ol>
+&lt;p>请参阅我们在&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/addContent">贡献新内容&lt;/a>或&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/review">内容审查&lt;/a>中的指南，
+以了解有关提交更多实质性更改的详细信息。&lt;/p>
+&lt;h2 id="branching-strategy">分支策略&lt;/h2>
+&lt;p>文档内容的维护在 &lt;code>TaibiaoGuo/devSpec&lt;/code> 仓库 Master 分支进行，Istio 发布当天，我们基于 Master 创建发布分支。以下链接指向我们在 GitHub 上的存储库：&lt;/p>
+&lt;p>&lt;a class="btn" href="https://github.com/TaibiaoGuo/devSpec/">查看站点源码&lt;/a>&lt;/p>
+&lt;p>devSpec 文档存储库使用多个分支发布所有 devSpec 版本的文档。每个 devSpec 发布都有相应的文档分支。例如，类似 &lt;code>release-1.0&lt;/code>、&lt;code>release-1.1&lt;/code>、&lt;code>release-1.2&lt;/code> 等分支，都是在相应的发布日创建的。&lt;/p>
+&lt;p>这种分支策略允许我们提供以下 Istio 在线资源：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>发布站点提供当前最新发布分支的内容。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>存档站点提供所有已发布分支的内容。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>考虑到分支的工作原理，如果您提交修改到 master 分支，在 Istio 的下一个 major 版本发布前，这些更改都不会被应用到文档网站。
+如果您的文档更改和当前 Istio 版本密切相关，也可以将更改应用到当前版本的 Release 分支。您可以通过在文档的 PR 上使用 cherry-pick 标签，自动地执行此操作。
+例如，如果您在 PR 中向 master 分支引入了更正，则可以通过 &lt;code>cherrypick/release-1.4&lt;/code> 标签以将此更改合并到 &lt;code>release-1.4&lt;/code> 分支。
+请注意，我们只会在当前版本的 Release 分支中应用更改，而不会在旧版本中进行。较旧的分支被视为已归档，并且通常不再接收任何更改。&lt;/p></description></item></channel></rss>
