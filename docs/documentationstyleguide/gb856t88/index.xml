@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 软件开发文档模板</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/</link><description>Recent content in 软件开发文档模板 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 可行性研究报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 软件开发文档模板</title><link>/docs/documentationstyleguide/gb856t88/</link><description>Recent content in 软件开发文档模板 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/documentationstyleguide/gb856t88/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 可行性研究报告</title><link>/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写本可行性研究报告的目的，指出预期的读者。&lt;/p>
@@ -348,7 +348,7 @@
 &lt;li>
 &lt;p>不能进行或不必进行（例如因技术不成熟、经济上不合算等）。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs: 项目开发计划</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 项目开发计划</title><link>/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明：编写这份软件项目开发计划的目的，并指出预期的读者。&lt;/p>
@@ -429,7 +429,7 @@
 &lt;h3 id="43由外单位提供的条件">4.3由外单位提供的条件&lt;/h3>
 &lt;p>逐项列出需要外单位分合同承包者承担的工作和完成的时间，包括需要由外单位提供的条件和提供的时间。&lt;/p>
 &lt;h2 id="5专题计划要点">5专题计划要点&lt;/h2>
-&lt;p>说明本项目开发中需制定的各个专题计划（如分合同计划、开发人员培训计划、测试计划、安全保密计划、质量保证计划、配置管理计划、用户培训计划、系统安装计划等）的要点。&lt;/p></description></item><item><title>Docs: 软件需求说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwarerequirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwarerequirements/</guid><description>
+&lt;p>说明本项目开发中需制定的各个专题计划（如分合同计划、开发人员培训计划、测试计划、安全保密计划、质量保证计划、配置管理计划、用户培训计划、系统安装计划等）的要点。&lt;/p></description></item><item><title>Docs: 软件需求说明书</title><link>/docs/documentationstyleguide/gb856t88/softwarerequirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwarerequirements/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份软件需求说明书的目的，指出预期的读者。&lt;/p>
@@ -544,7 +544,7 @@
 &lt;h3 id="43接口">4.3接口&lt;/h3>
 &lt;p>说明该软件同其他软件之间的接口、数据通信协议等。&lt;/p>
 &lt;h3 id="44控制">4.4控制&lt;/h3>
-&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
+&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: 概要设计说明书</title><link>/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份概要设计说明书的目的，指出预期的读者。&lt;/p>
@@ -675,7 +675,7 @@
 &lt;/ol>
 &lt;h3 id="63系统维护设计">6.3系统维护设计&lt;/h3>
 &lt;p>说明为了系统维护的方便而在程序内部设计中作出的安排，包括在程序中专门安排用于系统的检查与维护的检测点和专用模块。
-各个程序之间的对应关系，可采用如下的矩阵图的形式；&lt;/p></description></item><item><title>Docs: 详细设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</guid><description>
+各个程序之间的对应关系，可采用如下的矩阵图的形式；&lt;/p></description></item><item><title>Docs: 详细设计说明书</title><link>/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份详细设计说明书的目的，指出预期的读者。&lt;/p>
@@ -753,7 +753,7 @@
 &lt;p>说明在本程序的设计中尚未解决而设计者认为在软件完成之前应解决的问题。&lt;/p>
 &lt;h2 id="4程序2标识符设计说明">4程序2（标识符）设计说明&lt;/h2>
 &lt;p>用类似F．3的方式，说明第2个程序乃至第N个程序的设计考虑。&lt;/p>
-&lt;p>&amp;hellip;&amp;hellip;&lt;/p></description></item><item><title>Docs: 用户操作手册</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/usermanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/usermanual/</guid><description>
+&lt;p>&amp;hellip;&amp;hellip;&lt;/p></description></item><item><title>Docs: 用户操作手册</title><link>/docs/documentationstyleguide/gb856t88/usermanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/usermanual/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份用户手册的目的，指出预期的读者。&lt;/p>
@@ -959,7 +959,7 @@
 &lt;h3 id="45出错处理和恢复">4.5出错处理和恢复&lt;/h3>
 &lt;p>列出由软件产生的出错编码或条件以及应由用户承担的修改纠正工作。指出为了确保再启动和恢复的能力，用户必须遵循的处理过程。&lt;/p>
 &lt;h3 id="46终端操作">4.6终端操作&lt;/h3>
-&lt;p>当软件是在多终端系统上工作时，应编写本条，以说明终端的配置安排、连接步释、数据和参数输入步骤以及控制规定．说明通过终端操作进行查询、检索、修改数据文卷的能力、语言、过程以及辅助性程序等。&lt;/p></description></item><item><title>Docs: 测试计划</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testplan/</guid><description>
+&lt;p>当软件是在多终端系统上工作时，应编写本条，以说明终端的配置安排、连接步释、数据和参数输入步骤以及控制规定．说明通过终端操作进行查询、检索、修改数据文卷的能力、语言、过程以及辅助性程序等。&lt;/p></description></item><item><title>Docs: 测试计划</title><link>/docs/documentationstyleguide/gb856t88/testplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/testplan/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>本测试计划的具体编写目的，指出预期的读者范围。&lt;/p>
@@ -1049,7 +1049,7 @@
 &lt;h3 id="42数据整理">4.2数据整理&lt;/h3>
 &lt;p>陈述为了把测试数据加工成便于评价的适当形式，使得测试结果可以同，已知结果进行比较而要用到的转换处理技术，如手工方式或自动方式；如果是用自动方式整理数据，还要说明为进行处理而要用到的硬件、软件资源。&lt;/p>
 &lt;h3 id="43尺度">4.3尺度&lt;/h3>
-&lt;p>说明用来判断测试工作是否能通过的评价尺度，如合理的输出结果的类型、测试输出结果与预期输出之间的容许偏离范围、允许中断或停机的最大次数。&lt;/p></description></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/databasedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/databasedesign/</guid><description>
+&lt;p>说明用来判断测试工作是否能通过的评价尺度，如合理的输出结果的类型、测试输出结果与预期输出之间的容许偏离范围、允许中断或停机的最大次数。&lt;/p></description></item><item><title>Docs: 概要设计说明书</title><link>/docs/documentationstyleguide/gb856t88/databasedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/databasedesign/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份数据库设计说明书的目的，指出预期的读者。&lt;/p>
@@ -1114,7 +1114,7 @@
 &lt;h3 id="41数据字典设计">4.1数据字典设计&lt;/h3>
 &lt;p>对数据库设计中涉及到的各种项目，如数据项、记录、系、文卷、模式、子模式等一般要建立起数据字典，以说明它们的标识符、同义名及有关信息。在本节中要说明对此数据字典设计的基本考虑。&lt;/p>
 &lt;h3 id="42安全保密设计">4.2安全保密设计&lt;/h3>
-&lt;p>说明在数据库的设计中，将如何通过区分不同的访问者、不同的访问类型和不同的数据对象，进行分别对待而获得的数据库安全保密的设计考虑。&lt;/p></description></item><item><title>Docs: 测试分析报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testanalysisreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testanalysisreport/</guid><description>
+&lt;p>说明在数据库的设计中，将如何通过区分不同的访问者、不同的访问类型和不同的数据对象，进行分别对待而获得的数据库安全保密的设计考虑。&lt;/p></description></item><item><title>Docs: 测试分析报告</title><link>/docs/documentationstyleguide/gb856t88/testanalysisreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/testanalysisreport/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明这份测试分析报告的具体编写目的，指出预期的阅读范围。&lt;/p>
@@ -1185,7 +1185,7 @@
 &lt;h3 id="54评价">5.4评价&lt;/h3>
 &lt;p>说明该项软件的开发是否已达到预定目标，能否交付使用。&lt;/p>
 &lt;h2 id="6测试资源消耗">6测试资源消耗&lt;/h2>
-&lt;p>总结测试工作的资源消耗数据，如工作人员的水平级别数量、机时消耗等。&lt;/p></description></item><item><title>Docs: 开发进度月报</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</guid><description>
+&lt;p>总结测试工作的资源消耗数据，如工作人员的水平级别数量、机时消耗等。&lt;/p></description></item><item><title>Docs: 开发进度月报</title><link>/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</guid><description>
 &lt;h2 id="1标题">1标题&lt;/h2>
 &lt;p>开发中的软件系统的名称和标识符&lt;/p>
 &lt;p>分项目名称和标识符&lt;/p>
@@ -1262,7 +1262,7 @@
 &lt;p>说明本月内实际支出的经费与计划相比较，是超过了。相符合、还是不到计划数？如果与计划不一致，说明原因及准备采取的措施。&lt;/p>
 &lt;h2 id="5下个月的工作计划">5下个月的工作计划&lt;/h2>
 &lt;h2 id="6建议">6建议&lt;/h2>
-&lt;p>本月遇到的重要问题和应引起重视的问题以及因此产生的建议。&lt;/p></description></item><item><title>Docs: 项目开发总结报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</guid><description>
+&lt;p>本月遇到的重要问题和应引起重视的问题以及因此产生的建议。&lt;/p></description></item><item><title>Docs: 项目开发总结报告</title><link>/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份项目开发总结报告的目的，指出预期的阅读范围。&lt;/p>
@@ -1347,7 +1347,7 @@
 &lt;h3 id="34出错原因的分析">3.4出错原因的分析&lt;/h3>
 &lt;p>给出对于开发中出现的错误的原因分析。&lt;/p>
 &lt;h2 id="4经验与教训">4经验与教训&lt;/h2>
-&lt;p>列出从这项开发工作中所得到的最主要的经验与教训及对今后的项目开发工作的建议。&lt;/p></description></item><item><title>Docs: 模块开发卷宗</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</guid><description>
+&lt;p>列出从这项开发工作中所得到的最主要的经验与教训及对今后的项目开发工作的建议。&lt;/p></description></item><item><title>Docs: 模块开发卷宗</title><link>/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</guid><description>
 &lt;h2 id="1标题">1标题&lt;/h2>
 &lt;p>软件系统名称和标识符&lt;/p>
 &lt;p>模块名称和标识符（如果本卷宗包含多于一个的模块，则用这组模块的功能标识代替模块名）&lt;/p>
@@ -1377,4 +1377,4 @@
 &lt;h2 id="6测试说明">6测试说明&lt;/h2>
 &lt;p>说明直接要经过本模块（或本组模块）的每一项测试，包括这些测试各自的标识符和编号、进行这些测试的目的、所用的配置和输入、预期的输出及实际的输出。&lt;/p>
 &lt;h2 id="7复审的结论">7复审的结论&lt;/h2>
-&lt;p>把实际测试的结果，同软件需求说明书、系统设计说明书、程序设计说明书中规定的要求进行比较和给出结论。&lt;/p></description></item><item><title>Docs: 软件问题报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwareproblemreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwareproblemreport/</guid><description/></item><item><title>Docs: 软件修改报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</guid><description/></item></channel></rss>
+&lt;p>把实际测试的结果，同软件需求说明书、系统设计说明书、程序设计说明书中规定的要求进行比较和给出结论。&lt;/p></description></item><item><title>Docs: 软件问题报告</title><link>/docs/documentationstyleguide/gb856t88/softwareproblemreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwareproblemreport/</guid><description/></item><item><title>Docs: 软件修改报告</title><link>/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</guid><description/></item></channel></rss>

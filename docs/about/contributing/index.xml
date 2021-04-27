@@ -1,12 +1,12 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 向 devSpec 贡献文档</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/</link><description>Recent content in 向 devSpec 贡献文档 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/about/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 添加新文档</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/addcontent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/about/contributing/addcontent/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 向 devSpec 贡献文档</title><link>/docs/about/contributing/</link><description>Recent content in 向 devSpec 贡献文档 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/about/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 添加新文档</title><link>/docs/about/contributing/addcontent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/contributing/addcontent/</guid><description>
 &lt;p>贡献新文档到 devSpec，请执行以下步骤：&lt;/p>
 &lt;ol>
 &lt;li>确定受众和信息的预期用途。&lt;/li>
 &lt;li>选择您想要贡献的&lt;a href="#content-types">内容类型&lt;/a>。&lt;/li>
 &lt;li>&lt;a href="#choosing-a-title">命名标题&lt;/a>。&lt;/li>
-&lt;li>按照&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing">文档贡献指南&lt;/a>撰写您的贡献。&lt;/li>
+&lt;li>按照&lt;a href="/zh/about/contributing">文档贡献指南&lt;/a>撰写您的贡献。&lt;/li>
 &lt;li>将您的贡献提交到 &lt;a href="https://github.com/TaibiaoGuo/devSpec">GitHub 存储库&lt;/a>。&lt;/li>
-&lt;li>执行&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/review">审核流程&lt;/a>，直到您的贡献被合并。&lt;/li>
+&lt;li>执行&lt;a href="/zh/about/contributing/review">审核流程&lt;/a>，直到您的贡献被合并。&lt;/li>
 &lt;/ol>
 &lt;h2 id="identify-the-audience-and-intended-use">确定受众和信息的预期用途&lt;/h2>
 &lt;p>好的文档需要从了解读者的阅读目的，知识以及希望他们如何处理这些信息开始。否则，您无法确定要提供的信息的范围和深度、理想结构和必要的支持信息。
@@ -72,14 +72,14 @@
 &lt;p>为您的主题选择一个标题， devSpec 的内容大致可以是嵌套的结构，其典型结构包括两个部分：章节索引文件 &lt;code>_index.md&lt;/code> 和正文文件 &lt;code>xxx.md&lt;/code>。
 每个正文文件的标题应尽可能短，便于交叉引用时的创建和维护。&lt;/p>
 &lt;h2 id="submit-your-contribution-to-GitHub">将您的贡献提交到 GitHub&lt;/h2>
-&lt;p>如果您不熟悉 GitHub，请参阅&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/github">使用 GitHub 参与&lt;/a>，以了解如何提交文档更改。&lt;/p>
-&lt;p>如果您想了解有关发表文稿的方式和时间的更多信息，请参阅&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/github#branching-strategy">分支策略&lt;/a>，
-以了解我们如何使用分支和 &lt;code>cherry picking&lt;/code> 来发布我们的内容。&lt;/p></description></item><item><title>Docs: 使用 GitHub 参与社区活动</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/github/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/about/contributing/github/</guid><description>
+&lt;p>如果您不熟悉 GitHub，请参阅&lt;a href="/zh/about/contributing/github">使用 GitHub 参与&lt;/a>，以了解如何提交文档更改。&lt;/p>
+&lt;p>如果您想了解有关发表文稿的方式和时间的更多信息，请参阅&lt;a href="/zh/about/contributing/github#branching-strategy">分支策略&lt;/a>，
+以了解我们如何使用分支和 &lt;code>cherry picking&lt;/code> 来发布我们的内容。&lt;/p></description></item><item><title>Docs: 使用 GitHub 参与社区活动</title><link>/docs/about/contributing/github/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/contributing/github/</guid><description>
 &lt;p>devSpec 文档协作遵循标准的 &lt;a href="https://guides.github.com/introduction/flow/">GitHub 协作流&lt;/a>。这种成熟的协作模式有助于开源项目管理以下类型的贡献：&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/addContent">添加&lt;/a>新文件到存储库。&lt;/li>
+&lt;li>&lt;a href="/zh/about/contribute/addContent">添加&lt;/a>新文件到存储库。&lt;/li>
 &lt;li>&lt;a href="#quick-edit">编辑&lt;/a>现有文件。&lt;/li>
-&lt;li>&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/review">审阅&lt;/a>添加或修改的文件。&lt;/li>
+&lt;li>&lt;a href="/zh/about/contribute/review">审阅&lt;/a>添加或修改的文件。&lt;/li>
 &lt;li>管理多个发布或开发&lt;a href="#branching-strategy">分支&lt;/a>。&lt;/li>
 &lt;/ul>
 &lt;p>该贡献指南假定您可以完成以下任务：&lt;/p>
@@ -108,7 +108,7 @@
 &lt;li>在 GitHub UI 上进行编辑。&lt;/li>
 &lt;li>创建 Pull Request 提交您的修改。&lt;/li>
 &lt;/ol>
-&lt;p>请参阅我们在&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/addContent">贡献新内容&lt;/a>或&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/review">内容审查&lt;/a>中的指南，
+&lt;p>请参阅我们在&lt;a href="/zh/about/contribute/addContent">贡献新内容&lt;/a>或&lt;a href="/zh/about/contribute/review">内容审查&lt;/a>中的指南，
 以了解有关提交更多实质性更改的详细信息。&lt;/p>
 &lt;h2 id="branching-strategy">分支策略&lt;/h2>
 &lt;p>文档内容的维护在 &lt;code>TaibiaoGuo/devSpec&lt;/code> 仓库 Master 分支进行，Istio 发布当天，我们基于 Master 创建发布分支。以下链接指向我们在 GitHub 上的存储库：&lt;/p>

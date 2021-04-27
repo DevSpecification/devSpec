@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – Go编码规范</title><link>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/</link><description>Recent content in Go编码规范 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/gocodestandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: devSpec Go 编程指南</title><link>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/codestandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/codestandards/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – Go编码规范</title><link>/docs/gocodestandards/</link><description>Recent content in Go编码规范 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/gocodestandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: devSpec Go 编程指南</title><link>/docs/gocodestandards/codestandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gocodestandards/codestandards/</guid><description>
 &lt;h2 id="介绍">介绍&lt;/h2>
 &lt;p>样式 (style) 是支配我们代码的惯例。术语&lt;code>样式&lt;/code>有点用词不当，因为这些约定涵盖的范围不限于由 gofmt 替我们处理的源文件格式。&lt;/p>
 &lt;p>本指南的目的是通过详细描述编写 Go 代码的注意事项来管理这种复杂性。这些规则的存在是为了使代码库易于管理，同时仍然允许工程师更有效地使用 Go 语言功能。&lt;/p>
@@ -2060,7 +2060,7 @@ use one vs other -->
 &lt;/ul>
 &lt;h3 id="lint-runners">Lint Runners&lt;/h3>
 &lt;p>我们推荐 &lt;a href="https://github.com/golangci/golangci-lint">golangci-lint&lt;/a> 作为go-to lint的运行程序，这主要是因为它在较大的代码库中的性能以及能够同时配置和使用许多规范。这个repo有一个示例配置文件&lt;a href="https://github.com/uber-go/guide/blob/master/.golangci.yml">.golangci.yml&lt;/a>和推荐的linter设置。&lt;/p>
-&lt;p>golangci-lint 有&lt;a href="https://golangci-lint.run/usage/linters/">various-linters&lt;/a>可供使用。建议将上述linters作为基本set，我们鼓励团队添加对他们的项目有意义的任何附加linters。&lt;/p></description></item><item><title>Docs: devSpec Go 代码审核指南</title><link>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/gocodereviewguide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/gocodereviewguide/</guid><description>
+&lt;p>golangci-lint 有&lt;a href="https://golangci-lint.run/usage/linters/">various-linters&lt;/a>可供使用。建议将上述linters作为基本set，我们鼓励团队添加对他们的项目有意义的任何附加linters。&lt;/p></description></item><item><title>Docs: devSpec Go 代码审核指南</title><link>/docs/gocodestandards/gocodereviewguide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gocodestandards/gocodereviewguide/</guid><description>
 &lt;p>本篇文章收集了 Go 代码审核过程中的常见的评论，所以一个详细的解释可以用缩写来指代。 这是一个常见错误的清单，而不是一个全面的风格指南。&lt;/p>
 &lt;p>你可以将此作为 &lt;a href="https://learnku.com/docs/effective-go/2020">Effective Go&lt;/a> 的补充。&lt;/p>
 &lt;h3 id="gofmt">Gofmt&lt;/h3>

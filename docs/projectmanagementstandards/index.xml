@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 项目管理标准</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/</link><description>Recent content in 项目管理标准 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 团队文化</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 项目管理标准</title><link>/docs/projectmanagementstandards/</link><description>Recent content in 项目管理标准 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/projectmanagementstandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 团队文化</title><link>/docs/projectmanagementstandards/teamculture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/teamculture/</guid><description>
 &lt;p>微服务、敏捷开发、&lt;a href="https://zh.wikipedia.org/wiki/DevOps">DevOps&lt;/a> 在软件和互联网行业大行其道，屹立潮头的企业们设计了许多精巧的软件架构、严密的开发流程来适应这些新事物。
 事实上，&lt;a href="https://www.gartner.com/newsroom/id/3032517">Gartner&lt;/a> 曾做过统计，90%的DevOps 实践最终都走向了失败。人们逐渐发现，
 即使你设计的再精美的系统架构图、再严密的流程，一旦涉及到诸如人的参与和或卷入传统企业流程，往往都会变形，并最终走向崩溃。&lt;/p>
@@ -7,7 +7,7 @@
 &lt;li>除非也改变沟通结构，否则单纯改变架构或基础架构不会带来任何改变；&lt;/li>
 &lt;li>无论基础架构如何，改变沟通结构都会带来流程和基础架构的改进。&lt;/li>
 &lt;/ul>
-&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description>
+&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 团队架构</title><link>/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/teamarchitecture/</guid><description>
 &lt;p>在明确团队文化后，下一步就是明确团队架构。团队中所有 DevOps、敏捷的主要目标都是改进客户和业务的价值交付，而不是降低成本、
 提升自动化或者配置管理驱动一切。 这意味着，为了实现有效的 Dev 和 Ops 协同，不同的组织可能需要不同的团队结构。
 &lt;a href="https://web.devopstopologies.com/index.html">DevOpsTopologies&lt;/a> 给出了大量的团队架构范式，
@@ -68,6 +68,6 @@
 &lt;p>Netflix 和 Facebook 这种产品形态较为单一的组织已经实现了完全共担 Ops 职责架构。但如果你的团队包含多个产品流的研发任务，
 例如初创团队同时进行多个最小可行产品的论证工作，那么完全共担 Ops 职责架构最终将导致成员目标的分散，
 最终导致完全共担 Ops 职责架构的实施变形或失败。&lt;/p>
-&lt;h2 id="devspec-强烈反对的组织架构模板">devSpec 强烈反对的组织架构模板&lt;/h2></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description>
+&lt;h2 id="devspec-强烈反对的组织架构模板">devSpec 强烈反对的组织架构模板&lt;/h2></description></item><item><title>Docs: 开发方法论与框架</title><link>/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/projectlifecycle/</guid><description>
 &lt;p>软件开发过程(software process) 是软件开发的开发生命周期(software development life cycle)，
 其各个阶段实现了软件的需求定义与分析、设计、实现、测试、交付和维护。软件过程是在开发与构建系统时应遵循的步骤，是软件开发的路线图。&lt;/p></description></item></channel></rss>

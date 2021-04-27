@@ -1,12 +1,12 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 开发规范</title><link>https://taibiaoguo.github.io/devSpec/docs/</link><description>Recent content on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 添加新文档</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/addcontent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/about/contributing/addcontent/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 开发规范</title><link>/docs/</link><description>Recent content on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 添加新文档</title><link>/docs/about/contributing/addcontent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/contributing/addcontent/</guid><description>
 &lt;p>贡献新文档到 devSpec，请执行以下步骤：&lt;/p>
 &lt;ol>
 &lt;li>确定受众和信息的预期用途。&lt;/li>
 &lt;li>选择您想要贡献的&lt;a href="#content-types">内容类型&lt;/a>。&lt;/li>
 &lt;li>&lt;a href="#choosing-a-title">命名标题&lt;/a>。&lt;/li>
-&lt;li>按照&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing">文档贡献指南&lt;/a>撰写您的贡献。&lt;/li>
+&lt;li>按照&lt;a href="/zh/about/contributing">文档贡献指南&lt;/a>撰写您的贡献。&lt;/li>
 &lt;li>将您的贡献提交到 &lt;a href="https://github.com/TaibiaoGuo/devSpec">GitHub 存储库&lt;/a>。&lt;/li>
-&lt;li>执行&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/review">审核流程&lt;/a>，直到您的贡献被合并。&lt;/li>
+&lt;li>执行&lt;a href="/zh/about/contributing/review">审核流程&lt;/a>，直到您的贡献被合并。&lt;/li>
 &lt;/ol>
 &lt;h2 id="identify-the-audience-and-intended-use">确定受众和信息的预期用途&lt;/h2>
 &lt;p>好的文档需要从了解读者的阅读目的，知识以及希望他们如何处理这些信息开始。否则，您无法确定要提供的信息的范围和深度、理想结构和必要的支持信息。
@@ -72,9 +72,9 @@
 &lt;p>为您的主题选择一个标题， devSpec 的内容大致可以是嵌套的结构，其典型结构包括两个部分：章节索引文件 &lt;code>_index.md&lt;/code> 和正文文件 &lt;code>xxx.md&lt;/code>。
 每个正文文件的标题应尽可能短，便于交叉引用时的创建和维护。&lt;/p>
 &lt;h2 id="submit-your-contribution-to-GitHub">将您的贡献提交到 GitHub&lt;/h2>
-&lt;p>如果您不熟悉 GitHub，请参阅&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/github">使用 GitHub 参与&lt;/a>，以了解如何提交文档更改。&lt;/p>
-&lt;p>如果您想了解有关发表文稿的方式和时间的更多信息，请参阅&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contributing/github#branching-strategy">分支策略&lt;/a>，
-以了解我们如何使用分支和 &lt;code>cherry picking&lt;/code> 来发布我们的内容。&lt;/p></description></item><item><title>Docs: devSpec Go 编程指南</title><link>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/codestandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/codestandards/</guid><description>
+&lt;p>如果您不熟悉 GitHub，请参阅&lt;a href="/zh/about/contributing/github">使用 GitHub 参与&lt;/a>，以了解如何提交文档更改。&lt;/p>
+&lt;p>如果您想了解有关发表文稿的方式和时间的更多信息，请参阅&lt;a href="/zh/about/contributing/github#branching-strategy">分支策略&lt;/a>，
+以了解我们如何使用分支和 &lt;code>cherry picking&lt;/code> 来发布我们的内容。&lt;/p></description></item><item><title>Docs: devSpec Go 编程指南</title><link>/docs/gocodestandards/codestandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gocodestandards/codestandards/</guid><description>
 &lt;h2 id="介绍">介绍&lt;/h2>
 &lt;p>样式 (style) 是支配我们代码的惯例。术语&lt;code>样式&lt;/code>有点用词不当，因为这些约定涵盖的范围不限于由 gofmt 替我们处理的源文件格式。&lt;/p>
 &lt;p>本指南的目的是通过详细描述编写 Go 代码的注意事项来管理这种复杂性。这些规则的存在是为了使代码库易于管理，同时仍然允许工程师更有效地使用 Go 语言功能。&lt;/p>
@@ -2136,7 +2136,7 @@ use one vs other -->
 &lt;/ul>
 &lt;h3 id="lint-runners">Lint Runners&lt;/h3>
 &lt;p>我们推荐 &lt;a href="https://github.com/golangci/golangci-lint">golangci-lint&lt;/a> 作为go-to lint的运行程序，这主要是因为它在较大的代码库中的性能以及能够同时配置和使用许多规范。这个repo有一个示例配置文件&lt;a href="https://github.com/uber-go/guide/blob/master/.golangci.yml">.golangci.yml&lt;/a>和推荐的linter设置。&lt;/p>
-&lt;p>golangci-lint 有&lt;a href="https://golangci-lint.run/usage/linters/">various-linters&lt;/a>可供使用。建议将上述linters作为基本set，我们鼓励团队添加对他们的项目有意义的任何附加linters。&lt;/p></description></item><item><title>Docs: 可行性研究报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</guid><description>
+&lt;p>golangci-lint 有&lt;a href="https://golangci-lint.run/usage/linters/">various-linters&lt;/a>可供使用。建议将上述linters作为基本set，我们鼓励团队添加对他们的项目有意义的任何附加linters。&lt;/p></description></item><item><title>Docs: 可行性研究报告</title><link>/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/feasibilityanalysis/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写本可行性研究报告的目的，指出预期的读者。&lt;/p>
@@ -2486,7 +2486,7 @@ use one vs other -->
 &lt;li>
 &lt;p>不能进行或不必进行（例如因技术不成熟、经济上不合算等）。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs: 源代码API参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/apireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/apireference/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 源代码API参考文档</title><link>/docs/documentationstyleguide/codecomment/apireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/codecomment/apireference/</guid><description>
 &lt;p>创建API后，需要提供对应的API参考文档，通常是从源代码中生成的公开类、方法、常量及其他成员。根据不同的编程语言，依照本指南给出的基本准则，
 并参照特定语言样式指南。&lt;/p>
 &lt;p>此指南不含该 Web API 的参考文档样式，编写 Web API 的参考文档样式时，请参考 Web API 的参考文档样式说明。&lt;/p>
@@ -2571,7 +2571,7 @@ use one vs other -->
 &lt;p>如果该方法将在未来弃用，则需要在第一句话中告知用户该方法的最后支持版本。随后，可以向开发者解释为什么不推荐使用该API以及其他对开发人员有用的信息。&lt;/p>
 &lt;p>&lt;strong>例子&lt;/strong>：&lt;/p>
 &lt;p>不推荐使用，请改用 &lt;code>CameraPose&lt;/code>&lt;/p>
-&lt;p>不推荐使用，使用 &lt;code>getField()&lt;/code>方法访问此字段&lt;/p></description></item><item><title>Docs: devSpec Go 代码审核指南</title><link>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/gocodereviewguide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/gocodestandards/gocodereviewguide/</guid><description>
+&lt;p>不推荐使用，使用 &lt;code>getField()&lt;/code>方法访问此字段&lt;/p></description></item><item><title>Docs: devSpec Go 代码审核指南</title><link>/docs/gocodestandards/gocodereviewguide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gocodestandards/gocodereviewguide/</guid><description>
 &lt;p>本篇文章收集了 Go 代码审核过程中的常见的评论，所以一个详细的解释可以用缩写来指代。 这是一个常见错误的清单，而不是一个全面的风格指南。&lt;/p>
 &lt;p>你可以将此作为 &lt;a href="https://learnku.com/docs/effective-go/2020">Effective Go&lt;/a> 的补充。&lt;/p>
 &lt;h3 id="gofmt">Gofmt&lt;/h3>
@@ -2829,7 +2829,7 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>在任何情况下，您都有义务在测试失败时将有用的信息传递给将来调试代码的人。&lt;/p>
 &lt;h3 id="变量名称">变量名称&lt;/h3>
 &lt;p>Go 中的变量名称尽可能短为妙，言简意赅，尤其是对于那些处于有限空间中的局部变量更是如此。例如： 用 c 而不是 lineCount； 用 i 而不是 sliceIndex 。&lt;/p>
-&lt;p>基本准则：当变量首次被使用时离声明的位置越远，变量名称必须更具描述性。对于方法接收者的名称来说，一个或者两个字母就足够了。普通变量比如 loop indices 、 readers 的名称用一个字母（i , r）指代就可以。非常规事物和全局变量则需使用更具描述性的名字。&lt;/p></description></item><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/testprocessstandards/</guid><description/></item><item><title>Docs: 你需要微服务么</title><link>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/microservice/isneedmicroservice/</guid><description>
+&lt;p>基本准则：当变量首次被使用时离声明的位置越远，变量名称必须更具描述性。对于方法接收者的名称来说，一个或者两个字母就足够了。普通变量比如 loop indices 、 readers 的名称用一个字母（i , r）指代就可以。非常规事物和全局变量则需使用更具描述性的名字。&lt;/p></description></item><item><title>Docs: 你需要微服务么</title><link>/docs/automationintegrationstandards/testprocessstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/automationintegrationstandards/testprocessstandards/</guid><description/></item><item><title>Docs: 你需要微服务么</title><link>/docs/microservice/isneedmicroservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/microservice/isneedmicroservice/</guid><description>
 &lt;p>你应该早已经看过许多介绍微服务优点的博文，但很少有人告诉你微服务的切分、微服务的管理和监测等要点如果处理不当，微服务的实施将会是一场噩梦。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2896,7 +2896,7 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 以带来更好的灵活性。这在面向客户的界面(如 API、移动应用或 Web 应用)中尤为常见。这些界面通常较小，需要更加频繁的更新才能满足客户的期望。&lt;/p>
 &lt;p>分布式架构的最新定义之一是微服务。与其他模块化设计，像面向服务的架构(SOA)有一些相似之处，但微服务将服务之间的松散耦合转变为服务独立性。
 通常，单个服务的定义较为明确，可以轻松地在较大的架构中添加、升级或删除服务。这对于动态可扩展性和容错能力都有一定的好处:
-可以在不占用大量基础架构的情况下按需扩展单个服务，或者可以在不影响其他服务的情况下进行故障转移。&lt;/p></description></item><item><title>Docs: 团队文化</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamculture/</guid><description>
+可以在不占用大量基础架构的情况下按需扩展单个服务，或者可以在不影响其他服务的情况下进行故障转移。&lt;/p></description></item><item><title>Docs: 团队文化</title><link>/docs/projectmanagementstandards/teamculture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/teamculture/</guid><description>
 &lt;p>微服务、敏捷开发、&lt;a href="https://zh.wikipedia.org/wiki/DevOps">DevOps&lt;/a> 在软件和互联网行业大行其道，屹立潮头的企业们设计了许多精巧的软件架构、严密的开发流程来适应这些新事物。
 事实上，&lt;a href="https://www.gartner.com/newsroom/id/3032517">Gartner&lt;/a> 曾做过统计，90%的DevOps 实践最终都走向了失败。人们逐渐发现，
 即使你设计的再精美的系统架构图、再严密的流程，一旦涉及到诸如人的参与和或卷入传统企业流程，往往都会变形，并最终走向崩溃。&lt;/p>
@@ -2905,7 +2905,7 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 &lt;li>除非也改变沟通结构，否则单纯改变架构或基础架构不会带来任何改变；&lt;/li>
 &lt;li>无论基础架构如何，改变沟通结构都会带来流程和基础架构的改进。&lt;/li>
 &lt;/ul>
-&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 持续集成</title><link>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/continuesintegrationstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/automationintegrationstandards/continuesintegrationstandards/</guid><description/></item><item><title>Docs: 项目开发计划</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</guid><description>
+&lt;p>打造支持持续交付规范的团队（企业）文化，将是你实践 devSpec 的第一步。&lt;/p></description></item><item><title>Docs: 持续集成</title><link>/docs/automationintegrationstandards/continuesintegrationstandards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/automationintegrationstandards/continuesintegrationstandards/</guid><description/></item><item><title>Docs: 项目开发计划</title><link>/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明：编写这份软件项目开发计划的目的，并指出预期的读者。&lt;/p>
@@ -2986,12 +2986,12 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 &lt;h3 id="43由外单位提供的条件">4.3由外单位提供的条件&lt;/h3>
 &lt;p>逐项列出需要外单位分合同承包者承担的工作和完成的时间，包括需要由外单位提供的条件和提供的时间。&lt;/p>
 &lt;h2 id="5专题计划要点">5专题计划要点&lt;/h2>
-&lt;p>说明本项目开发中需制定的各个专题计划（如分合同计划、开发人员培训计划、测试计划、安全保密计划、质量保证计划、配置管理计划、用户培训计划、系统安装计划等）的要点。&lt;/p></description></item><item><title>Docs: WebAPI参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/grpcapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/grpcapireference/</guid><description/></item><item><title>Docs: WebAPI参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/webapireference/</guid><description/></item><item><title>Docs: 使用 GitHub 参与社区活动</title><link>https://taibiaoguo.github.io/devSpec/docs/about/contributing/github/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/about/contributing/github/</guid><description>
+&lt;p>说明本项目开发中需制定的各个专题计划（如分合同计划、开发人员培训计划、测试计划、安全保密计划、质量保证计划、配置管理计划、用户培训计划、系统安装计划等）的要点。&lt;/p></description></item><item><title>Docs: WebAPI参考文档</title><link>/docs/documentationstyleguide/codecomment/grpcapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/codecomment/grpcapireference/</guid><description/></item><item><title>Docs: WebAPI参考文档</title><link>/docs/documentationstyleguide/codecomment/webapireference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/codecomment/webapireference/</guid><description/></item><item><title>Docs: 使用 GitHub 参与社区活动</title><link>/docs/about/contributing/github/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/contributing/github/</guid><description>
 &lt;p>devSpec 文档协作遵循标准的 &lt;a href="https://guides.github.com/introduction/flow/">GitHub 协作流&lt;/a>。这种成熟的协作模式有助于开源项目管理以下类型的贡献：&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/addContent">添加&lt;/a>新文件到存储库。&lt;/li>
+&lt;li>&lt;a href="/zh/about/contribute/addContent">添加&lt;/a>新文件到存储库。&lt;/li>
 &lt;li>&lt;a href="#quick-edit">编辑&lt;/a>现有文件。&lt;/li>
-&lt;li>&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/review">审阅&lt;/a>添加或修改的文件。&lt;/li>
+&lt;li>&lt;a href="/zh/about/contribute/review">审阅&lt;/a>添加或修改的文件。&lt;/li>
 &lt;li>管理多个发布或开发&lt;a href="#branching-strategy">分支&lt;/a>。&lt;/li>
 &lt;/ul>
 &lt;p>该贡献指南假定您可以完成以下任务：&lt;/p>
@@ -3020,7 +3020,7 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 &lt;li>在 GitHub UI 上进行编辑。&lt;/li>
 &lt;li>创建 Pull Request 提交您的修改。&lt;/li>
 &lt;/ol>
-&lt;p>请参阅我们在&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/addContent">贡献新内容&lt;/a>或&lt;a href="https://taibiaoguo.github.io/devSpec/zh/about/contribute/review">内容审查&lt;/a>中的指南，
+&lt;p>请参阅我们在&lt;a href="/zh/about/contribute/addContent">贡献新内容&lt;/a>或&lt;a href="/zh/about/contribute/review">内容审查&lt;/a>中的指南，
 以了解有关提交更多实质性更改的详细信息。&lt;/p>
 &lt;h2 id="branching-strategy">分支策略&lt;/h2>
 &lt;p>文档内容的维护在 &lt;code>TaibiaoGuo/devSpec&lt;/code> 仓库 Master 分支进行，Istio 发布当天，我们基于 Master 创建发布分支。以下链接指向我们在 GitHub 上的存储库：&lt;/p>
@@ -3038,7 +3038,7 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 &lt;p>考虑到分支的工作原理，如果您提交修改到 master 分支，在 Istio 的下一个 major 版本发布前，这些更改都不会被应用到文档网站。
 如果您的文档更改和当前 Istio 版本密切相关，也可以将更改应用到当前版本的 Release 分支。您可以通过在文档的 PR 上使用 cherry-pick 标签，自动地执行此操作。
 例如，如果您在 PR 中向 master 分支引入了更正，则可以通过 &lt;code>cherrypick/release-1.4&lt;/code> 标签以将此更改合并到 &lt;code>release-1.4&lt;/code> 分支。
-请注意，我们只会在当前版本的 Release 分支中应用更改，而不会在旧版本中进行。较旧的分支被视为已归档，并且通常不再接收任何更改。&lt;/p></description></item><item><title>Docs: 团队架构</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/teamarchitecture/</guid><description>
+请注意，我们只会在当前版本的 Release 分支中应用更改，而不会在旧版本中进行。较旧的分支被视为已归档，并且通常不再接收任何更改。&lt;/p></description></item><item><title>Docs: 团队架构</title><link>/docs/projectmanagementstandards/teamarchitecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/teamarchitecture/</guid><description>
 &lt;p>在明确团队文化后，下一步就是明确团队架构。团队中所有 DevOps、敏捷的主要目标都是改进客户和业务的价值交付，而不是降低成本、
 提升自动化或者配置管理驱动一切。 这意味着，为了实现有效的 Dev 和 Ops 协同，不同的组织可能需要不同的团队结构。
 &lt;a href="https://web.devopstopologies.com/index.html">DevOpsTopologies&lt;/a> 给出了大量的团队架构范式，
@@ -3099,7 +3099,7 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 &lt;p>Netflix 和 Facebook 这种产品形态较为单一的组织已经实现了完全共担 Ops 职责架构。但如果你的团队包含多个产品流的研发任务，
 例如初创团队同时进行多个最小可行产品的论证工作，那么完全共担 Ops 职责架构最终将导致成员目标的分散，
 最终导致完全共担 Ops 职责架构的实施变形或失败。&lt;/p>
-&lt;h2 id="devspec-强烈反对的组织架构模板">devSpec 强烈反对的组织架构模板&lt;/h2></description></item><item><title>Docs: 软件需求说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwarerequirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwarerequirements/</guid><description>
+&lt;h2 id="devspec-强烈反对的组织架构模板">devSpec 强烈反对的组织架构模板&lt;/h2></description></item><item><title>Docs: 软件需求说明书</title><link>/docs/documentationstyleguide/gb856t88/softwarerequirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwarerequirements/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份软件需求说明书的目的，指出预期的读者。&lt;/p>
@@ -3214,11 +3214,11 @@ godoc 文档时能够很好地格式化。注释应从所描述的事物的名�
 &lt;h3 id="43接口">4.3接口&lt;/h3>
 &lt;p>说明该软件同其他软件之间的接口、数据通信协议等。&lt;/p>
 &lt;h3 id="44控制">4.4控制&lt;/h3>
-&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: Git工作流</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/gitflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/gitflow/</guid><description>
+&lt;p>说明控制该软件的运行的方法和控制信号，并说明这些控制信号的来源。&lt;/p></description></item><item><title>Docs: Git工作流</title><link>/docs/codestandards/gitflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/gitflow/</guid><description>
 &lt;p>目前基于 &lt;code>git&lt;/code> 协作工作流的模式非常多，对于初创团队可以借鉴 &lt;code>gitflow&lt;/code> 构建协作方式。此外，通过统一的协作工作流程和开发工作流，
 保证团队高效地协作开发，保持项目开发迭代周期井井有序。&lt;/p>
 &lt;p>团队开发与维护主要是针对项目去开发、迭代甚至是维护，使用分支能够有效地避免不同开发工作之间的相关干扰。&lt;/p>
-&lt;p>&lt;img src="https://taibiaoguo.github.io/devSpec/images/gitflow.png" alt="gitflow">&lt;/p>
+&lt;p>&lt;img src="/images/gitflow.png" alt="gitflow">&lt;/p>
 &lt;h2 id="git提交规范">Git提交规范&lt;/h2>
 &lt;p>当一个团队在协作开发时，针对 &lt;strong>git commit&lt;/strong> 规范是十分必须的，每一次提交都务必带上说明信息，同时说明信息亦要有格式规范，
 即团队要有良好的约定。目的是制定统一的标准，使得提交历史信息条理清晰，更是为了项目有条不絮地迭代以及提高开发者的效率。&lt;/p>
@@ -3437,7 +3437,7 @@ git merge develop
 git tag -a 1.1.1 -m &lt;span style="color:#4e9a06">&amp;#34;fixed:video:upload&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>测试通过后推送到代码仓库&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 代码审阅</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 代码审阅</title><link>/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/codereview/</guid><description>
 &lt;p>代码审阅（Code Review） 是项目中的必需项。代码审阅有助于提升代码的质量，尽早发现潜在的缺陷，降低修复的成本，
 同时可以促进开发团队内部知识的共享，帮助开发者更好理解系统的业务与实现对于代码审阅的原则而言，
 不定期地从小版本迭代(version) 或 新功能(feature)进行团队或者相关人员进行评审，评审的从架构、业务实现、技术等维度着手分析。&lt;/p>
@@ -3534,7 +3534,7 @@ end
 根据项目规范与产品规划&lt;strong>指出问题&lt;/strong>、&lt;strong>讨论问题&lt;/strong>、&lt;strong>解决问题&lt;/strong>。&lt;/p>
 &lt;blockquote>
 &lt;p>devSpec 已经给出了 Go的编码规范与指南，可以根据指南来指导代码评审会。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: 发行和版本控制</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/version/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: 发行和版本控制</title><link>/docs/codestandards/version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/version/</guid><description>
 &lt;h2 id="版本控制">版本控制&lt;/h2>
 &lt;h3 id="语义化版本控制规范">语义化版本控制规范&lt;/h3>
 &lt;p>版本号格式为 x.y.z，其中 x 为大版本号，y 为小版本号，z 为补丁版本号。 版本号格式遵循 &lt;a href="https://semver.org/">Semantic Versioning&lt;/a>。&lt;/p>
@@ -3630,7 +3630,7 @@ end
 &lt;p>&lt;strong>语义化版本对于版本的字串长度是否有限制呢？&lt;/strong>
 没有，请自行做适当的判断。举例来说，长到 255 个字元的版本已过度夸张。再者，特定的系统对于字串长度可能会有他们自己的限制。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs: 开发方法论与框架</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 日志</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 开发方法论与框架</title><link>/docs/projectmanagementstandards/devmethod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/devmethod/</guid><description/></item><item><title>Docs: 日志</title><link>/docs/codestandards/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/log/</guid><description/></item><item><title>Docs: 概要设计说明书</title><link>/docs/documentationstyleguide/gb856t88/outlinedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/outlinedesign/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份概要设计说明书的目的，指出预期的读者。&lt;/p>
@@ -3761,9 +3761,9 @@ end
 &lt;/ol>
 &lt;h3 id="63系统维护设计">6.3系统维护设计&lt;/h3>
 &lt;p>说明为了系统维护的方便而在程序内部设计中作出的安排，包括在程序中专门安排用于系统的检查与维护的检测点和专用模块。
-各个程序之间的对应关系，可采用如下的矩阵图的形式；&lt;/p></description></item><item><title>Docs: 注释</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/comment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/comment/</guid><description/></item><item><title>Docs: 测试</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/test/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/projectmanagementstandards/projectlifecycle/</guid><description>
+各个程序之间的对应关系，可采用如下的矩阵图的形式；&lt;/p></description></item><item><title>Docs: 注释</title><link>/docs/codestandards/comment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/comment/</guid><description/></item><item><title>Docs: 测试</title><link>/docs/codestandards/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/test/</guid><description/></item><item><title>Docs: 项目生命周期</title><link>/docs/projectmanagementstandards/projectlifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/projectmanagementstandards/projectlifecycle/</guid><description>
 &lt;p>软件开发过程(software process) 是软件开发的开发生命周期(software development life cycle)，
-其各个阶段实现了软件的需求定义与分析、设计、实现、测试、交付和维护。软件过程是在开发与构建系统时应遵循的步骤，是软件开发的路线图。&lt;/p></description></item><item><title>Docs: 详细设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</guid><description>
+其各个阶段实现了软件的需求定义与分析、设计、实现、测试、交付和维护。软件过程是在开发与构建系统时应遵循的步骤，是软件开发的路线图。&lt;/p></description></item><item><title>Docs: 详细设计说明书</title><link>/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/detaileddesignspecification/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份详细设计说明书的目的，指出预期的读者。&lt;/p>
@@ -3841,7 +3841,7 @@ end
 &lt;p>说明在本程序的设计中尚未解决而设计者认为在软件完成之前应解决的问题。&lt;/p>
 &lt;h2 id="4程序2标识符设计说明">4程序2（标识符）设计说明&lt;/h2>
 &lt;p>用类似F．3的方式，说明第2个程序乃至第N个程序的设计考虑。&lt;/p>
-&lt;p>&amp;hellip;&amp;hellip;&lt;/p></description></item><item><title>Docs: 用户操作手册</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/usermanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/usermanual/</guid><description>
+&lt;p>&amp;hellip;&amp;hellip;&lt;/p></description></item><item><title>Docs: 用户操作手册</title><link>/docs/documentationstyleguide/gb856t88/usermanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/usermanual/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份用户手册的目的，指出预期的读者。&lt;/p>
@@ -4047,7 +4047,7 @@ end
 &lt;h3 id="45出错处理和恢复">4.5出错处理和恢复&lt;/h3>
 &lt;p>列出由软件产生的出错编码或条件以及应由用户承担的修改纠正工作。指出为了确保再启动和恢复的能力，用户必须遵循的处理过程。&lt;/p>
 &lt;h3 id="46终端操作">4.6终端操作&lt;/h3>
-&lt;p>当软件是在多终端系统上工作时，应编写本条，以说明终端的配置安排、连接步释、数据和参数输入步骤以及控制规定．说明通过终端操作进行查询、检索、修改数据文卷的能力、语言、过程以及辅助性程序等。&lt;/p></description></item><item><title>Docs: 测试计划</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testplan/</guid><description>
+&lt;p>当软件是在多终端系统上工作时，应编写本条，以说明终端的配置安排、连接步释、数据和参数输入步骤以及控制规定．说明通过终端操作进行查询、检索、修改数据文卷的能力、语言、过程以及辅助性程序等。&lt;/p></description></item><item><title>Docs: 测试计划</title><link>/docs/documentationstyleguide/gb856t88/testplan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/testplan/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>本测试计划的具体编写目的，指出预期的读者范围。&lt;/p>
@@ -4137,7 +4137,7 @@ end
 &lt;h3 id="42数据整理">4.2数据整理&lt;/h3>
 &lt;p>陈述为了把测试数据加工成便于评价的适当形式，使得测试结果可以同，已知结果进行比较而要用到的转换处理技术，如手工方式或自动方式；如果是用自动方式整理数据，还要说明为进行处理而要用到的硬件、软件资源。&lt;/p>
 &lt;h3 id="43尺度">4.3尺度&lt;/h3>
-&lt;p>说明用来判断测试工作是否能通过的评价尺度，如合理的输出结果的类型、测试输出结果与预期输出之间的容许偏离范围、允许中断或停机的最大次数。&lt;/p></description></item><item><title>Docs: 概要设计说明书</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/databasedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/databasedesign/</guid><description>
+&lt;p>说明用来判断测试工作是否能通过的评价尺度，如合理的输出结果的类型、测试输出结果与预期输出之间的容许偏离范围、允许中断或停机的最大次数。&lt;/p></description></item><item><title>Docs: 概要设计说明书</title><link>/docs/documentationstyleguide/gb856t88/databasedesign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/databasedesign/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份数据库设计说明书的目的，指出预期的读者。&lt;/p>
@@ -4202,7 +4202,7 @@ end
 &lt;h3 id="41数据字典设计">4.1数据字典设计&lt;/h3>
 &lt;p>对数据库设计中涉及到的各种项目，如数据项、记录、系、文卷、模式、子模式等一般要建立起数据字典，以说明它们的标识符、同义名及有关信息。在本节中要说明对此数据字典设计的基本考虑。&lt;/p>
 &lt;h3 id="42安全保密设计">4.2安全保密设计&lt;/h3>
-&lt;p>说明在数据库的设计中，将如何通过区分不同的访问者、不同的访问类型和不同的数据对象，进行分别对待而获得的数据库安全保密的设计考虑。&lt;/p></description></item><item><title>Docs: 测试分析报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testanalysisreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/testanalysisreport/</guid><description>
+&lt;p>说明在数据库的设计中，将如何通过区分不同的访问者、不同的访问类型和不同的数据对象，进行分别对待而获得的数据库安全保密的设计考虑。&lt;/p></description></item><item><title>Docs: 测试分析报告</title><link>/docs/documentationstyleguide/gb856t88/testanalysisreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/testanalysisreport/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明这份测试分析报告的具体编写目的，指出预期的阅读范围。&lt;/p>
@@ -4273,7 +4273,7 @@ end
 &lt;h3 id="54评价">5.4评价&lt;/h3>
 &lt;p>说明该项软件的开发是否已达到预定目标，能否交付使用。&lt;/p>
 &lt;h2 id="6测试资源消耗">6测试资源消耗&lt;/h2>
-&lt;p>总结测试工作的资源消耗数据，如工作人员的水平级别数量、机时消耗等。&lt;/p></description></item><item><title>Docs: 开发进度月报</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</guid><description>
+&lt;p>总结测试工作的资源消耗数据，如工作人员的水平级别数量、机时消耗等。&lt;/p></description></item><item><title>Docs: 开发进度月报</title><link>/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/</guid><description>
 &lt;h2 id="1标题">1标题&lt;/h2>
 &lt;p>开发中的软件系统的名称和标识符&lt;/p>
 &lt;p>分项目名称和标识符&lt;/p>
@@ -4350,7 +4350,7 @@ end
 &lt;p>说明本月内实际支出的经费与计划相比较，是超过了。相符合、还是不到计划数？如果与计划不一致，说明原因及准备采取的措施。&lt;/p>
 &lt;h2 id="5下个月的工作计划">5下个月的工作计划&lt;/h2>
 &lt;h2 id="6建议">6建议&lt;/h2>
-&lt;p>本月遇到的重要问题和应引起重视的问题以及因此产生的建议。&lt;/p></description></item><item><title>Docs: 项目开发总结报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</guid><description>
+&lt;p>本月遇到的重要问题和应引起重视的问题以及因此产生的建议。&lt;/p></description></item><item><title>Docs: 项目开发总结报告</title><link>/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/</guid><description>
 &lt;h2 id="1引言">1引言&lt;/h2>
 &lt;h3 id="11编写目的">1.1编写目的&lt;/h3>
 &lt;p>说明编写这份项目开发总结报告的目的，指出预期的阅读范围。&lt;/p>
@@ -4435,7 +4435,7 @@ end
 &lt;h3 id="34出错原因的分析">3.4出错原因的分析&lt;/h3>
 &lt;p>给出对于开发中出现的错误的原因分析。&lt;/p>
 &lt;h2 id="4经验与教训">4经验与教训&lt;/h2>
-&lt;p>列出从这项开发工作中所得到的最主要的经验与教训及对今后的项目开发工作的建议。&lt;/p></description></item><item><title>Docs: 模块开发卷宗</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</guid><description>
+&lt;p>列出从这项开发工作中所得到的最主要的经验与教训及对今后的项目开发工作的建议。&lt;/p></description></item><item><title>Docs: 模块开发卷宗</title><link>/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/</guid><description>
 &lt;h2 id="1标题">1标题&lt;/h2>
 &lt;p>软件系统名称和标识符&lt;/p>
 &lt;p>模块名称和标识符（如果本卷宗包含多于一个的模块，则用这组模块的功能标识代替模块名）&lt;/p>
@@ -4465,4 +4465,4 @@ end
 &lt;h2 id="6测试说明">6测试说明&lt;/h2>
 &lt;p>说明直接要经过本模块（或本组模块）的每一项测试，包括这些测试各自的标识符和编号、进行这些测试的目的、所用的配置和输入、预期的输出及实际的输出。&lt;/p>
 &lt;h2 id="7复审的结论">7复审的结论&lt;/h2>
-&lt;p>把实际测试的结果，同软件需求说明书、系统设计说明书、程序设计说明书中规定的要求进行比较和给出结论。&lt;/p></description></item><item><title>Docs: 软件问题报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwareproblemreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwareproblemreport/</guid><description/></item><item><title>Docs: 软件修改报告</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</guid><description/></item><item><title>Docs:</title><link>https://taibiaoguo.github.io/devSpec/docs/iaas/userinterface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/iaas/userinterface/</guid><description/></item></channel></rss>
+&lt;p>把实际测试的结果，同软件需求说明书、系统设计说明书、程序设计说明书中规定的要求进行比较和给出结论。&lt;/p></description></item><item><title>Docs: 软件问题报告</title><link>/docs/documentationstyleguide/gb856t88/softwareproblemreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwareproblemreport/</guid><description/></item><item><title>Docs: 软件修改报告</title><link>/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/softwaremodificationreport/</guid><description/></item><item><title>Docs:</title><link>/docs/iaas/userinterface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/iaas/userinterface/</guid><description/></item></channel></rss>

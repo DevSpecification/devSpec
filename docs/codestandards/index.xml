@@ -1,8 +1,8 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 编码协作规范</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/</link><description>Recent content in 编码协作规范 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/codestandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Git工作流</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/gitflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/gitflow/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 编码协作规范</title><link>/docs/codestandards/</link><description>Recent content in 编码协作规范 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/codestandards/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Git工作流</title><link>/docs/codestandards/gitflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/gitflow/</guid><description>
 &lt;p>目前基于 &lt;code>git&lt;/code> 协作工作流的模式非常多，对于初创团队可以借鉴 &lt;code>gitflow&lt;/code> 构建协作方式。此外，通过统一的协作工作流程和开发工作流，
 保证团队高效地协作开发，保持项目开发迭代周期井井有序。&lt;/p>
 &lt;p>团队开发与维护主要是针对项目去开发、迭代甚至是维护，使用分支能够有效地避免不同开发工作之间的相关干扰。&lt;/p>
-&lt;p>&lt;img src="https://taibiaoguo.github.io/devSpec/images/gitflow.png" alt="gitflow">&lt;/p>
+&lt;p>&lt;img src="/images/gitflow.png" alt="gitflow">&lt;/p>
 &lt;h2 id="git提交规范">Git提交规范&lt;/h2>
 &lt;p>当一个团队在协作开发时，针对 &lt;strong>git commit&lt;/strong> 规范是十分必须的，每一次提交都务必带上说明信息，同时说明信息亦要有格式规范，
 即团队要有良好的约定。目的是制定统一的标准，使得提交历史信息条理清晰，更是为了项目有条不絮地迭代以及提高开发者的效率。&lt;/p>
@@ -221,7 +221,7 @@ git merge develop
 git tag -a 1.1.1 -m &lt;span style="color:#4e9a06">&amp;#34;fixed:video:upload&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>测试通过后推送到代码仓库&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 代码审阅</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/codereview/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 代码审阅</title><link>/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/codereview/</guid><description>
 &lt;p>代码审阅（Code Review） 是项目中的必需项。代码审阅有助于提升代码的质量，尽早发现潜在的缺陷，降低修复的成本，
 同时可以促进开发团队内部知识的共享，帮助开发者更好理解系统的业务与实现对于代码审阅的原则而言，
 不定期地从小版本迭代(version) 或 新功能(feature)进行团队或者相关人员进行评审，评审的从架构、业务实现、技术等维度着手分析。&lt;/p>
@@ -318,7 +318,7 @@ end
 根据项目规范与产品规划&lt;strong>指出问题&lt;/strong>、&lt;strong>讨论问题&lt;/strong>、&lt;strong>解决问题&lt;/strong>。&lt;/p>
 &lt;blockquote>
 &lt;p>devSpec 已经给出了 Go的编码规范与指南，可以根据指南来指导代码评审会。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: 发行和版本控制</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/version/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: 发行和版本控制</title><link>/docs/codestandards/version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/version/</guid><description>
 &lt;h2 id="版本控制">版本控制&lt;/h2>
 &lt;h3 id="语义化版本控制规范">语义化版本控制规范&lt;/h3>
 &lt;p>版本号格式为 x.y.z，其中 x 为大版本号，y 为小版本号，z 为补丁版本号。 版本号格式遵循 &lt;a href="https://semver.org/">Semantic Versioning&lt;/a>。&lt;/p>
@@ -414,4 +414,4 @@ end
 &lt;p>&lt;strong>语义化版本对于版本的字串长度是否有限制呢？&lt;/strong>
 没有，请自行做适当的判断。举例来说，长到 255 个字元的版本已过度夸张。再者，特定的系统对于字串长度可能会有他们自己的限制。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs: 日志</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/log/</guid><description/></item><item><title>Docs: 注释</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/comment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/comment/</guid><description/></item><item><title>Docs: 测试</title><link>https://taibiaoguo.github.io/devSpec/docs/codestandards/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/codestandards/test/</guid><description/></item></channel></rss>
+&lt;/ol></description></item><item><title>Docs: 日志</title><link>/docs/codestandards/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/log/</guid><description/></item><item><title>Docs: 注释</title><link>/docs/codestandards/comment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/comment/</guid><description/></item><item><title>Docs: 测试</title><link>/docs/codestandards/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/test/</guid><description/></item></channel></rss>

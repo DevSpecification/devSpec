@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 文档样式指南</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/</link><description>Recent content in 文档样式指南 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 一般原则</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/generalprinciple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/generalprinciple/</guid><description/></item><item><title>Docs: API参考文档</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/codecomment/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发规范 – 文档样式指南</title><link>/docs/documentationstyleguide/</link><description>Recent content in 文档样式指南 on 开发规范</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/documentationstyleguide/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 一般原则</title><link>/docs/documentationstyleguide/generalprinciple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/generalprinciple/</guid><description/></item><item><title>Docs: API参考文档</title><link>/docs/documentationstyleguide/codecomment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/codecomment/</guid><description>
 &lt;p>参照国家标准软件开发文档 GB856T-88 给出了常见的开发模板。&lt;/p>
 &lt;h2 id="模板说明">模板说明&lt;/h2>
 &lt;ol>
@@ -54,7 +54,7 @@
 &lt;p>&lt;strong>软件修改报告&lt;/strong>：&lt;/p>
 &lt;p>软件产品投入运行以后，发现了需对其进行修正、更改等问题，应将存在的问题、修改的考虑以及修改的影响作出详细的描述，提交审批。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs: 软件开发文档模板</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/gb856t88/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 软件开发文档模板</title><link>/docs/documentationstyleguide/gb856t88/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/gb856t88/</guid><description>
 &lt;p>参照国家标准软件开发文档 GB856T-88 给出了常见的开发模板，在实际项目中可以作为参考。&lt;/p>
 &lt;h2 id="模板说明">模板说明&lt;/h2>
 &lt;ol>
@@ -110,4 +110,4 @@
 &lt;p>&lt;strong>软件修改报告&lt;/strong>：&lt;/p>
 &lt;p>软件产品投入运行以后，发现了需对其进行修正、更改等问题，应将存在的问题、修改的考虑以及修改的影响作出详细的描述，提交审批。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs: Issues</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/issues/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/issues/</guid><description/></item><item><title>Docs: 拉取请求</title><link>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/pullrequest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://taibiaoguo.github.io/devSpec/docs/documentationstyleguide/pullrequest/</guid><description/></item></channel></rss>
+&lt;/ol></description></item><item><title>Docs: Issues</title><link>/docs/documentationstyleguide/issues/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/issues/</guid><description/></item><item><title>Docs: 拉取请求</title><link>/docs/documentationstyleguide/pullrequest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/documentationstyleguide/pullrequest/</guid><description/></item></channel></rss>
