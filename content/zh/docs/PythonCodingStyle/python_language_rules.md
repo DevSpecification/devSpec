@@ -1,7 +1,7 @@
 ---
 title: "Python语言规范"
 linkTitle: "Python语言规范"
-weight: 30
+weight: 20
 ---
 
 ## Lint

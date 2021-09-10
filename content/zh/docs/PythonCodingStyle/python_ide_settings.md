@@ -1,7 +1,7 @@
 ---
 title: "Python集成开发环境/编辑工具代码检查插件设置"
 linkTitle: "Python集成开发环境/编辑工具代码检查插件设置"
-weight: 30
+weight: 10
 ---
 
 ## 常用编辑器
