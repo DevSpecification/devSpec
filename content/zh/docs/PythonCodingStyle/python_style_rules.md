@@ -1,4 +1,8 @@
-# Python风格规范
+---
+title: "Python风格规范"
+linkTitle: "Python风格规范"
+weight: 30
+---
 
 ## 分号
 
@@ -69,7 +73,7 @@ with very_long_first_expression_function() as spam:
         place_order(beans, spam)
 ```
 
-注意上面例子中的元素缩进; 你可以在本文的 [:ref:`缩进`](./python_style_rules.md#id6) 部分找到解释.
+注意上面例子中的元素缩进; 你可以在本文的 [`缩进`](./#缩进) 部分找到解释.
 
 另外在其他所有情况下，若一行超过80个字符，但 [yapf](https://github.com/google/yapf/) 却无法将该行字数降至80个字符以下时，则允许该行超过80个字符长度.
 
@@ -108,7 +112,7 @@ return (foo)
 
 > Tip: 用4个空格来缩进代码
 
-绝对不要用tab, 也不要tab和空格混用. 对于行连接的情况, 你应该要么垂直对齐换行的元素(见 [:ref:`行长度`](./python_style_rules.md#id10) 部分的示例), 或者使用4空格的悬挂式缩进(这时第一行不应该有参数):
+绝对不要用tab, 也不要tab和空格混用. 对于行连接的情况, 你应该要么垂直对齐换行的元素(见 [`行长度`](./#行长度) 部分的示例), 或者使用4空格的悬挂式缩进(这时第一行不应该有参数):
 
 ```python
 # Yes:
@@ -491,39 +495,45 @@ bar = foo.FunctionBar()
 > Tip: 即使参数都是字符串, 使用%操作符或者格式化方法格式化字符串. 不过也不能一概而论, 你需要在+和%之间好好判定.
 
 ```python
-Yes: x = a + b
-     x = '%s, %s!' % (imperative, expletive)
-     x = '{}, {}!'.format(imperative, expletive)
-     x = 'name: %s; score: %d' % (name, n)
-     x = 'name: {}; score: {}'.format(name, n)
-No: x = '%s%s' % (a, b)  # use + in this case
-    x = '{}{}'.format(a, b)  # use + in this case
-    x = imperative + ', ' + expletive + '!'
-    x = 'name: ' + name + '; score: ' + str(n)
+# Yes:
+x = a + b
+x = '%s, %s!' % (imperative, expletive)
+x = '{}, {}!'.format(imperative, expletive)
+x = 'name: %s; score: %d' % (name, n)
+x = 'name: {}; score: {}'.format(name, n)
+
+# No:
+x = '%s%s' % (a, b)  # use + in this case
+x = '{}{}'.format(a, b)  # use + in this case
+x = imperative + ', ' + expletive + '!'
+x = 'name: ' + name + '; score: ' + str(n)
 ```
 
 避免在循环中用+和+=操作符来累加字符串. 由于字符串是不可变的, 这样做会创建不必要的临时对象, 并且导致二次方而不是线性的运行时间. 作为替代方案, 你可以将每个子串加入列表, 然后在循环结束后用 `.join` 连接列表. (也可以将每个子串写入一个 `cStringIO.StringIO` 缓存中.)
 
 ```python
-Yes: items = ['<table>']
-     for last_name, first_name in employee_list:
-         items.append('<tr><td>%s, %s</td></tr>' % (last_name, first_name))
-     items.append('</table>')
-     employee_table = ''.join(items)
-No: employee_table = '<table>'
-    for last_name, first_name in employee_list:
-        employee_table += '<tr><td>%s, %s</td></tr>' % (last_name, first_name)
-    employee_table += '</table>'
+# Yes:
+items = ['<table>']
+for last_name, first_name in employee_list:
+    items.append('<tr><td>%s, %s</td></tr>' % (last_name, first_name))
+items.append('</table>')
+employee_table = ''.join(items)
+
+# No:
+employee_table = '<table>'
+for last_name, first_name in employee_list:
+    employee_table += '<tr><td>%s, %s</td></tr>' % (last_name, first_name)
+employee_table += '</table>'
 ```
 
 在同一个文件中, 保持使用字符串引号的一致性. 使用单引号'或者双引号"之一用以引用字符串, 并在同一文件中沿用. 在字符串内可以使用另外一种引号, 以避免在字符串中使用.
 
 ```python
-Yes:
+# Yes:
      Python('Why are you hiding your eyes?')
      Gollum("I'm scared of lint errors.")
      Narrator('"Good!" thought a happy Python reviewer.')
-No:
+# No:
      Python("Why are you hiding your eyes?")
      Gollum('The lint. It burns. It burns us.')
      Gollum("Always the great lint. Watching. Watching.")
@@ -532,20 +542,20 @@ No:
 为多行字符串使用三重双引号"""而非三重单引号'''. 当且仅当项目中使用单引号'来引用字符串时, 才可能会使用三重'''为非文档字符串的多行字符串来标识引用. 文档字符串必须使用三重双引号""". 多行字符串不应随着代码其他部分缩进的调整而发生位置移动. 如果需要避免在字符串中嵌入额外的空间,可以使用串联的单行字符串或者使用 [textwrap.dedent()](https://docs.python.org/zh-cn/3/library/textwrap.html#textwrap.dedent) 来删除每行多余的空间.
 
 ```python
-No:
+# No:
 long_string = """This is pretty ugly.
 Don't do this.
 """
-Yes:
+# Yes:
 long_string = """This is fine if your use case can accept
   extraneous leading spaces."""
-Yes:
+# Yes:
 long_string = ("And this is fine if you cannot accept\n" +
        "extraneous leading spaces.")
-Yes:
+# Yes:
 long_string = ("And this too is fine if you cannot accept\n"
        "extraneous leading spaces.")
-Yes:
+# Yes:
 import textwrap
 
 long_string = textwrap.dedent("""\
@@ -606,10 +616,13 @@ TODO注释应该在所有开头处包含"TODO"字符串, 紧跟着是用括号�
 > Tip: 每个导入应该独占一行, `typing` 的导入除外
 
 ```python
-Yes: import os
-    import sys
-    from typing import Mapping, Sequence
-No:  import os, sys
+# Yes: 
+import os
+import sys
+from typing import Mapping, Sequence
+
+# No:
+import os, sys
 ```
 
 导入总应该放在文件顶部, 位于模块注释和文档字符串之后, 模块全局变量和常量之前. 导入应该按照从最通用到最不通用的顺序分组:
@@ -673,10 +686,10 @@ from otherproject.ai import soul
 不过, 如果测试结果与测试语句在一行放得下, 你也可以将它们放在同一行. 如果是if语句, 只有在没有else时才能这样做. 特别地, 绝不要对 `try/except` 这样做, 因为try和except不能放在同一行.
 
 ```python
-Yes:
+# Yes:
 
   if foo: bar(foo)
-No:
+# No:
 
   if foo: bar(foo)
   else:   baz(foo)
@@ -817,7 +830,7 @@ if __name__ == '__main__':
 > 若是末位形参和返回值类型注释不适合在同一行上,可以换行,缩进为4空格,并保持闭合的括号 `)` 和 `def` 对齐
 >
 > ```python
-> Yes:
+> # Yes:
 > def my_method(
 >     self, other_arg: Optional[MyLongType]
 > ) -> Dict[OtherLongType, MyLongType]:
@@ -827,7 +840,7 @@ if __name__ == '__main__':
 > `pylint` 允许闭合括号 `)` 换至新行并与 开启括号 `(` 对齐,但这样的可读性不好.
 >
 > ```python
-> No:
+> # No:
 > def my_method(self,
 >                 other_arg: Optional[MyLongType]
 >              ) -> Dict[OtherLongType, MyLongType]:
@@ -849,13 +862,13 @@ if __name__ == '__main__':
 > 若一个类型注释确实太长,则应优先考虑对过长的类型使用别名 [alias](https://google.github.io/styleguide/pyguide.html#typing-aliases). 其次是考虑在冒号后 [``](https://github.com/zh-google-styleguide/zh-google-styleguide/blob/master/google-python-styleguide/python_style_rules.rst#id28):[``](https://github.com/zh-google-styleguide/zh-google-styleguide/blob/master/google-python-styleguide/python_style_rules.rst#id30)进行换行并添加4格空格缩进.
 >
 > ```python
-> Yes:
+> # Yes:
 > def my_function(
 >     long_variable_name:
 >         long_module_name.LongTypeName,
 > ) -> None:
 > ...
-> No:
+> # No:
 > def my_function(
 >     long_variable_name: long_module_name.
 >         LongTypeName,
@@ -879,10 +892,10 @@ if __name__ == '__main__':
 > 依据 [PEP-008](https://www.python.org/dev/peps/pep-0008/#other-recommendations) ,仅对同时具有类型注释和默认值的参数的 `=` 周围加空格.
 >
 > ```python
-> Yes:
+> # Yes:
 > def func(a: int = 0) -> int:
 > ...
-> No:
+> # No:
 > def func(a:int=0) -> int:
 > ...
 > ```
@@ -892,12 +905,12 @@ if __name__ == '__main__':
 > 在python的类型系统中, `NoneType` 是 "一等对象",为了输入方便, `None` 是 `NoneType` 的别名.一个变量若是 `None`,则该变量必须被声明.我们可以使用 `Union`, 但若类型仅仅只是对应另一个其他类型,建议使用 `Optional`. 尽量显式而非隐式的使用 `Optional`.在PEP-484的早期版本中允许使用 `a: Text = None` 来替代 `a: Optional[Text] = None`,当然,现在不推荐这么做了.
 >
 > ```python
-> Yes:
+> # Yes:
 > def func(a: Optional[Text], b: Optional[Text] = None) -> Text:
 >     ...
 > def multiple_nullable_union(a: Union[None, Text, int]) -> Text
 >     ...
-> No:
+> # No:
 > def nullable_union(a: Union[None, Text]) -> Text:
 >     ...
 > def implicit_optional(a: Text = None) -> Text:
@@ -984,7 +997,7 @@ if __name__ == '__main__':
 > 如何正确的注释字符串的相关类型和要使用的python版本有关. 对于仅在 python3 下运行的代码,首选使用 `str`. 使用 `Text` 也可以.但是两个不要混用,保持风格一致. 对于需要兼容 python2 的代码,使用 `Text`.在少数情况下,使用 `str` 也许更加清晰.不要使用 `unicode`,因为 python3 里没有这个类型. 造成这种差异的原因是因为,在不同的python版本中,``str`` 意义不同.
 >
 > ```python
-> No:
+> # No:
 > def py2_code(x: str) -> unicode:
 > ...
 > ```
