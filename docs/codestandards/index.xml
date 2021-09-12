@@ -10,10 +10,10 @@
 &lt;p>统一团队 git commit 日志标准，便于后续代码 review ，版本发布以及日志自动化生成等等。&lt;/p>
 &lt;/blockquote>
 &lt;p>提交格式包含提交类别、范围模块、描述说明三部分：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git commit -m &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>type&lt;span style="color:#ce5c00;font-weight:bold">](&lt;/span>:scope&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>:&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>subject&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git commit -m &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>type&lt;span style="color:#ce5c00;font-weight:bold">](&lt;/span>:scope&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>:&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>subject&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>例子&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git commit -m &lt;span style="color:#4e9a06">&amp;#34;feature:log:algo log by using websocket&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git commit -m &lt;span style="color:#4e9a06">&amp;#34;feature:log:algo log by using websocket&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
 &lt;p>&lt;strong>提交类别&lt;/strong>包括：&lt;/p>
 &lt;ul>
@@ -177,50 +177,50 @@
 &lt;/ul>
 &lt;h2 id="代码提交的实例">代码提交的实例&lt;/h2>
 &lt;p>当前存在版本(tag) &lt;code>1.0.0&lt;/code>，并规划推出新版本 &lt;code>1.1.0&lt;/code>，那么应该基于 &lt;code>1.0.0&lt;/code> 新建版本开发分支：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_develop
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_develop
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>该开发版本有很多功能并且有多人参与。研发 a 参与视频模块开发，需要从 &lt;code>1.1.0_develop&lt;/code> 创建一个功能分支，
 参考的分支命名规范是 &lt;code>{version}_{function}__{author}_{datetime}&lt;/code>：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_video_a_20200806
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_video_a_20200806
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>研发 b 参与朋友圈模块开发，需要从 &lt;code>1.1.0_develop&lt;/code> 创建一个功能分支：&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_friends_group_b_20200805
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_friends_group_b_20200805
 &lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>切记千万不要在开发分支直接提交代码 开发分支是合并分支&lt;/p>
 &lt;/blockquote>
 &lt;p>开发完毕合并功能分支，处于不断合并的过程&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git merge 1.1.0_video_a_20200806
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git merge 1.1.0_video_a_20200806
 git merge 1.1.0_friends_group_b_20200805
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>自测完成后，没有问题那就将功能分支删除&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git branch -d 1.1.0_video_a_20200806
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git branch -d 1.1.0_video_a_20200806
 git branch -d 1.1.0_friends_group_b_20200805
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>提测发现有缺陷，需要基于版本迭代分支创建缺陷修复分支&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_fixed_video_upload_bug_alicfeng_20200808
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout -b 1.1.0_fixed_video_upload_bug_alicfeng_20200808
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>修复完成再合并到迭代分支&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git merge 1.1.0_fixed_video_upload_bug_alicfeng_20200808
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git merge 1.1.0_fixed_video_upload_bug_alicfeng_20200808
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>测试通过后 通过约定的方式 &lt;code>tag&lt;/code> 即为发布版本 发布 &lt;code>1.1.0&lt;/code> 版本&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git tag -a 1.1.0 -m &lt;span style="color:#4e9a06">&amp;#34;release:version:1.1.0&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git tag -a 1.1.0 -m &lt;span style="color:#4e9a06">&amp;#34;release:version:1.1.0&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="线上发现缺陷后的仓库操作与协作约定">线上发现缺陷后的仓库操作与协作约定&lt;/h2>
 &lt;ol>
 &lt;li>基于版本标签新建热修复分支&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout 1.1.0
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout 1.1.0
 git checkout -b hotfix_video_alicfeng_20200809
 &lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
 &lt;li>开发分支合并热修复分支&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout develop
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout develop
 git merge hotfix_video_alicfeng_20200809
 &lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
 &lt;li>主分支合并开发分支&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout master
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout master
 git merge develop
 &lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>基于主分支新建新的版本标签,务必在&lt;code>git&lt;/code>上编写更新内容&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout hotfix_video_alicfeng_20200809
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git checkout hotfix_video_alicfeng_20200809
 git tag -a 1.1.1 -m &lt;span style="color:#4e9a06">&amp;#34;fixed:video:upload&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>测试通过后推送到代码仓库&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 代码审阅</title><link>/docs/codestandards/codereview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/codestandards/codereview/</guid><description>
 &lt;p>代码审阅（Code Review） 是项目中的必需项。代码审阅有助于提升代码的质量，尽早发现潜在的缺陷，降低修复的成本，
 同时可以促进开发团队内部知识的共享，帮助开发者更好理解系统的业务与实现对于代码审阅的原则而言，
@@ -238,7 +238,7 @@ git tag -a 1.1.1 -m &lt;span style="color:#4e9a06">&amp;#34;fixed:video:upload&a
 &lt;p>开发者根据修改方案进行代码修复，完成后再次提交。&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre>&lt;code class="language-mermaid" data-lang="mermaid">graph TB
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">graph TB
 subgraph 团队协作仓库
 wait[稳住稳住]--&amp;gt;merge_code[合并功能分支]
 end

@@ -1,0 +1,837 @@
+<!doctype html><html lang=zh class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.88.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel="shortcut icon" href=/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
+<title>Python集成开发环境/编辑工具代码检查插件设置 | 开发规范</title>
+<meta name=description content="常用编辑器
+区别于Java或者C这类需要编译的软件，Python在开发时几乎不需要专用的编辑软件，但是一个优秀的IDE总是能在开发时提供巨大的帮助。
+Python常用的编辑器有PyCharm、VS Code、vim、Eclipse with PyDev、Sublime …">
+<meta property="og:title" content="Python集成开发环境/编辑工具代码检查插件设置">
+<meta property="og:description" content="常用编辑器 区别于Java或者C这类需要编译的软件，Python在开发时几乎不需要专用的编辑软件，但是一个优秀的IDE总是能在开发时提供巨大的帮助。
+Python常用的编辑器有PyCharm、VS Code、vim、Eclipse with PyDev、Sublime Text、Emacs、Wing、PyScripter、The Eric Python IDE等，选择一款适自己喜欢的就好。这里主要介绍的 是PyCharm和VS Code。
+PyLint Pylint 是一个 Python 代码分析工具，它分析 Python 代码中的错误，查找不符合代码风格标准（Pylint 默认使用的代码风格是 PEP 8，具体信息，请参阅参考资料）和有潜在问题的代码。
+ Pylint 是一个 Python 工具，除了平常代码分析工具的作用之外，它提供了更多的功能：如检查一行代码的长度，变量名是否符合命名标准，一个声明过的接口是否被真正实现等等。 Pylint 的一个很大的好处是它的高可配置性，高可定制性，并且可以很容易写小插件来添加功能。 如果运行两次 Pylint，它会同时显示出当前和上次的运行结果，从而可以看出代码质量是否得到了改进。  YAPF 目前用于Python的格式化程序（如autopep8和pep8ify）都用于删除代码中的lint错误。这有很明显的局限性。
+YAPF采用了不同的方法，基于Daniel Jasper开发的“&lsquo;clang-format”。从本质上来说，该算法取走代码并重新排版，以符合样式指南的最佳格式，即便原始代码没有违反样式指南。这个想法也是类似于Go编程语言的gofmt工具。
+其最终目标是让YAPE所产生的代码可以与程序员所写的代码一样好（前提是程序员遵循样式指南），它取代了一些维护代码的苦差。
+PyCharm安装代码审查插件 安装插件 不管是否安装IDE的代码格式化插件，要使用PyLint及YAPF 首先得安装他们：
+pip install pylint pip install yapf  Tip: 由于PyLint审查代码时的一下问题，如果项目存在虚拟环境，为了避免PyLint误报找不到module，建议将pylint安装在虚拟环境中。
+ 在PyCharm插件市场中搜索PyLint和yapf-pycharm两个插件，然后重启PyCharm。
+配置PyLint 可以通过执行pylint --generate-rcfile生成配置文件模板（默认会在pylint可执行文件的所在的目录下），可以在模板文件上定制相关的统一的配置文件。配置完成后将配置文件路径填入PyCharm：
+下面是Google推荐的pylintrc配置：
+# This Pylint rcfile contains a best-effort configuration to uphold the # best-practices and style described in the Google Python style guide: # https://google.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/docs/pythoncodingstyle/python_ide_settings/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2021-09-12T18:19:36+08:00"><meta property="og:site_name" content="开发规范">
+<meta itemprop=name content="Python集成开发环境/编辑工具代码检查插件设置">
+<meta itemprop=description content="常用编辑器 区别于Java或者C这类需要编译的软件，Python在开发时几乎不需要专用的编辑软件，但是一个优秀的IDE总是能在开发时提供巨大的帮助。
+Python常用的编辑器有PyCharm、VS Code、vim、Eclipse with PyDev、Sublime Text、Emacs、Wing、PyScripter、The Eric Python IDE等，选择一款适自己喜欢的就好。这里主要介绍的 是PyCharm和VS Code。
+PyLint Pylint 是一个 Python 代码分析工具，它分析 Python 代码中的错误，查找不符合代码风格标准（Pylint 默认使用的代码风格是 PEP 8，具体信息，请参阅参考资料）和有潜在问题的代码。
+ Pylint 是一个 Python 工具，除了平常代码分析工具的作用之外，它提供了更多的功能：如检查一行代码的长度，变量名是否符合命名标准，一个声明过的接口是否被真正实现等等。 Pylint 的一个很大的好处是它的高可配置性，高可定制性，并且可以很容易写小插件来添加功能。 如果运行两次 Pylint，它会同时显示出当前和上次的运行结果，从而可以看出代码质量是否得到了改进。  YAPF 目前用于Python的格式化程序（如autopep8和pep8ify）都用于删除代码中的lint错误。这有很明显的局限性。
+YAPF采用了不同的方法，基于Daniel Jasper开发的“&lsquo;clang-format”。从本质上来说，该算法取走代码并重新排版，以符合样式指南的最佳格式，即便原始代码没有违反样式指南。这个想法也是类似于Go编程语言的gofmt工具。
+其最终目标是让YAPE所产生的代码可以与程序员所写的代码一样好（前提是程序员遵循样式指南），它取代了一些维护代码的苦差。
+PyCharm安装代码审查插件 安装插件 不管是否安装IDE的代码格式化插件，要使用PyLint及YAPF 首先得安装他们：
+pip install pylint pip install yapf  Tip: 由于PyLint审查代码时的一下问题，如果项目存在虚拟环境，为了避免PyLint误报找不到module，建议将pylint安装在虚拟环境中。
+ 在PyCharm插件市场中搜索PyLint和yapf-pycharm两个插件，然后重启PyCharm。
+配置PyLint 可以通过执行pylint --generate-rcfile生成配置文件模板（默认会在pylint可执行文件的所在的目录下），可以在模板文件上定制相关的统一的配置文件。配置完成后将配置文件路径填入PyCharm：
+下面是Google推荐的pylintrc配置：
+# This Pylint rcfile contains a best-effort configuration to uphold the # best-practices and style described in the Google Python style guide: # https://google.">
+<meta itemprop=dateModified content="2021-09-12T18:19:36+08:00">
+<meta itemprop=wordCount content="1722">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Python集成开发环境/编辑工具代码检查插件设置">
+<meta name=twitter:description content="常用编辑器 区别于Java或者C这类需要编译的软件，Python在开发时几乎不需要专用的编辑软件，但是一个优秀的IDE总是能在开发时提供巨大的帮助。
+Python常用的编辑器有PyCharm、VS Code、vim、Eclipse with PyDev、Sublime Text、Emacs、Wing、PyScripter、The Eric Python IDE等，选择一款适自己喜欢的就好。这里主要介绍的 是PyCharm和VS Code。
+PyLint Pylint 是一个 Python 代码分析工具，它分析 Python 代码中的错误，查找不符合代码风格标准（Pylint 默认使用的代码风格是 PEP 8，具体信息，请参阅参考资料）和有潜在问题的代码。
+ Pylint 是一个 Python 工具，除了平常代码分析工具的作用之外，它提供了更多的功能：如检查一行代码的长度，变量名是否符合命名标准，一个声明过的接口是否被真正实现等等。 Pylint 的一个很大的好处是它的高可配置性，高可定制性，并且可以很容易写小插件来添加功能。 如果运行两次 Pylint，它会同时显示出当前和上次的运行结果，从而可以看出代码质量是否得到了改进。  YAPF 目前用于Python的格式化程序（如autopep8和pep8ify）都用于删除代码中的lint错误。这有很明显的局限性。
+YAPF采用了不同的方法，基于Daniel Jasper开发的“&lsquo;clang-format”。从本质上来说，该算法取走代码并重新排版，以符合样式指南的最佳格式，即便原始代码没有违反样式指南。这个想法也是类似于Go编程语言的gofmt工具。
+其最终目标是让YAPE所产生的代码可以与程序员所写的代码一样好（前提是程序员遵循样式指南），它取代了一些维护代码的苦差。
+PyCharm安装代码审查插件 安装插件 不管是否安装IDE的代码格式化插件，要使用PyLint及YAPF 首先得安装他们：
+pip install pylint pip install yapf  Tip: 由于PyLint审查代码时的一下问题，如果项目存在虚拟环境，为了避免PyLint误报找不到module，建议将pylint安装在虚拟环境中。
+ 在PyCharm插件市场中搜索PyLint和yapf-pycharm两个插件，然后重启PyCharm。
+配置PyLint 可以通过执行pylint --generate-rcfile生成配置文件模板（默认会在pylint可执行文件的所在的目录下），可以在模板文件上定制相关的统一的配置文件。配置完成后将配置文件路径填入PyCharm：
+下面是Google推荐的pylintrc配置：
+# This Pylint rcfile contains a best-effort configuration to uphold the # best-practices and style described in the Google Python style guide: # https://google.">
+<link href=/scss/main.css rel=stylesheet>
+<script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+</head>
+<body class=td-page>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/>
+<span class=navbar-logo><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="text-uppercase font-weight-bold">开发规范</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/docs/><span class=active>开发规范</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; 站内搜索…" aria-label=站内搜索… autocomplete=off>
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; 站内搜索…" aria-label=站内搜索… autocomplete=off>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docs-li>
+<a href=/docs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docs><span>开发规范</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li>
+<a href=/docs/overview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>总览</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docspythoncodingstyle-li>
+<a href=/docs/pythoncodingstyle/ title=Python编码规范指南 class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docspythoncodingstyle><span>Python编码协作规范</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docspythoncodingstylepython_ide_settings-li>
+<a href=/docs/pythoncodingstyle/python_ide_settings/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docspythoncodingstylepython_ide_settings><span class=td-sidebar-nav-active-item>Python集成开发环境/编辑工具代码检查插件设置</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docspythoncodingstylepython_language_rules-li>
+<a href=/docs/pythoncodingstyle/python_language_rules/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docspythoncodingstylepython_language_rules><span>Python语言规范</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docspythoncodingstylepython_style_rules-li>
+<a href=/docs/pythoncodingstyle/python_style_rules/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docspythoncodingstylepython_style_rules><span>Python风格规范</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docscodestandards-li>
+<a href=/docs/codestandards/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscodestandards><span>编码协作规范</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docscodestandardsgitflow-li>
+<a href=/docs/codestandards/gitflow/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docscodestandardsgitflow><span>Git工作流</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docscodestandardscodereview-li>
+<a href=/docs/codestandards/codereview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docscodestandardscodereview><span>代码审阅</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docscodestandardsversion-li>
+<a href=/docs/codestandards/version/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docscodestandardsversion><span>发行和版本控制</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docscodestandardslog-li>
+<a href=/docs/codestandards/log/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docscodestandardslog><span>日志</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docscodestandardscomment-li>
+<a href=/docs/codestandards/comment/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docscodestandardscomment><span>注释</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docscodestandardstest-li>
+<a href=/docs/codestandards/test/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docscodestandardstest><span>测试</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsprojectmanagementstandards-li>
+<a href=/docs/projectmanagementstandards/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsprojectmanagementstandards><span>项目管理标准</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsprojectmanagementstandardsteamculture-li>
+<a href=/docs/projectmanagementstandards/teamculture/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsprojectmanagementstandardsteamculture><span>团队文化</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsprojectmanagementstandardsteamarchitecture-li>
+<a href=/docs/projectmanagementstandards/teamarchitecture/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsprojectmanagementstandardsteamarchitecture><span>团队架构</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsprojectmanagementstandardsdevmethod-li>
+<a href=/docs/projectmanagementstandards/devmethod/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsprojectmanagementstandardsdevmethod><span>开发方法论与框架</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsprojectmanagementstandardsprojectlifecycle-li>
+<a href=/docs/projectmanagementstandards/projectlifecycle/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsprojectmanagementstandardsprojectlifecycle><span>项目生命周期</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsautomationintegrationstandards-li>
+<a href=/docs/automationintegrationstandards/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsautomationintegrationstandards><span>持续集成标准</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsautomationintegrationstandardstestprocessstandards-li>
+<a href=/docs/automationintegrationstandards/testprocessstandards/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsautomationintegrationstandardstestprocessstandards><span>你需要微服务么</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsautomationintegrationstandardscontinuesintegrationstandards-li>
+<a href=/docs/automationintegrationstandards/continuesintegrationstandards/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsautomationintegrationstandardscontinuesintegrationstandards><span>持续集成</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsmicroservice-li>
+<a href=/docs/microservice/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsmicroservice><span>微服务</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsmicroserviceisneedmicroservice-li>
+<a href=/docs/microservice/isneedmicroservice/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsmicroserviceisneedmicroservice><span>你需要微服务么</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsiaas-li>
+<a href=/docs/iaas/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsiaas><span>基础设施即服务</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsiaasuserinterface-li>
+<a href=/docs/iaas/userinterface/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsiaasuserinterface><span></span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsgocodestandards-li>
+<a href=/docs/gocodestandards/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsgocodestandards><span>Go编码规范</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsgocodestandardscodestandards-li>
+<a href=/docs/gocodestandards/codestandards/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsgocodestandardscodestandards><span>devSpec Go 编程指南</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsgocodestandardsgocodereviewguide-li>
+<a href=/docs/gocodestandards/gocodereviewguide/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsgocodestandardsgocodereviewguide><span>devSpec Go 代码审核指南</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsdocumentationstyleguide-li>
+<a href=/docs/documentationstyleguide/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocumentationstyleguide><span>文档样式指南</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegeneralprinciple-li>
+<a href=/docs/documentationstyleguide/generalprinciple/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocumentationstyleguidegeneralprinciple><span>一般原则</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id=m-docsdocumentationstyleguidecodecomment-li>
+<a href=/docs/documentationstyleguide/codecomment/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocumentationstyleguidecodecomment><span>API参考文档</span></a>
+<ul class="ul-3 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidecodecommentapireference-li>
+<a href=/docs/documentationstyleguide/codecomment/apireference/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidecodecommentapireference><span>源代码API参考文档</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidecodecommentgrpcapireference-li>
+<a href=/docs/documentationstyleguide/codecomment/grpcapireference/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidecodecommentgrpcapireference><span>WebAPI参考文档</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidecodecommentwebapireference-li>
+<a href=/docs/documentationstyleguide/codecomment/webapireference/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidecodecommentwebapireference><span>WebAPI参考文档</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id=m-docsdocumentationstyleguidegb856t88-li>
+<a href=/docs/documentationstyleguide/gb856t88/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocumentationstyleguidegb856t88><span>软件开发文档模板</span></a>
+<ul class="ul-3 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88feasibilityanalysis-li>
+<a href=/docs/documentationstyleguide/gb856t88/feasibilityanalysis/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88feasibilityanalysis><span>可行性研究报告</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88projectdevelopmentplan-li>
+<a href=/docs/documentationstyleguide/gb856t88/projectdevelopmentplan/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88projectdevelopmentplan><span>项目开发计划</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88softwarerequirements-li>
+<a href=/docs/documentationstyleguide/gb856t88/softwarerequirements/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88softwarerequirements><span>软件需求说明书</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88outlinedesign-li>
+<a href=/docs/documentationstyleguide/gb856t88/outlinedesign/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88outlinedesign><span>概要设计说明书</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88detaileddesignspecification-li>
+<a href=/docs/documentationstyleguide/gb856t88/detaileddesignspecification/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88detaileddesignspecification><span>详细设计说明书</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88usermanual-li>
+<a href=/docs/documentationstyleguide/gb856t88/usermanual/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88usermanual><span>用户操作手册</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88testplan-li>
+<a href=/docs/documentationstyleguide/gb856t88/testplan/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88testplan><span>测试计划</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88databasedesign-li>
+<a href=/docs/documentationstyleguide/gb856t88/databasedesign/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88databasedesign><span>概要设计说明书</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88testanalysisreport-li>
+<a href=/docs/documentationstyleguide/gb856t88/testanalysisreport/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88testanalysisreport><span>测试分析报告</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88monthlydevelopmentprogressreport-li>
+<a href=/docs/documentationstyleguide/gb856t88/monthlydevelopmentprogressreport/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88monthlydevelopmentprogressreport><span>开发进度月报</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88projectdevelopmentsummaryreport-li>
+<a href=/docs/documentationstyleguide/gb856t88/projectdevelopmentsummaryreport/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88projectdevelopmentsummaryreport><span>项目开发总结报告</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88softwaremaintenancemanual-li>
+<a href=/docs/documentationstyleguide/gb856t88/softwaremaintenancemanual/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88softwaremaintenancemanual><span>模块开发卷宗</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88softwareproblemreport-li>
+<a href=/docs/documentationstyleguide/gb856t88/softwareproblemreport/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88softwareproblemreport><span>软件问题报告</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidegb856t88softwaremodificationreport-li>
+<a href=/docs/documentationstyleguide/gb856t88/softwaremodificationreport/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdocumentationstyleguidegb856t88softwaremodificationreport><span>软件修改报告</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguideissues-li>
+<a href=/docs/documentationstyleguide/issues/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocumentationstyleguideissues><span>Issues</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsdocumentationstyleguidepullrequest-li>
+<a href=/docs/documentationstyleguide/pullrequest/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocumentationstyleguidepullrequest><span>拉取请求</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsabout-li>
+<a href=/docs/about/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsabout><span>关于</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id=m-docsaboutcontributing-li>
+<a href=/docs/about/contributing/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsaboutcontributing><span>向 devSpec 贡献文档</span></a>
+<ul class="ul-3 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsaboutcontributingaddcontent-li>
+<a href=/docs/about/contributing/addcontent/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsaboutcontributingaddcontent><span>添加新文档</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsaboutcontributinggithub-li>
+<a href=/docs/about/contributing/github/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsaboutcontributinggithub><span>使用 GitHub 参与社区活动</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/TaibiaoGuo/devSpec/edit/master/content/zh/docs/PythonCodingStyle/python_ide_settings.md target=_blank><i class="fa fa-edit fa-fw"></i> 编辑此页</a>
+<a href="https://github.com/TaibiaoGuo/devSpec/new/master/content/zh/docs/PythonCodingStyle/python_ide_settings.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" target=_blank><i class="fa fa-edit fa-fw"></i> 添加子页面</a>
+<a href="https://github.com/TaibiaoGuo/devSpec/issues/new?title=Python%e9%9b%86%e6%88%90%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83/%e7%bc%96%e8%be%91%e5%b7%a5%e5%85%b7%e4%bb%a3%e7%a0%81%e6%a3%80%e6%9f%a5%e6%8f%92%e4%bb%b6%e8%ae%be%e7%bd%ae" target=_blank><i class="fab fa-github fa-fw"></i> 提交文档问题</a>
+<a href=https://github.com/TaibiaoGuo/devSpec/projects/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> 提交项目问题</a>
+<a id=print href=/docs/pythoncodingstyle/_print/><i class="fa fa-print fa-fw"></i> 整节打印</a>
+</div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#常用编辑器>常用编辑器</a></li>
+<li><a href=#pylint>PyLint</a></li>
+<li><a href=#yapf>YAPF</a></li>
+<li><a href=#pycharm安装代码审查插件>PyCharm安装代码审查插件</a>
+<ul>
+<li><a href=#安装插件>安装插件</a></li>
+<li><a href=#配置pylint>配置PyLint</a></li>
+<li><a href=#配置yapf>配置YAPF</a></li>
+<li><a href=#使用yapf插件>使用YAPF插件</a></li>
+<li><a href=#使用pylint插件>使用PyLint插件</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class="d-none d-md-block d-print-none">
+<ol class="breadcrumb spb-1">
+<li class=breadcrumb-item>
+<a href=/docs/>开发规范</a>
+</li>
+<li class=breadcrumb-item>
+<a href=/docs/pythoncodingstyle/>Python编码协作规范</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=/docs/pythoncodingstyle/python_ide_settings/>Python集成开发环境/编辑工具代码检查插件设置</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>Python集成开发环境/编辑工具代码检查插件设置</h1>
+<header class=article-meta>
+</header>
+<h2 id=常用编辑器>常用编辑器</h2>
+<p>区别于Java或者C这类需要编译的软件，Python在开发时几乎不需要专用的编辑软件，但是一个优秀的IDE总是能在开发时提供巨大的帮助。</p>
+<p>Python常用的编辑器有PyCharm、VS Code、vim、Eclipse with PyDev、Sublime Text、Emacs、Wing、PyScripter、The Eric Python IDE等，选择一款适自己喜欢的就好。这里主要介绍的 是PyCharm和VS Code。</p>
+<h2 id=pylint>PyLint</h2>
+<p>Pylint 是一个 Python 代码分析工具，它分析 Python 代码中的错误，查找不符合代码风格标准（Pylint 默认使用的代码风格是 PEP 8，具体信息，请参阅参考资料）和有潜在问题的代码。</p>
+<ul>
+<li>Pylint 是一个 Python 工具，除了平常代码分析工具的作用之外，它提供了更多的功能：如检查一行代码的长度，变量名是否符合命名标准，一个声明过的接口是否被真正实现等等。</li>
+<li>Pylint 的一个很大的好处是它的高可配置性，高可定制性，并且可以很容易写小插件来添加功能。</li>
+<li>如果运行两次 Pylint，它会同时显示出当前和上次的运行结果，从而可以看出代码质量是否得到了改进。</li>
+</ul>
+<h2 id=yapf>YAPF</h2>
+<p>目前用于Python的格式化程序（如autopep8和pep8ify）都用于删除代码中的lint错误。这有很明显的局限性。</p>
+<p>YAPF采用了不同的方法，基于Daniel Jasper开发的“&lsquo;clang-format”。从本质上来说，该算法取走代码并重新排版，以符合样式指南的最佳格式，即便原始代码没有违反样式指南。这个想法也是类似于Go编程语言的gofmt工具。</p>
+<p>其最终目标是让YAPE所产生的代码可以与程序员所写的代码一样好（前提是程序员遵循样式指南），它取代了一些维护代码的苦差。</p>
+<h2 id=pycharm安装代码审查插件>PyCharm安装代码审查插件</h2>
+<h3 id=安装插件>安装插件</h3>
+<p>不管是否安装IDE的代码格式化插件，要使用PyLint及YAPF 首先得安装他们：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>pip install pylint
+pip install yapf
+</code></pre></div><blockquote>
+<p>Tip: 由于PyLint审查代码时的一下问题，如果项目存在<code>虚拟环境</code>，为了避免PyLint误报找不到module，建议将<code>pylint</code>安装在虚拟环境中。</p>
+</blockquote>
+<p>在PyCharm插件市场中搜索<code>PyLint</code>和<code>yapf-pycharm</code>两个插件，然后重启PyCharm。</p>
+<p><img src=/images/image-20210909154713560.png alt=image-20210909154713560></p>
+<p><img src=/images/image-20210909154858917.png alt=image-20210909154858917></p>
+<h3 id=配置pylint>配置PyLint</h3>
+<p>可以通过执行<code>pylint --generate-rcfile</code>生成配置文件模板（默认会在pylint可执行文件的所在的目录下），可以在模板文件上定制相关的统一的配置文件。配置完成后将配置文件路径填入PyCharm：</p>
+<p><img src=/images/image-20210909160427685.png alt=image-20210909160427685></p>
+<p>下面是Google推荐的pylintrc配置：</p>
+<pre tabindex=0><code># This Pylint rcfile contains a best-effort configuration to uphold the
+# best-practices and style described in the Google Python style guide:
+#   https://google.github.io/styleguide/pyguide.html
+#
+# Its canonical open-source location is:
+#   https://google.github.io/styleguide/pylintrc
+
+[MASTER]
+
+# Files or directories to be skipped. They should be base names, not paths.
+ignore=third_party
+
+# Files or directories matching the regex patterns are skipped. The regex
+# matches against base names, not paths.
+ignore-patterns=
+
+# Pickle collected data for later comparisons.
+persistent=no
+
+# List of plugins (as comma separated values of python modules names) to load,
+# usually to register additional checkers.
+load-plugins=
+
+# Use multiple processes to speed up Pylint.
+jobs=4
+
+# Allow loading of arbitrary C extensions. Extensions are imported into the
+# active Python interpreter and may run arbitrary code.
+unsafe-load-any-extension=no
+
+
+[MESSAGES CONTROL]
+
+# Only show warnings with the listed confidence levels. Leave empty to show
+# all. Valid levels: HIGH, INFERENCE, INFERENCE_FAILURE, UNDEFINED
+confidence=
+
+# Enable the message, report, category or checker with the given id(s). You can
+# either give multiple identifier separated by comma (,) or put this option
+# multiple time (only on the command line, not in the configuration file where
+# it should appear only once). See also the &quot;--disable&quot; option for examples.
+#enable=
+
+# Disable the message, report, category or checker with the given id(s). You
+# can either give multiple identifiers separated by comma (,) or put this
+# option multiple times (only on the command line, not in the configuration
+# file where it should appear only once).You can also use &quot;--disable=all&quot; to
+# disable everything first and then reenable specific checks. For example, if
+# you want to run only the similarities checker, you can use &quot;--disable=all
+# --enable=similarities&quot;. If you want to run only the classes checker, but have
+# no Warning level messages displayed, use&quot;--disable=all --enable=classes
+# --disable=W&quot;
+disable=abstract-method,
+        apply-builtin,
+        arguments-differ,
+        attribute-defined-outside-init,
+        backtick,
+        bad-option-value,
+        basestring-builtin,
+        buffer-builtin,
+        c-extension-no-member,
+        consider-using-enumerate,
+        cmp-builtin,
+        cmp-method,
+        coerce-builtin,
+        coerce-method,
+        delslice-method,
+        div-method,
+        duplicate-code,
+        eq-without-hash,
+        execfile-builtin,
+        file-builtin,
+        filter-builtin-not-iterating,
+        fixme,
+        getslice-method,
+        global-statement,
+        hex-method,
+        idiv-method,
+        implicit-str-concat-in-sequence,
+        import-error,
+        import-self,
+        import-star-module-level,
+        inconsistent-return-statements,
+        input-builtin,
+        intern-builtin,
+        invalid-str-codec,
+        locally-disabled,
+        long-builtin,
+        long-suffix,
+        map-builtin-not-iterating,
+        misplaced-comparison-constant,
+        missing-function-docstring,
+        metaclass-assignment,
+        next-method-called,
+        next-method-defined,
+        no-absolute-import,
+        no-else-break,
+        no-else-continue,
+        no-else-raise,
+        no-else-return,
+        no-init,  # added
+        no-member,
+        no-name-in-module,
+        no-self-use,
+        nonzero-method,
+        oct-method,
+        old-division,
+        old-ne-operator,
+        old-octal-literal,
+        old-raise-syntax,
+        parameter-unpacking,
+        print-statement,
+        raising-string,
+        range-builtin-not-iterating,
+        raw_input-builtin,
+        rdiv-method,
+        reduce-builtin,
+        relative-import,
+        reload-builtin,
+        round-builtin,
+        setslice-method,
+        signature-differs,
+        standarderror-builtin,
+        suppressed-message,
+        sys-max-int,
+        too-few-public-methods,
+        too-many-ancestors,
+        too-many-arguments,
+        too-many-boolean-expressions,
+        too-many-branches,
+        too-many-instance-attributes,
+        too-many-locals,
+        too-many-nested-blocks,
+        too-many-public-methods,
+        too-many-return-statements,
+        too-many-statements,
+        trailing-newlines,
+        unichr-builtin,
+        unicode-builtin,
+        unnecessary-pass,
+        unpacking-in-except,
+        useless-else-on-loop,
+        useless-object-inheritance,
+        useless-suppression,
+        using-cmp-argument,
+        wrong-import-order,
+        xrange-builtin,
+        zip-builtin-not-iterating,
+
+
+[REPORTS]
+
+# Set the output format. Available formats are text, parseable, colorized, msvs
+# (visual studio) and html. You can also give a reporter class, eg
+# mypackage.mymodule.MyReporterClass.
+output-format=text
+
+# Put messages in a separate file for each module / package specified on the
+# command line instead of printing them on stdout. Reports (if any) will be
+# written in a file name &quot;pylint_global.[txt|html]&quot;. This option is deprecated
+# and it will be removed in Pylint 2.0.
+files-output=no
+
+# Tells whether to display a full report or only the messages
+reports=no
+
+# Python expression which should return a note less than 10 (10 is the highest
+# note). You have access to the variables errors warning, statement which
+# respectively contain the number of errors / warnings messages and the total
+# number of statements analyzed. This is used by the global evaluation report
+# (RP0004).
+evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
+
+# Template used to display messages. This is a python new-style format string
+# used to format the message information. See doc for all details
+#msg-template=
+
+
+[BASIC]
+
+# Good variable names which should always be accepted, separated by a comma
+good-names=main,_
+
+# Bad variable names which should always be refused, separated by a comma
+bad-names=
+
+# Colon-delimited sets of names that determine each other's naming style when
+# the name regexes allow several styles.
+name-group=
+
+# Include a hint for the correct naming format with invalid-name
+include-naming-hint=no
+
+# List of decorators that produce properties, such as abc.abstractproperty. Add
+# to this list to register other decorators that produce valid properties.
+property-classes=abc.abstractproperty,cached_property.cached_property,cached_property.threaded_cached_property,cached_property.cached_property_with_ttl,cached_property.threaded_cached_property_with_ttl
+
+# Regular expression matching correct function names
+function-rgx=^(?:(?P&lt;exempt&gt;setUp|tearDown|setUpModule|tearDownModule)|(?P&lt;camel_case&gt;_?[A-Z][a-zA-Z0-9]*)|(?P&lt;snake_case&gt;_?[a-z][a-z0-9_]*))$
+
+# Regular expression matching correct variable names
+variable-rgx=^[a-z][a-z0-9_]*$
+
+# Regular expression matching correct constant names
+const-rgx=^(_?[A-Z][A-Z0-9_]*|__[a-z0-9_]+__|_?[a-z][a-z0-9_]*)$
+
+# Regular expression matching correct attribute names
+attr-rgx=^_{0,2}[a-z][a-z0-9_]*$
+
+# Regular expression matching correct argument names
+argument-rgx=^[a-z][a-z0-9_]*$
+
+# Regular expression matching correct class attribute names
+class-attribute-rgx=^(_?[A-Z][A-Z0-9_]*|__[a-z0-9_]+__|_?[a-z][a-z0-9_]*)$
+
+# Regular expression matching correct inline iteration names
+inlinevar-rgx=^[a-z][a-z0-9_]*$
+
+# Regular expression matching correct class names
+class-rgx=^_?[A-Z][a-zA-Z0-9]*$
+
+# Regular expression matching correct module names
+module-rgx=^(_?[a-z][a-z0-9_]*|__init__)$
+
+# Regular expression matching correct method names
+method-rgx=(?x)^(?:(?P&lt;exempt&gt;_[a-z0-9_]+__|runTest|setUp|tearDown|setUpTestCase|tearDownTestCase|setupSelf|tearDownClass|setUpClass|(test|assert)_*[A-Z0-9][a-zA-Z0-9_]*|next)|(?P&lt;camel_case&gt;_{0,2}[A-Z][a-zA-Z0-9_]*)|(?P&lt;snake_case&gt;_{0,2}[a-z][a-z0-9_]*))$
+
+# Regular expression which should only match function or class names that do
+# not require a docstring.
+no-docstring-rgx=(__.*__|main|test.*|.*test|.*Test)$
+
+# Minimum line length for functions/classes that require docstrings, shorter
+# ones are exempt.
+docstring-min-length=10
+
+
+[TYPECHECK]
+
+# List of decorators that produce context managers, such as
+# contextlib.contextmanager. Add to this list to register other decorators that
+# produce valid context managers.
+contextmanager-decorators=contextlib.contextmanager,contextlib2.contextmanager
+
+# Tells whether missing members accessed in mixin class should be ignored. A
+# mixin class is detected if its name ends with &quot;mixin&quot; (case insensitive).
+ignore-mixin-members=yes
+
+# List of module names for which member attributes should not be checked
+# (useful for modules/projects where namespaces are manipulated during runtime
+# and thus existing member attributes cannot be deduced by static analysis. It
+# supports qualified module names, as well as Unix pattern matching.
+ignored-modules=
+
+# List of class names for which member attributes should not be checked (useful
+# for classes with dynamically set attributes). This supports the use of
+# qualified names.
+ignored-classes=optparse.Values,thread._local,_thread._local
+
+# List of members which are set dynamically and missed by pylint inference
+# system, and so shouldn't trigger E1101 when accessed. Python regular
+# expressions are accepted.
+generated-members=
+
+
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=80
+
+# TODO(https://github.com/PyCQA/pylint/issues/3352): Direct pylint to exempt
+# lines made too long by directives to pytype.
+
+# Regexp for a line that is allowed to be longer than the limit.
+ignore-long-lines=(?x)(
+  ^\s*(\#\ )?&lt;?https?://\S+&gt;?$|
+  ^\s*(from\s+\S+\s+)?import\s+.+$)
+
+# Allow the body of an if to be on the same line as the test if there is no
+# else.
+single-line-if-stmt=yes
+
+# List of optional constructs for which whitespace checking is disabled. `dict-
+# separator` is used to allow tabulation in dicts, etc.: {1  : 1,\n222: 2}.
+# `trailing-comma` allows a space between comma and closing bracket: (a, ).
+# `empty-line` allows space-only lines.
+no-space-check=
+
+# Maximum number of lines in a module
+max-module-lines=99999
+
+# String used as indentation unit.  The internal Google style guide mandates 2
+# spaces.  Google's externaly-published style guide says 4, consistent with
+# PEP 8.  Here, we use 2 spaces, for conformity with many open-sourced Google
+# projects (like TensorFlow).
+indent-string='  '
+
+# Number of spaces of indent required inside a hanging  or continued line.
+indent-after-paren=4
+
+# Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
+expected-line-ending-format=
+
+
+[MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma.
+notes=TODO
+
+
+[STRING]
+
+# This flag controls whether inconsistent-quotes generates a warning when the
+# character used as a quote delimiter is used inconsistently within a module.
+check-quote-consistency=yes
+
+
+[VARIABLES]
+
+# Tells whether we should check for unused import in __init__ files.
+init-import=no
+
+# A regular expression matching the name of dummy variables (i.e. expectedly
+# not used).
+dummy-variables-rgx=^\*{0,2}(_$|unused_|dummy_)
+
+# List of additional names supposed to be defined in builtins. Remember that
+# you should avoid to define new builtins when possible.
+additional-builtins=
+
+# List of strings which can identify a callback function by name. A callback
+# name must start or end with one of those strings.
+callbacks=cb_,_cb
+
+# List of qualified module names which can have objects that can redefine
+# builtins.
+redefining-builtins-modules=six,six.moves,past.builtins,future.builtins,functools
+
+
+[LOGGING]
+
+# Logging modules to check that the string format arguments are in logging
+# function parameter format
+logging-modules=logging,absl.logging,tensorflow.io.logging
+
+
+[SIMILARITIES]
+
+# Minimum lines number of a similarity.
+min-similarity-lines=4
+
+# Ignore comments when computing similarities.
+ignore-comments=yes
+
+# Ignore docstrings when computing similarities.
+ignore-docstrings=yes
+
+# Ignore imports when computing similarities.
+ignore-imports=no
+
+
+[SPELLING]
+
+# Spelling dictionary name. Available dictionaries: none. To make it working
+# install python-enchant package.
+spelling-dict=
+
+# List of comma separated words that should not be checked.
+spelling-ignore-words=
+
+# A path to a file that contains private dictionary; one word per line.
+spelling-private-dict-file=
+
+# Tells whether to store unknown words to indicated private dictionary in
+# --spelling-private-dict-file option instead of raising a message.
+spelling-store-unknown-words=no
+
+
+[IMPORTS]
+
+# Deprecated modules which should not be used, separated by a comma
+deprecated-modules=regsub,
+                   TERMIOS,
+                   Bastion,
+                   rexec,
+                   sets
+
+# Create a graph of every (i.e. internal and external) dependencies in the
+# given file (report RP0402 must not be disabled)
+import-graph=
+
+# Create a graph of external dependencies in the given file (report RP0402 must
+# not be disabled)
+ext-import-graph=
+
+# Create a graph of internal dependencies in the given file (report RP0402 must
+# not be disabled)
+int-import-graph=
+
+# Force import order to recognize a module as part of the standard
+# compatibility libraries.
+known-standard-library=
+
+# Force import order to recognize a module as part of a third party library.
+known-third-party=enchant, absl
+
+# Analyse import fallback blocks. This can be used to support both Python 2 and
+# 3 compatible code, which means that the block might have code that exists
+# only in one or another interpreter, leading to false positives when analysed.
+analyse-fallback-blocks=no
+
+
+[CLASSES]
+
+# List of method names used to declare (i.e. assign) instance attributes.
+defining-attr-methods=__init__,
+                      __new__,
+                      setUp
+
+# List of member names, which should be excluded from the protected access
+# warning.
+exclude-protected=_asdict,
+                  _fields,
+                  _replace,
+                  _source,
+                  _make
+
+# List of valid names for the first argument in a class method.
+valid-classmethod-first-arg=cls,
+                            class_
+
+# List of valid names for the first argument in a metaclass class method.
+valid-metaclass-classmethod-first-arg=mcs
+
+
+[EXCEPTIONS]
+
+# Exceptions that will emit a warning when being caught. Defaults to
+# &quot;Exception&quot;
+overgeneral-exceptions=StandardError,
+                       Exception,
+                       BaseException
+</code></pre><h3 id=配置yapf>配置YAPF</h3>
+<p>使用命令<code>yapf --style-help > yapf_style.cfg</code>生成YAPF的配置文件，将<code>yapf_style.cfg</code>放在工程目录下，或者与要格式化的文件在同一目录</p>
+<p>如果想一劳永逸的话，可以将<code>yapf_style.cfg</code>改名为<code>style</code>，直接放入<code>$HOME/.config/yapf/</code>下，其中HOME目录在windows上需要自己设置添加进PATH，Linux和Mac os就是~，这时yapfArgs可以不写入配置。</p>
+<p>如果要使用<code>Google-Python-Style-Guide</code>中的代码规范，可以在配置文件中加入下列语句：</p>
+<pre tabindex=0><code># YAPF uses the Google Python style
+based_on_style = google
+indent_width: 4
+</code></pre><h3 id=使用yapf插件>使用YAPF插件</h3>
+<p>PyCharm中使用YAPF及PyLint工具还是比较方便的：</p>
+<p><img src=/images/image-20210909163242645.png alt=image-20210909163242645></p>
+<p>如上图，我们可以在<code>Code > Reformat code (YAPF)</code>中格式化文件，也可以在编写时直接使用快捷键(<code>Meta+Alt+L</code>)。</p>
+<h3 id=使用pylint插件>使用PyLint插件</h3>
+<p>一般来讲，安装完之后PyCharm底部会出现如下窗口：</p>
+<p><img src=/images/image-20210909163656145.png alt=image-20210909163656145></p>
+<p>在本窗口可以选择单文件扫描、模块扫描或工程扫描，扫描完成PyLint会有相应结果提示。</p>
+<style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
+<div class=d-print-none>
+<h2 class=feedback--title>Feedback</h2>
+<p class=feedback--question>Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+Glad to hear it! Please <a href=https://github.com/TaibiaoGuo/devSpec/discussions/new>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+Sorry to hear that. Please <a href=https://github.com/TaibiaoGuo/devSpec/discussions/new>tell us how we can improve</a>.
+</p>
+</div>
+<script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
+<br>
+<div class="text-muted mt-5 pt-3 border-top">
+最后修改
+September 12, 2021
+: <a href=https://github.com/TaibiaoGuo/devSpec/commit/f85e7efe28757d285896c282809981e6b88a7d46>Feature 1.1.0/python (#7) (f85e7ef)</a>
+</div>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/TaibiaoGuo/devSpec aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2021 TaibiaoGuo All Rights Reserved</small>
+<small class=ml-1><a href=https://policies.google.com/privacy target=_blank rel=noopener>隐私政策</a></small>
+<p class=mt-2><a href=/docs/about/>关于</a></p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js integrity=sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/mermaid@8.11.2/dist/mermaid.min.js integrity=sha384-m8Pdaep6Qk8sW3J6XhPOiwUww3maU9HxZTLvEfSEB4e1UVvTdHyfJsYmEfYqvwLC crossorigin=anonymous></script>
+<script src=/js/tabpane-persist.js></script>
+<script src=/js/deflate.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css integrity=sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js integrity=sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!1,left:"$",right:"$"}]})'></script>
+<script src=/js/main.js></script>
+</body>
+</html>
