@@ -17,7 +17,7 @@ jobs:
         run: make dependencies
 
       - name: Build
-        uses: docker://klakegg/hugo:ext-alpine
+        uses: docker://klakegg/hugo:0.85.0-ext-alpine
         with:
           volume: $(pwd):/src
           args: --minify
