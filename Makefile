@@ -1,6 +1,8 @@
 .PHONY:dependencies
 dependencies:
 	git clone --recurse-submodules --depth 1 https://github.com/google/docsy.git themes/doscy
+	cd themes/doscy
+	git checkout tags/v0.6.0
 
 .PHONY:docker-compose
 docker-compose:
