@@ -21,7 +21,6 @@ outputs:
   section:
     - HTML
     - RSS
-    - print
 blackfriday:
   plainIDAnchors: true
   hrefTargetBlank: true
